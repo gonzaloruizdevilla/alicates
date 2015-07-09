@@ -3,6 +3,7 @@ let assert = require('chai').assert;
 
 import {
   all,
+  any,
   compose,
   curry,
   filter,
@@ -80,5 +81,16 @@ describe('all', () => {
   });
   it('should return true on an empty list', () => {
     assert.ok(all(pred, []));
+  });
+});
+
+describe('any', () => {
+  const pred = a => a > 2;
+  it('should return true if any of the values match the predicate', () => {
+    assert.notOk(any(pred, [1,1,1]));
+    assert.ok(any(pred, [1,1,3]));
+  });
+  it('should return false on an empty list', () => {
+    assert.notOk(any(pred, []));
   });
 });
