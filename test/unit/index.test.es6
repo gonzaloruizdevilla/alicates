@@ -2,6 +2,7 @@
 let assert = require('chai').assert;
 
 import {
+  add,
   all,
   any,
   compose,
@@ -27,6 +28,16 @@ describe('curry', () => {
     assert.equal(curriedAdd(1)(2),3);
   });
 });
+
+describe('add', () => {
+    it('should add two values', () =>{
+      assert.equal(add(1,2), 3);
+    });
+
+    it('should be curried', () => {
+      assert.equal(add(1)(2), 3);
+    });
+})
 
 describe('head', () => {
   it('should return the first element of an array', () => {
