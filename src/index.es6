@@ -2,10 +2,10 @@
 
 /* jshint -W067 */
 export
-  const curry = (fn, aux) => (
-    aux = args => args.length < fn.length ? (...more) => aux([...args, ...more])
-                                          : fn(...args)
-  )([]);
+  const curry = fn => (curried =>
+    curried = (...args) => args.length < fn.length ? (...more) => curried(...args, ...more)
+                                                   : fn(...args)
+  )();
 /* jshint +W067 */
 
 export
