@@ -12,7 +12,7 @@ export
   const head = y => y[0];
 
 export
-    const last = arr => arr.slice(-1)[0];
+  const last = arr => arr.slice(-1)[0];
 
 export
   const init = arr => arr.slice(0, -1);
@@ -20,7 +20,11 @@ export
 export
   const tail = arr => arr.slice(1);
 
+export
   const reduce = curry((op, a, [x, ...y]) => x !== undefined ? reduce(op, op(a, x), y) : a);
+
+export
+  const reduceRight = curry((op, a, y) => last(y) !== undefined ? reduceRight(op, op(last(y), a), init(y)) : a);
 
 export
   const map = curry((op, y) => reduce((a, x) => [...a, op(x)], [], y));

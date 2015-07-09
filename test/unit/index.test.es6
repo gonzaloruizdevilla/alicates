@@ -55,8 +55,8 @@ describe('tail', () => {
 describe('reduce', () => {
   const add =  (a,b) => a + b;
   it('should reduce arrays', () =>{
-    const result = reduce(add, 0, [0,1,2]);
-    assert.equal(result,3);
+    assert.equal(reduce(add, 0, [0,1,2]), 3);
+    assert.equal(reduce(add, '', ['0','1','2']), '012');
   });
 
   it('should be curried', () =>{
@@ -69,6 +69,13 @@ describe('reduce', () => {
   });
 });
 
+describe('reduceRight', () => {
+  const add =  (value, acc) => acc + value;
+  it('should reduce arrays', () =>{
+    const result = reduceRight(add, '', ['0','1','2']);
+    assert.equal(result,'210');
+  });
+});
 
 describe('map', () => {
   const add2 =  a => a + 2;
