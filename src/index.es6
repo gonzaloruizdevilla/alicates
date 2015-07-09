@@ -3,7 +3,7 @@
 /* jshint -W067 */
 export
   const curry = (fn, aux) => (
-    aux = args => args.length < fn.length ? (...newArgs) => aux(args.concat(newArgs))
+    aux = args => args.length < fn.length ? (...more) => aux([...args, ...more])
                                           : fn(...args)
   )([]);
 /* jshint +W067 */
