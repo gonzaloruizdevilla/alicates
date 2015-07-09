@@ -6,6 +6,7 @@ describe('Entry Point', () => {
     assert.isObject(module);
 import {
   curry,
+  reduce,
 } from '../../src/index.es6';
 describe('curry', () => {
   it('should curry functions', () => {
@@ -13,5 +14,14 @@ describe('curry', () => {
     assert.equal(curriedAdd(1)(2),3);
   });
 });
+
+describe('reduce', () => {
+  it('should reduce arrays', () =>{
+    const add =  (a,b) => a + b;
+    const result = reduce(add, 0, [0,1,2]);
+    assert.equal(result,3);
+  });
+});
+
   });
 });
