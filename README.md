@@ -14,8 +14,9 @@ Because it's funny to implement functions like curry with (Java|Ecma)Script like
 
 ```javascript
 const curry = (fn, arity) => (curried =>
-  curried = (...args) => args.length < (arity || fn.length) ? (...more) => curried(...args, ...more)
-                                                            : fn(...args)
+  curried = (...args) =>
+    args.length < (arity || fn.length) ? (...more) => curried(...args, ...more)
+                                       : fn(...args)
 )();
 ```
 
