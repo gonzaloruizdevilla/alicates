@@ -35,3 +35,8 @@ export
   const any = (fn, [x,...y]) => x === undefined ? false :
                                 fn(x)           ? true
                                                 : any(fn, y);
+
+export
+  const none = (fn, [x,...y]) => x === undefined ? true :
+                                 fn(x)           ? false
+                                                 : none(fn, y);
