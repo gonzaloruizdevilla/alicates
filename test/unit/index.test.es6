@@ -24,9 +24,18 @@ describe('curry', () => {
 });
 
 describe('reduce', () => {
+  const add =  (a,b) => a + b;
   it('should reduce arrays', () =>{
-    const add =  (a,b) => a + b;
     const result = reduce(add, 0, [0,1,2]);
+    assert.equal(result,3);
+  });
+
+  it('should be curried', () =>{
+    let result = reduce(add)(0)([0,1,2]);
+    assert.equal(result,3);
+    result = reduce(add, 0)([0,1,2]);
+    assert.equal(result,3);
+    result = reduce(add)(0, [0,1,2]);
     assert.equal(result,3);
   });
 });
