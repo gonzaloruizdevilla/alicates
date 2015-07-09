@@ -1,8 +1,12 @@
+'use strict';
+
+/* jshint -W067 */
 export
   const curry = (fn, aux) => (
     aux = args => args.length < fn.length ? (...newArgs) => aux(args.concat(newArgs))
                                           : fn(...args)
   )([]);
+/* jshint +W067 */
 
 export 
   const reduce = (op, a, [x, ...y]) => x !== undefined ? reduce(op, op(a, x), y) : a;
