@@ -14,11 +14,12 @@ export
   const filter = (op, y) => reduce((a, x) => {return op(x) ? [...a, x] : a}, [], y);
 
 export
-  const reverse = (y) => reduce((a, x)=> [x,...a], [] ,y); 
- 
-export  
-  const compose = (...ops) => sequence(...reverse(ops));
-  
+  const reverse = (y) => reduce((a, x)=> [x,...a], [] ,y);
+
 export
   const sequence = (...ops) => (a) => reduce((a, op) => op(a), a, ops);
   
+export
+  const compose = (...ops) => sequence(...reverse(ops));
+
+
