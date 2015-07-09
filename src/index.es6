@@ -34,9 +34,11 @@ export
               );
 
 export
-  const any = (fn, [x,...y]) => x === undefined ? false :
-                                fn(x)           ? true
-                                                : any(fn, y);
+  const any = curry(
+                (fn, [x,...y]) => x === undefined ? false :
+                                  fn(x)           ? true
+                                                  : any(fn, y)
+              );
 
 export
   const none = (fn, [x,...y]) => x === undefined ? true :
