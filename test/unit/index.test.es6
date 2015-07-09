@@ -33,5 +33,13 @@ describe('map', () => {
   });
 });
 
+describe('filter', () => {
+  it('should filter arrays', () =>{
+    const criteria =  a => a > 1;
+    const result = filter(criteria, [0,1,2]);
+    assert.deepEqual(result, [2]);
+  });
+});
+
   });
 });

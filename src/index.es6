@@ -9,4 +9,7 @@ export
 export
   const map = (op, y) => reduce((a, x) => [...a, op(x)], [], y);
   
+export
+  const filter = (op, y) => reduce((a, x) => {return op(x) ? [...a, x] : a}, [], y);
+
   
