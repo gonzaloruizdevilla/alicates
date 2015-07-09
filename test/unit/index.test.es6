@@ -42,9 +42,15 @@ describe('reduce', () => {
 
 
 describe('map', () => {
+  const add2 =  a => a + 2;
+
   it('should map arrays', () =>{
-    const add2 =  a => a + 2;
     const result = map(add2, [0,1,2]);
+    assert.deepEqual(result, [2,3,4]);
+  });
+
+  it('should be curried', () =>{
+    const result = map(add2)([0,1,2]);
     assert.deepEqual(result, [2,3,4]);
   });
 });

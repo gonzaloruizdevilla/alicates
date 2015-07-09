@@ -12,7 +12,7 @@ export
   const reduce = curry((op, a, [x, ...y]) => x !== undefined ? reduce(op, op(a, x), y) : a);
 
 export
-  const map = (op, y) => reduce((a, x) => [...a, op(x)], [], y);
+  const map = curry((op, y) => reduce((a, x) => [...a, op(x)], [], y));
 
 export
   const filter = (op, y) => reduce((a, x) => {return op(x) ? [...a, x] : a}, [], y);
