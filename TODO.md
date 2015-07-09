@@ -2,9 +2,7 @@
 
 Some of the functions I should be implementing in the following days...
 
-* not
 * maybe
-* once
 * unique
 * without
 * intersection
