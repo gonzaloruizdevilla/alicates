@@ -27,4 +27,6 @@ export
   const compose = (...ops) => sequence(...reverse(ops));
 
 export
-  const all = (fn, [x,...y]) => false;
+  const all = (fn, [x,...y]) => x === undefined ? true :
+                                fn(x)           ? all(fn, y)
+                                                : false;
