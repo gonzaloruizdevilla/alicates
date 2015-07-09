@@ -102,8 +102,13 @@ describe('all', () => {
     assert.notOk(all(pred, [1,2,3]));
     assert.ok(all(pred, [3,3,3]));
   });
+
   it('should return true on an empty list', () => {
     assert.ok(all(pred, []));
+  });
+
+  it('should be curried', () =>{
+    assert.ok(all(pred)([3,3,3]));
   });
 });
 
