@@ -16,6 +16,10 @@ export
 
 export
   const init = arr => arr.slice(0, -1);
+
+export
+  const tail = arr => arr.slice(1);
+
   const reduce = curry((op, a, [x, ...y]) => x !== undefined ? reduce(op, op(a, x), y) : a);
 
 export

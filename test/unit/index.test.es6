@@ -46,6 +46,12 @@ describe('init', () => {
   });
 });
 
+describe('tail', () => {
+  it('should return all the elements of an array minus the first one', () => {
+    assert.deepEqual(tail([1,2,3]), [2,3]);
+  });
+});
+
 describe('reduce', () => {
   const add =  (a,b) => a + b;
   it('should reduce arrays', () =>{
