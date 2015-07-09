@@ -10,7 +10,10 @@ import {
   map,
   reduce,
   reverse,
+  sequence
 } from '../../src/index.es6';
+
+
 describe('curry', () => {
   it('should curry functions', () => {
     var curriedAdd = curry((a,b)=>a+b);
@@ -47,6 +50,16 @@ describe('reverse', () => {
   it('should reverse arrays', () =>{
     const result = reverse([0,1,2]);
     assert.deepEqual(result, [2,1,0]);
+  });
+});
+
+describe('sequence', () => {
+  it('should create a function that executes a list in functions in sequence', () =>{
+    const add3 = a => a + 3;
+    const mult10 = a => a * 10;
+    const seq = sequence(add3, mult10);
+    const result = seq(2);
+    assert.equal(result, 50);
   });
 });
 
