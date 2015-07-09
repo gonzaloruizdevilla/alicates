@@ -1,6 +1,6 @@
 # Alicates
 
-![Build Status](https://img.shields.io/travis//alicates.svg) ![Coverage](https://img.shields.io/coveralls//alicates.svg) ![Downloads](https://img.shields.io/npm/dm/alicates.svg) ![npm version](https://img.shields.io/npm/v/alicates.svg) ![dependencies](https://img.shields.io/david//alicates.svg) ![dev dependencies](https://img.shields.io/david/dev//alicates.svg) ![License](https://img.shields.io/npm/l/alicates.svg)
+![Build Status](https://img.shields.io/travis/gonzaloruizdevilla/alicates.svg) ![Coverage](https://img.shields.io/coveralls/gonzaloruizdevilla/alicates.svg)
 
 Compact functional library made with ES6
 
