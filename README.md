@@ -1,6 +1,6 @@
 # Alicates
 
-![Build Status](https://img.shields.io/travis/gonzaloruizdevilla/alicates.svg) ![Coverage](https://img.shields.io/coveralls/gonzaloruizdevilla/alicates.svg)
+![Build Status](https://travis-ci.org/gonzaloruizdevilla/alicates.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/gonzaloruizdevilla/alicates/badge.svg?branch=master&service=github)](https://coveralls.io/github/gonzaloruizdevilla/alicates?branch=master)
 
 Compact functional library made with ES6
 
