@@ -9,6 +9,11 @@ export
 /* jshint +W067 */
 
 export
+  const head = y => y[0];
+
+const
+  export
+    const last = arr => arr.slice(-1)[0];
   const reduce = curry((op, a, [x, ...y]) => x !== undefined ? reduce(op, op(a, x), y) : a);
 
 export

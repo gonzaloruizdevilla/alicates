@@ -7,6 +7,8 @@ import {
   compose,
   curry,
   filter,
+  head,
+  last,
   map,
   none,
   reduce,
@@ -20,6 +22,18 @@ describe('curry', () => {
   it('should curry functions', () => {
     var curriedAdd = curry((a,b)=>a+b);
     assert.equal(curriedAdd(1)(2),3);
+  });
+});
+
+describe('head', () => {
+  it('should return the first element of an array', () => {
+    assert.equal(head([1,2,3]), 1);
+  });
+});
+
+describe('last', () => {
+  it('should return the last element of an array', () => {
+    assert.equal(last([1,2,3]), 3);
   });
 });
 
