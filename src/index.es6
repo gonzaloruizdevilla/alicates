@@ -43,12 +43,12 @@ export
 
 /* jshint -W067 */
 export
-  const zip = (arr1, arr2) => (
+  const zip = (y1, y2) => (
      ((aux) =>
         (aux = ([x1,...y1], [x2,...y2], acc) =>
           x1 === undefined || x2 === undefined ? acc
                                                : aux(y1, y2, acc.concat([[x1, x2]]))
-        )(arr1, arr2, [])
+        )(y1, y2, [])
       )()
   )
 /* jshint +W067 */
