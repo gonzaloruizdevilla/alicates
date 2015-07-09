@@ -41,9 +41,11 @@ export
               );
 
 export
-  const none = (fn, [x,...y]) => x === undefined ? true :
-                                 fn(x)           ? false
-                                                 : none(fn, y);
+  const none = curry(
+                (fn, [x,...y]) => x === undefined ? true :
+                                  fn(x)           ? false
+                                                  : none(fn, y)
+              );
 
 /* jshint -W067 */
 export
