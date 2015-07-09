@@ -15,6 +15,7 @@ import {
   last,
   map,
   none,
+  not,
   reduce,
   reduceRight,
   reverse,
@@ -241,8 +242,17 @@ describe('zip', () => {
 describe('apply', () => {
   const mult10 = x => x * 10;
   const add3 = add(3);
-  
+
   it('should apply a list of functions to a list of values', function() {
     assert.deepEqual(apply([mult10, add3], [1, 2, 3]), [10, 20, 30, 4, 5, 6]);
   });
 });
+
+describe('not', () => {
+  it('should returns the ! of its argument', () => {
+    assert.equal(not(true), false);
+    assert.equal(not(false), true);
+    assert.equal(not(0), true);
+    assert.equal(not(1), false);
+  })
+})

@@ -83,3 +83,6 @@ export
 
 export
   const apply = (fns, y) => reduce((a, fn) => [...a, ...map(fn, y)], [], fns);
+
+export
+  const not = x => !x;
