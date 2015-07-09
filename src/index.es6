@@ -11,9 +11,11 @@ export
 export
   const head = y => y[0];
 
-const
-  export
+export
     const last = arr => arr.slice(-1)[0];
+
+export
+  const init = arr => arr.slice(0, -1);
   const reduce = curry((op, a, [x, ...y]) => x !== undefined ? reduce(op, op(a, x), y) : a);
 
 export

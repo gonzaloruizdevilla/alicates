@@ -8,12 +8,15 @@ import {
   curry,
   filter,
   head,
+  init,
   last,
   map,
   none,
   reduce,
+  reduceRight,
   reverse,
   sequence,
+  tail,
   zip
 } from '../../src/index.es6';
 
@@ -34,6 +37,12 @@ describe('head', () => {
 describe('last', () => {
   it('should return the last element of an array', () => {
     assert.equal(last([1,2,3]), 3);
+  });
+});
+
+describe('init', () => {
+  it('should return all the elements of an array minus the last one', () => {
+    assert.deepEqual(init([1,2,3]), [1,2]);
   });
 });
 
