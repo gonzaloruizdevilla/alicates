@@ -46,7 +46,7 @@ export
   const zip = (arr1, arr2, aux) => (
     (aux = ([x1,...y1], [x2,...y2], acc) =>
       x1 === undefined || x2 === undefined ? acc
-                                         : aux(y1, y2, acc.concat([[x1, x2]]))
+                                           : aux(y1, y2, acc.concat([[x1, x2]]))
     )(arr1, arr2, [])
   )
 /* jshint +W067 */
