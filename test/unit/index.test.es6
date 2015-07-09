@@ -6,8 +6,10 @@ describe('Entry Point', () => {
     assert.isObject(module);
 import {
   curry,
+  filter,
   map,
   reduce,
+  reverse,
 } from '../../src/index.es6';
 describe('curry', () => {
   it('should curry functions', () => {
@@ -38,6 +40,13 @@ describe('filter', () => {
     const criteria =  a => a > 1;
     const result = filter(criteria, [0,1,2]);
     assert.deepEqual(result, [2]);
+  });
+});
+
+describe('reverse', () => {
+  it('should reverse arrays', () =>{
+    const result = reverse([0,1,2]);
+    assert.deepEqual(result, [2,1,0]);
   });
 });
 

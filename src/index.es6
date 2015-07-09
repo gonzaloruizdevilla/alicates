@@ -3,6 +3,7 @@ export
     aux = args => args.length < fn.length ? (...newArgs) => aux(args.concat(newArgs))
                                           : f(...args)
   )([]);
+
 export 
   const reduce = (op, a, [x, ...y]) => x !== undefined ? reduce(op, op(a, x), y) : a;
   
@@ -12,4 +13,7 @@ export
 export
   const filter = (op, y) => reduce((a, x) => {return op(x) ? [...a, x] : a}, [], y);
 
+export
+  const reverse = (y) => reduce((a, x)=> [x,...a], [] ,y); 
+ 
   
