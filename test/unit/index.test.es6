@@ -6,6 +6,7 @@ describe('Entry Point', () => {
     assert.isObject(module);
 import {
   curry,
+  map,
   reduce,
 } from '../../src/index.es6';
 describe('curry', () => {
@@ -20,6 +21,15 @@ describe('reduce', () => {
     const add =  (a,b) => a + b;
     const result = reduce(add, 0, [0,1,2]);
     assert.equal(result,3);
+  });
+});
+
+
+describe('map', () => {
+  it('should map arrays', () =>{
+    const add2 =  a => a + 2;
+    const result = map(add2, [0,1,2]);
+    assert.deepEqual(result, [2,3,4]);
   });
 });
 

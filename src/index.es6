@@ -6,3 +6,7 @@ export
 export 
   const reduce = (op, a, [x, ...y]) => x !== undefined ? reduce(op, op(a, x), y) : a;
   
+export
+  const map = (op, y) => reduce((a, x) => [...a, op(x)], [], y);
+  
+  
