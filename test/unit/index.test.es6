@@ -28,6 +28,11 @@ describe('curry', () => {
     var curriedAdd = curry((a,b)=>a+b);
     assert.equal(curriedAdd(1)(2),3);
   });
+
+  it('should allow to explicitly set the arity functions', () => {
+    var curriedAddAll = curry(addAll, 3);
+    assert.equal(curriedAddAll(1)(2)(3), 6);
+  });
 });
 
 describe('add', () => {
