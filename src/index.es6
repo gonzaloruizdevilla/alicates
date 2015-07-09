@@ -79,3 +79,6 @@ export
       )()
   ));
 /* jshint +W067 */
+
+export
+  const apply = (fns, y) => reduce((a, fn) => [...a, ...map(fn, y)], [], fns);
