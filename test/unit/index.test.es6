@@ -56,9 +56,15 @@ describe('map', () => {
 });
 
 describe('filter', () => {
+  const criteria =  a => a > 1;
+
   it('should filter arrays', () =>{
-    const criteria =  a => a > 1;
     const result = filter(criteria, [0,1,2]);
+    assert.deepEqual(result, [2]);
+  });
+
+  it('should be curried', () =>{
+    const result = filter(criteria)([0,1,2]);
     assert.deepEqual(result, [2]);
   });
 });
