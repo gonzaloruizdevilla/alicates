@@ -27,7 +27,10 @@ export
   const reduceRight = curry((op, a, y) => last(y) !== undefined ? reduceRight(op, op(last(y), a), init(y)) : a);
 
 export
-    const add = curry((a, b) => a + b);
+  const add = curry((a, b) => a + b);
+
+export
+  const addAll = (...args) => reduce(add, 0, args);
 
 export
   const map = curry((op, y) => reduce((a, x) => [...a, op(x)], [], y));

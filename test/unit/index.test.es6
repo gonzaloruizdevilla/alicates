@@ -3,6 +3,7 @@ let assert = require('chai').assert;
 
 import {
   add,
+  addAll,
   all,
   any,
   compose,
@@ -37,7 +38,14 @@ describe('add', () => {
     it('should be curried', () => {
       assert.equal(add(1)(2), 3);
     });
-})
+});
+
+
+describe('addAll', () => {
+    it('should add all the arguments', () =>{
+      assert.equal(addAll(1,2,3), 6);
+    });
+});
 
 describe('head', () => {
   it('should return the first element of an array', () => {
