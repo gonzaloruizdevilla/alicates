@@ -16,6 +16,9 @@ export
 export
   const reverse = (y) => reduce((a, x)=> [x,...a], [] ,y); 
  
+export  
+  const compose = (...ops) => sequence(...reverse(ops));
+  
 export
   const sequence = (...ops) => (a) => reduce((a, op) => op(a), a, ops);
   
