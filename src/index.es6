@@ -1,5 +1,3 @@
-'use strict';
-
 /* jshint -W067 */
 export
   const curry = (fn, arity) => (curried =>

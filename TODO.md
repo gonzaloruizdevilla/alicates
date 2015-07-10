@@ -35,7 +35,7 @@ ALL OF IT
 
 #Jscss, jshint, etc.
 
-Unify style, get rid of 'use strict' (as it is implicit in ES2015) without getting jshint warnings, etc.
+Unify style, better checking, etc.
 
 #Design
 A logo, and a documentation website.

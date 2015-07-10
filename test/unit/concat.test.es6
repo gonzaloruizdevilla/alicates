@@ -1,4 +1,3 @@
-'use strict';
 let assert = require('chai').assert;
 
 import {concat} from '../../src/index.es6';
