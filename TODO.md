@@ -3,9 +3,7 @@
 Some of the functions I should be implementing in the following days...
 
 * maybe
-* intersection
 * intersectionWith
-* difference
 * differenceWith
 * contains
 * lift

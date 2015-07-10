@@ -115,3 +115,9 @@ export
     el => (all(contains(el), args)),
     [...(new Set(...args))]
   ), 2);
+
+export
+  const difference = curry((arr, ...others) => filter(
+        el => (none(contains(el), others)),
+        arr
+  ), 2);
