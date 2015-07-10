@@ -10,7 +10,6 @@ Some of the functions I should be implementing in the following days...
 * difference
 * differenceWith
 * contains
-* combine/concat
 * lift
 * allPass
 * anyPass
@@ -28,5 +27,15 @@ Some of the functions I should be implementing in the following days...
 * identity
 * inc
 
-
 And many other functions you can find implemented in RamdaJS, Underscore and other libraries.
+
+
+# Documentation
+ALL OF IT
+
+#Jscss, jshint, etc.
+
+Unify style, get rid of 'use strict' (as it is implicit in ES2015) without getting jshint warnings, etc.
+
+#Design
+A logo, and a documentation website.
