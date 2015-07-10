@@ -279,7 +279,7 @@ describe('once', () => {
 
   it('retains and returns the first value calculated, even if different arguments are passed later', () => {
     var fn = once((a, b) => a + b);
-    assert.strictEqual(fn(5, 10), 15);
-    assert.strictEqual(fn(5, 20), 15);
+    assert.equal(fn(5, 10), 15);
+    assert.equal(fn(5, 20), 15);
   });
 });
