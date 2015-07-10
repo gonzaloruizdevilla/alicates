@@ -3,7 +3,6 @@
 Some of the functions I should be implementing in the following days...
 
 * maybe
-* unique
 * without
 * intersection
 * intersectionWith

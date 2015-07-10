@@ -89,7 +89,10 @@ export
   const once = fn => ((executed, value) =>
     (...args) => executed ? value
                           : (executed = true, value = fn(...args))
-  )()
+  )();
 
 export
-  const concat = curry((...args) => [].concat(...args), 2)
+  const concat = curry((...args) => [].concat(...args), 2);
+
+export
+  const unique = arr => [...(new Set(arr))];
