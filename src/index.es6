@@ -92,3 +92,6 @@ export
     (...args) => executed ? value
                           : (executed = true, value = fn(...args))
   )()
+
+export
+  const concat = curry((...args) => [].concat(...args), 2)
