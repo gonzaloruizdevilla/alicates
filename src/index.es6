@@ -110,3 +110,8 @@ export
   const contains = curry((x, arr) => (!!~arr.indexOf(x)));
 /* jshint +W016 */
 
+export
+  const intersection = curry((...args) => filter(
+    el => (all(contains(el), args)),
+    [...(new Set(...args))]
+  ), 2);
