@@ -96,3 +96,11 @@ export
 
 export
   const unique = arr => [...(new Set(arr))];
+
+/* jshint -W067 */
+export
+  const without = curry((arr, ...args) => (filterFn => (
+    filterFn = el => not(any(exclude => el === exclude, args)),
+    filter(filterFn, arr)
+  ))(), 2);
+/* jshint +W067 */
