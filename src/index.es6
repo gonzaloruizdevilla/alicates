@@ -104,3 +104,9 @@ export
     filter(filterFn, arr)
   ))(), 2);
 /* jshint +W067 */
+
+/* jshint -W016 */
+export
+  const contains = curry((x, arr) => (!!~arr.indexOf(x)));
+/* jshint +W016 */
+
