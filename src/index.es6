@@ -8,7 +8,7 @@ export
 /* jshint +W067 */
 
 export
-  const head = y => y[0];
+  const head = arr => arr[0];
 
 export
   const last = arr => arr.slice(-1)[0];
@@ -20,10 +20,10 @@ export
   const tail = arr => arr.slice(1);
 
 export
-  const reduce = curry((op, a, [x, ...y]) => x !== undefined ? reduce(op, op(a, x), y) : a);
+  const reduce = curry((fn, acc, [x, ...arr]) => x !== undefined ? reduce(fn, fn(acc, x), arr) : acc);
 
 export
-  const reduceRight = curry((op, a, y) => last(y) !== undefined ? reduceRight(op, op(last(y), a), init(y)) : a);
+  const reduceRight = curry((fn, acc, arr) => last(arr) !== undefined ? reduceRight(fn, fn(last(arr), acc), init(arr)) : acc);
 
 export
   const add = curry((a, b) => a + b);
@@ -32,55 +32,55 @@ export
   const addAll = (...args) => reduce(add, 0, args);
 
 export
-  const map = curry((op, y) => reduce((a, x) => [...a, op(x)], [], y));
+  const map = curry((fn, arr) => reduce((acc, x) => [...acc, fn(x)], [], arr));
 
 export
-  const filter = curry((op, y) => reduce((a, x) => op(x) ? [...a, x] : a, [], y));
+  const filter = curry((fn, arr) => reduce((acc, x) => fn(x) ? [...acc, x] : acc, [], arr));
 
 export
-  const reverse = (y) => reduce((a, x)=> [x,...a], [] ,y);
+  const reverse = (arr) => reduce((acc, x)=> [x,...acc], [] ,arr);
 
 export
-  const sequence = (...ops) => (a) => reduce((a, op) => op(a), a, ops);
+  const sequence = (...fns) => (a) => reduce((a, fn) => fn(a), a, fns);
 
 export
-  const compose = (...ops) => sequence(...reverse(ops));
+  const compose = (...fns) => sequence(...reverse(fns));
 
 export
   const all = curry(
-                (fn, [x,...y]) => x === undefined ? true :
-                                  fn(x)           ? all(fn, y)
-                                                  : false
+                (fn, [x,...arr]) => x === undefined ? true :
+                                    fn(x)           ? all(fn, arr)
+                                                    : false
               );
 
 export
   const any = curry(
-                (fn, [x,...y]) => x === undefined ? false :
-                                  fn(x)           ? true
-                                                  : any(fn, y)
+                (fn, [x,...arr]) => x === undefined ? false :
+                                    fn(x)           ? true
+                                                    : any(fn, arr)
               );
 
 export
   const none = curry(
-                (fn, [x,...y]) => x === undefined ? true :
-                                  fn(x)           ? false
-                                                  : none(fn, y)
+                 (fn, [x,...arr]) => x === undefined ? true :
+                                     fn(x)           ? false
+                                                     : none(fn, arr)
               );
 
 /* jshint -W067 */
 export
-  const zip = curry((y1, y2) => (
+  const zip = curry((arr1, arr2) => (
      ((aux) =>
-        (aux = ([x1,...y1], [x2,...y2], acc) =>
+        (aux = ([x1,...arr1], [x2,...arr2], acc) =>
           x1 === undefined || x2 === undefined ? acc
-                                               : aux(y1, y2, [...acc, [x1, x2]])
-        )(y1, y2, [])
+                                               : aux(arr1, arr2, [...acc, [x1, x2]])
+        )(arr1, arr2, [])
       )()
   ));
 /* jshint +W067 */
 
 export
-  const apply = (fns, y) => reduce((a, fn) => [...a, ...map(fn, y)], [], fns);
+  const apply = (fns, arr) => reduce((acc, fn) => [...acc, ...map(fn, arr)], [], fns);
 
 export
   const not = x => !x;
