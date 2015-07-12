@@ -124,4 +124,4 @@ export
 
 
 export
-  const lift = fn => (x, ...args) => reduce(apply, map(curry(fn), x), args);
+  const lift = (fn, arity) => curry((x, ...args) => reduce(apply, map(curry(fn, arity), x), args), arity);
