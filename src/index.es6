@@ -121,3 +121,7 @@ export
         el => (none(contains(el), others)),
         arr
   ), 2);
+
+
+export
+  const lift = fn => (x, ...args) => reduce(apply, map(curry(fn), x), args);
