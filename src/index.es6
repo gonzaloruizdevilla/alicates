@@ -8,6 +8,7 @@ export const sequence = functional.sequence;
 
 import * as logic from './modules/logic';
 export const not = logic.not;
+export const or = logic.or;
 
 import * as list from './modules/list';
 export const all = list.all;
