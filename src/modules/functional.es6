@@ -2,6 +2,9 @@ import * as _curry from './functional/curry';
 import {map, reduce, reverse} from './list';
 
 export
+  const always = (a) => () => a;
+
+export
   const apply = (fns, arr) => reduce((acc, fn) => [...acc, ...map(fn, arr)], [], fns);
 
 export const curry = _curry.curry;
