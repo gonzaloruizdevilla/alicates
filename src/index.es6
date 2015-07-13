@@ -6,6 +6,7 @@ export const curry = functional.curry;
 export const lift = functional.lift;
 export const once = functional.once;
 export const sequence = functional.sequence;
+export const t = functional.t;
 
 import * as logic from './modules/logic';
 export const not = logic.not;

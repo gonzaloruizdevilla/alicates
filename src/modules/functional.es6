@@ -23,3 +23,4 @@ export
 
 export
   const lift = (fn, arity) => curry((x, ...args) => reduce(apply, map(curry(fn, arity), x), args), arity);
+export const t = () => true;
