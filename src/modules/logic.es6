@@ -1,7 +1,8 @@
 import {curry} from './functional/curry'
 
+import * as _not from './logic/not'
 export
-  const not = x => !x;
+  const not = _not.not;
 
 export
   const or = curry((a,b) => a || b) ;

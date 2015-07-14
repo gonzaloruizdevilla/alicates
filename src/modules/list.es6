@@ -1,5 +1,5 @@
 import {curry} from './functional/curry';
-import {not} from './logic';
+import {not} from './logic/not';
 
 export
   const reduce = curry((fn, acc, [x, ...arr]) => x !== undefined ? reduce(fn, fn(acc, x), arr) : acc);
