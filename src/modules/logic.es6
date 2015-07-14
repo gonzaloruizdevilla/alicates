@@ -1,6 +1,8 @@
 import {curry} from './functional/curry'
 
 import * as _not from './logic/not'
+import * as _equals from './logic/equals'
+
 export
   const not = _not.not;
 
@@ -24,3 +26,6 @@ export
         )(arr)
       )();
 /* jshint +W067 */
+
+export
+  const equals = _equals.equals;
