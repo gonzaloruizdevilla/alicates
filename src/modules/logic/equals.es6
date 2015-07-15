@@ -4,7 +4,7 @@ import {isDate, isFunction, isObject, isRegExp} from '../type';
 
 let _equals;
 
-const hasMethod = (name, a) => !!a && typeof a[name] === 'function';
+const hasMethod = (name, a) => !!a && isFunction(a[name]);
 const isArray = Array.isArray;
 const isMap = a => isObject(a) && !isArray(a) && !isRegExp(a) && !isDate(a);
 
@@ -23,7 +23,7 @@ const equalMaps = (a, b) => {
   const aKeys = getPropertiesKeys(a);
   const bKeys = getPropertiesKeys(b);
   return aKeys.size === bKeys.size && all(
-      (key) => aKeys.has(key) && _equals(a[key], b[key]),
+      key => aKeys.has(key) && _equals(a[key], b[key]),
       bKeys
     );
 };

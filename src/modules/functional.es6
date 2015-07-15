@@ -2,7 +2,7 @@ import * as _curry from './functional/curry';
 import {map, reduce, reverse} from './list';
 
 export
-  const always = (a) => () => a;
+  const always = a => () => a;
 
 export
   const apply = (fns, arr) => reduce((acc, fn) => [...acc, ...map(fn, arr)], [], fns);
@@ -10,7 +10,7 @@ export
 export const curry = _curry.curry;
 
 export
-  const sequence = (...fns) => (a) => reduce((a, fn) => fn(a), a, fns);
+  const sequence = (...fns) => a => reduce((a, fn) => fn(a), a, fns);
 
 export
   const compose = (...fns) => sequence(...reverse(fns));

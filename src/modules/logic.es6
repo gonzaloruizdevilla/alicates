@@ -19,7 +19,7 @@ export
 export
   const cond = (arr) =>
     (...args) =>
-      ((aux) =>
+      (aux =>
         (aux = ([x, ...arr]) => x === undefined ? undefined :
                                 x[0](...args)   ? x[1](...args)
                                                 : aux(arr)

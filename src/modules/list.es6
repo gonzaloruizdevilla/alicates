@@ -26,7 +26,7 @@ export
   const filter = curry((fn, arr) => reduce((acc, x) => fn(x) ? [...acc, x] : acc, [], arr));
 
 export
-  const reverse = (arr) => reduce((acc, x)=> [x,...acc], [] ,arr);
+  const reverse = arr => reduce((acc, x)=> [x,...acc], [] ,arr);
 
 export
   const all = curry(
@@ -53,12 +53,12 @@ export
 /* jshint -W067 */
 export
   const zip = curry((arr1, arr2) => (
-     ((aux) =>
-        (aux = ([x1,...arr1], [x2,...arr2], acc) =>
-          x1 === undefined || x2 === undefined ? acc
-                                               : aux(arr1, arr2, [...acc, [x1, x2]])
-        )(arr1, arr2, [])
-      )()
+    (aux =>
+      (aux = ([x1,...arr1], [x2,...arr2], acc) =>
+        x1 === undefined || x2 === undefined ? acc
+                                             : aux(arr1, arr2, [...acc, [x1, x2]])
+      )(arr1, arr2, [])
+    )()
   ));
 /* jshint +W067 */
 
