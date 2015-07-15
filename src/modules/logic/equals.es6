@@ -1,15 +1,13 @@
 import {curry} from '../functional/curry';
 import {all, zip} from '../list';
-import {isDate} from '../type';
+import {isDate, isRegExp} from '../type';
 
 let _equals;
 
 const isTypeObject = a => typeof a === 'object';
 const hasMethod = (name, a) => !!a && typeof a[name] === 'function';
-
 const isArray = Array.isArray;
 const isFunction = a => typeof a === 'function';
-const isRegExp = a => toString.call(a) === '[object RegExp]';
 const isMap = a => isTypeObject(a) && !isArray(a) && !isRegExp(a) && !isDate(a);
 
 const equalArrays = (a,b) => a.length === b.length && all(([x,y]) => _equals(x,y), zip(a,b));
