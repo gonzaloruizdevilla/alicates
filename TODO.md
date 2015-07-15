@@ -6,7 +6,6 @@ Some of the functions I should be implementing in the following days...
 * intersectionWith
 * differenceWith
 * contains
-* lift
 * allPass
 * anyPass
 * nonePass
