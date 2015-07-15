@@ -35,7 +35,7 @@ const equalMaps = (a, b) => {
 };
 
 const equalObjects = (a, b) =>  isArray(a)   ? (isArray(b)    && equalArrays(a, b)) :
-                                isRegExp(a)  ? (isRegExp(b)   && a.toString() == b.toString()) :
+                                isRegExp(a)  ? (isRegExp(b)   && a.toString() === b.toString()) :
                                 isDate(a)    ? (isDate(b)     && _equals(a.getTime(),b.getTime())) :
                                 !isMap(b)    ? false
                                              : equalMaps(a, b);
