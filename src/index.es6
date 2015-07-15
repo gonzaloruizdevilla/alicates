@@ -40,3 +40,6 @@ export const zip = list.zip;
 import * as math from './modules/math';
 export const add = math.add;
 export const addAll = math.addAll;
+
+import * as type from './modules/type';
+export const isDate = type.isDate;
