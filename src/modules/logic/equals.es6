@@ -1,16 +1,14 @@
 import {curry} from '../functional/curry';
 import {all, zip} from '../list';
-import {isDate, isFunction, isRegExp} from '../type';
+import {isDate, isFunction, isObject, isRegExp} from '../type';
 
 let _equals;
 
-const isTypeObject = a => typeof a === 'object';
 const hasMethod = (name, a) => !!a && typeof a[name] === 'function';
 const isArray = Array.isArray;
-const isMap = a => isTypeObject(a) && !isArray(a) && !isRegExp(a) && !isDate(a);
+const isMap = a => isObject(a) && !isArray(a) && !isRegExp(a) && !isDate(a);
 
 const equalArrays = (a,b) => a.length === b.length && all(([x,y]) => _equals(x,y), zip(a,b));
-
 
 const getPropertiesKeys = (o) => {
   const keys = new Set()
@@ -20,7 +18,6 @@ const getPropertiesKeys = (o) => {
   }
   return keys;
 }
-
 
 const equalMaps = (a, b) => {
   const aKeys = getPropertiesKeys(a);
@@ -43,6 +40,6 @@ _equals = (a,b) =>
   (a !== a && b !== b)               ? true  : //NaN !== NaN =>  true
   hasMethod('equals', a)             ? a.equals(b) :
   hasMethod('equals', b)             ? b.equals(a)
-                                     : isTypeObject(a) && isTypeObject(b) && equalObjects(a, b);
+                                     : isObject(a) && isObject(b) && equalObjects(a, b);
 
 export const equals =  curry(_equals);

@@ -45,3 +45,4 @@ import * as type from './modules/type';
 export const isDate = type.isDate;
 export const isRegExp = type.isRegExp;
 export const isFunction = type.isFunction;
+export const isObject = type.isObject;
