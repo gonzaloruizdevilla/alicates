@@ -130,6 +130,33 @@ describe('equals', () => {
   });
 
 
+  it('dispatches to `equals` method', () => {
+    class Left{
+      constructor(x){
+        this.value = x;
+      }
+      equals(x){
+        return x instanceof Left && equals(x.value, this.value);
+      }
+    }
+    class Right{
+      constructor(x){
+        this.value = x;
+      }
+      equals(x){
+        return x instanceof Right && equals(x.value, this.value);
+      }
+    }
+
+    assert.strictEqual(equals(new Left([42]), new Left([42])), true);
+    assert.strictEqual(equals(new Left([42]), new Left([43])), false);
+    assert.strictEqual(equals(new Left(42), {value: 42}), false);
+    assert.strictEqual(equals({value: 42}, new Left(42)), false);
+    assert.strictEqual(equals(new Left(42), new Right(42)), false);
+    assert.strictEqual(equals(new Right(42), new Left(42)), false);
+  });
+
+
   it('is curried', () => {
     let a = [];
     let isA = equals(a);
