@@ -10,6 +10,7 @@ export const sequence = functional.sequence;
 export const t = functional.t;
 
 import * as logic from './modules/logic';
+export const allPass = logic.allPass;
 export const cond = logic.cond;
 export const equals = logic.equals;
 export const not = logic.not;

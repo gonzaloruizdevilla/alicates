@@ -2,9 +2,11 @@ import {curry} from './functional/curry'
 
 import * as _not from './logic/not'
 import * as _equals from './logic/equals'
+import * as _allPass from './logic/allPass'
 
-export
-  const not = _not.not;
+export const not = _not.not;
+export const equals = _equals.equals;
+export const allPass = _allPass.allPass;
 
 export
   const or = curry((a,b) => a || b) ;
@@ -26,6 +28,3 @@ export
         )(arr)
       )();
 /* jshint +W067 */
-
-export
-  const equals = _equals.equals;
