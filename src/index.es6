@@ -29,6 +29,7 @@ export const intersection = list.intersection;
 export const last = list.last;
 export const map = list.map;
 export const none = list.none;
+export const pluck = list.pluck;
 export const reduce = list.reduce;
 export const reduceRight = list.reduceRight;
 export const reverse = list.reverse;

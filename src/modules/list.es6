@@ -3,6 +3,8 @@ import {not} from './logic/not';
 
 import * as _reduce from './list/reduce';
 export const reduce = _reduce.reduce;
+import * as _pluck from './list/pluck';
+export const pluck = _pluck.pluck;
 import * as _map from './list/map';
 export const map = _map.map;
 
