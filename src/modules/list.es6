@@ -1,8 +1,10 @@
 import {curry} from './functional/curry';
 import {not} from './logic/not';
 
-export
-  const reduce = curry((fn, acc, [x, ...arr]) => x !== undefined ? reduce(fn, fn(acc, x), arr) : acc);
+import * as _reduce from './list/reduce';
+export const reduce = _reduce.reduce;
+import * as _map from './list/map';
+export const map = _map.map;
 
 export
   const head = arr => arr[0];
@@ -19,8 +21,7 @@ export
 export
   const reduceRight = curry((fn, acc, arr) => last(arr) !== undefined ? reduceRight(fn, fn(last(arr), acc), init(arr)) : acc);
 
-export
-  const map = curry((fn, arr) => reduce((acc, x) => [...acc, fn(x)], [], arr));
+
 
 export
   const filter = curry((fn, arr) => reduce((acc, x) => fn(x) ? [...acc, x] : acc, [], arr));
