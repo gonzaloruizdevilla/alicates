@@ -3,10 +3,12 @@ import {curry} from './functional/curry'
 import * as _not from './logic/not'
 import * as _equals from './logic/equals'
 import * as _allPass from './logic/allPass'
+import * as _anyPass from './logic/anyPass'
 
 export const not = _not.not;
 export const equals = _equals.equals;
 export const allPass = _allPass.allPass;
+export const anyPass = _anyPass.anyPass;
 
 export
   const or = curry((a,b) => a || b) ;
