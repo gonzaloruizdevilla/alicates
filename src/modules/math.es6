@@ -1,8 +1,4 @@
-import {curry} from './functional/curry';
-import {reduce} from './list'
-
-export
-  const add = curry((a, b) => a + b);
-
-export
-    const addAll = (...args) => reduce(add, 0, args);
+import * as _add from './math/add'
+export const add = _add.add;
+import * as _addAll from './math/addAll'
+export const addAll = _addAll.addAll;
