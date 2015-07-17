@@ -4,6 +4,7 @@ export const apply = functional.apply;
 export const compose = functional.compose;
 export const curry = functional.curry;
 export const f = functional.f;
+export const identity = functional.identity;
 export const lift = functional.lift;
 export const once = functional.once;
 export const sequence = functional.sequence;

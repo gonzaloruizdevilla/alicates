@@ -1,5 +1,10 @@
 import * as _curry from './functional/curry';
+import * as _identity from './functional/identity';
 import {map, reduce, reverse} from './list';
+
+export const curry = _curry.curry;
+export const identity = _identity.identity;
+
 
 export
   const always = a => () => a;
@@ -7,7 +12,6 @@ export
 export
   const apply = (fns, arr) => reduce((acc, fn) => [...acc, ...map(fn, arr)], [], fns);
 
-export const curry = _curry.curry;
 
 export
   const sequence = (...fns) => a => reduce((a, fn) => fn(a), a, fns);
