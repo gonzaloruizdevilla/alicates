@@ -51,3 +51,5 @@ export const isDate = type.isDate;
 export const isRegExp = type.isRegExp;
 export const isFunction = type.isFunction;
 export const isObject = type.isObject;
+import * as object from './modules/object';
+export const keys = object.keys;
