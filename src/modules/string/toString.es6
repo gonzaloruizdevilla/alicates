@@ -1,5 +1,6 @@
 import {cond, equals} from '../logic';
-import {curry,t} from '../functional';
+import {curry} from '../functional/curry';
+import {t} from '../functional/t';
 import {contains, filter, map} from '../list';
 import {isObject} from '../type/isObject';
 import {keys} from '../object/keys';

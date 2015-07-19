@@ -6,6 +6,7 @@ export const curry = functional.curry;
 export const f = functional.f;
 export const identity = functional.identity;
 export const lift = functional.lift;
+export const memoize = functional.memoize;
 export const once = functional.once;
 export const sequence = functional.sequence;
 export const t = functional.t;
