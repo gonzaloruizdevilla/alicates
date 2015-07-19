@@ -6,8 +6,6 @@ Some of the functions I should be implementing in the following days...
 * intersectionWith
 * differenceWith
 * contains
-* allPass
-* anyPass
 * nonePass
 * sequenceP
 * composeP
@@ -19,10 +17,9 @@ Some of the functions I should be implementing in the following days...
 * findLast
 * has
 * gt, gte, lt, lte
-* identity
 * inc
 
-And many other functions you can find implemented in RamdaJS, Underscore and other libraries.
+And many other functions you can find implemented in RamdaJS
 
 
 # Documentation
