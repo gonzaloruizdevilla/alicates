@@ -2,9 +2,10 @@
 
 ![Build Status](https://travis-ci.org/gonzaloruizdevilla/alicates.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/gonzaloruizdevilla/alicates/badge.svg?branch=master&service=github)](https://coveralls.io/github/gonzaloruizdevilla/alicates?branch=master)
 
-Compact functional library made with ES6
+Compact functional library made with ES2015
 
 Functions implemented in the library are very small but not necessarily very efficient (yet).
+Like RamdaJS (http://ramdajs.com) and written with ES2015.
 
 A lot of development and documentation has to be done before this can be used for more than passing its own tests.
 
