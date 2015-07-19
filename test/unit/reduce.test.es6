@@ -9,6 +9,12 @@ describe('reduce', () => {
     assert.equal(reduce(add, '', ['0','1','2']), '012');
   });
 
+  it('should reduce arrays with holes', () => {
+    /* jshint -W128*/
+    assert.equal(reduce(add, '', ['0', undefined, ,'1','2']), '0undefinedundefined12');
+    /* jshint +W128*/
+  });
+
   it('should be curried', () =>{
     let result = reduce(add)(0)([0,1,2]);
     assert.equal(result,3);
