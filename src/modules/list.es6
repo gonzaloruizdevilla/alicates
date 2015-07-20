@@ -1,99 +1,44 @@
-import {curry} from './functional/curry';
-import {not} from './logic/not';
+import * as _all          from './list/all';
+import * as _any          from './list/any';
+import * as _concat       from './list/concat';
+import * as _contains     from './list/contains';
+import * as _difference   from './list/difference';
+import * as _filter       from './list/filter';
+import * as _head         from './list/head';
+import * as _init         from './list/init';
+import * as _intersection from './list/intersection';
+import * as _map          from './list/map';
+import * as _none         from './list/none';
+import * as _last         from './list/last';
+import * as _pluck        from './list/pluck';
+import * as _reduce       from './list/reduce';
+import * as _reduceRight  from './list/reduceRight';
+import * as _repeat       from './list/repeat';
+import * as _reverse      from './list/reverse';
+import * as _tail         from './list/tail';
+import * as _unique       from './list/unique';
+import * as _without      from './list/without';
+import * as _zip          from './list/zip';
 
-import * as _reduce from './list/reduce';
-export const reduce = _reduce.reduce;
-import * as _pluck from './list/pluck';
-export const pluck = _pluck.pluck;
-import * as _map from './list/map';
+
+export const all = _all.all;
+export const any = _any.any;
+export const concat = _concat.concat;
+export const contains = _contains.contains;
+export const difference = _difference.difference;
+export const filter = _filter.filter;
+export const head = _head.head;
+export const init = _init.init;
+export const intersection = _intersection.intersection;
+export const last = _last.last;
 export const map = _map.map;
-import * as _repeat from './list/repeat';
+export const none = _none.none;
+export const pluck = _pluck.pluck;
+export const reduce = _reduce.reduce;
+export const reduceRight = _reduceRight.reduceRight;
 export const repeat = _repeat.repeat;
-
-export
-  const head = arr => arr[0];
-
-export
-  const init = arr => arr.slice(0, -1);
-
-export
-  const last = arr => arr.slice(-1)[0];
-
-export
-  const tail = arr => arr.slice(1);
-
-export
-  const reduceRight = curry((fn, acc, arr) => last(arr) !== undefined ? reduceRight(fn, fn(last(arr), acc), init(arr)) : acc);
-
-
-
-export
-  const filter = curry((fn, arr) => reduce((acc, x) => fn(x) ? [...acc, x] : acc, [], arr));
-
-export
-  const reverse = arr => reduce((acc, x)=> [x,...acc], [] ,arr);
-
-export
-  const all = curry(
-                (fn, [x,...arr]) => x === undefined ? true :
-                                    fn(x)           ? all(fn, arr)
-                                                    : false
-              );
-
-export
-  const any = curry(
-                (fn, [x,...arr]) => x === undefined ? false :
-                                    fn(x)           ? true
-                                                    : any(fn, arr)
-              );
-
-export
-  const none = curry(
-                 (fn, [x,...arr]) => x === undefined ? true :
-                                     fn(x)           ? false
-                                                     : none(fn, arr)
-              );
-
-
-/* jshint -W067 */
-export
-  const zip = curry((arr1, arr2) => (
-    (aux =>
-      (aux = ([x1,...arr1], [x2,...arr2], acc) =>
-        x1 === undefined || x2 === undefined ? acc
-                                             : aux(arr1, arr2, [...acc, [x1, x2]])
-      )(arr1, arr2, [])
-    )()
-  ));
-/* jshint +W067 */
-
-export
-  const concat = curry((...args) => [].concat(...args), 2);
-
-export
-  const unique = arr => [...(new Set(arr))];
-
-/* jshint -W067 */
-export
-  const without = curry((arr, ...args) => (filterFn => (
-    filterFn = el => not(any(exclude => el === exclude, args)),
-    filter(filterFn, arr)
-  ))(), 2);
-/* jshint +W067 */
-
-/* jshint -W016 */
-export
-  const contains = curry((x, arr) => (!!~arr.indexOf(x)));
-/* jshint +W016 */
-
-export
-  const intersection = curry((...args) => filter(
-    el => (all(contains(el), args)),
-    [...(new Set(...args))]
-  ), 2);
-
-export
-  const difference = curry((arr, ...others) => filter(
-        el => (none(contains(el), others)),
-        arr
-  ), 2);
+export const reverse = _reverse.reverse;
+export const tail = _tail.tail;
+export const unique = _unique.unique;
+export const without = _without.without;
+export const zip = _zip.zip;
