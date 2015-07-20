@@ -40,6 +40,7 @@ export const reduceRight = list.reduceRight;
 export const repeat = list.repeat;
 export const reverse = list.reverse;
 export const tail = list.tail;
+export const take = list.take;
 export const unique = list.unique;
 export const without = list.without;
 export const zip = list.zip;
