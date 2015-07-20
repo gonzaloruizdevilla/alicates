@@ -1,1 +1,3 @@
-export const always = a => () => a;
+export const always =
+  a =>
+    () => a;

@@ -1,1 +1,2 @@
-export const f = () => false;
+export const f =
+  () => false;
