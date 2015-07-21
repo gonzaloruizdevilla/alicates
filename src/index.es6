@@ -24,6 +24,7 @@ export const same = logic.same;
 import * as list from './modules/list';
 export const all = list.all;
 export const any = list.any;
+export const append = list.append;
 export const concat = list.concat;
 export const contains = list.contains;
 export const difference = list.difference;

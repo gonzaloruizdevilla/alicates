@@ -1,5 +1,6 @@
 import * as _all          from './list/all';
 import * as _any          from './list/any';
+import * as _append       from './list/append';
 import * as _concat       from './list/concat';
 import * as _contains     from './list/contains';
 import * as _difference   from './list/difference';
@@ -24,6 +25,7 @@ import * as _zip          from './list/zip';
 
 export const all = _all.all;
 export const any = _any.any;
+export const append = _append.append;
 export const concat = _concat.concat;
 export const contains = _contains.contains;
 export const difference = _difference.difference;
