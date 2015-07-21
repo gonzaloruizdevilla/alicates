@@ -36,6 +36,7 @@ export const last = list.last;
 export const map = list.map;
 export const none = list.none;
 export const pluck = list.pluck;
+export const range = list.range;
 export const reduce = list.reduce;
 export const reduceRight = list.reduceRight;
 export const repeat = list.repeat;
