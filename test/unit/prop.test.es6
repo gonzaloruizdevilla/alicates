@@ -9,5 +9,6 @@ describe('prop', () => {
     let nm = prop('name');
     assert.strictEqual(typeof nm, 'function');
     assert.strictEqual(nm(fred), 'Fred');
+    assert.strictEqual(prop('name',fred), 'Fred');
   });
 });
