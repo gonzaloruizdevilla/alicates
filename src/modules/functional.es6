@@ -1,5 +1,5 @@
 import * as _always from './functional/always';
-import * as _apply from './functional/apply';
+import * as _ap from './functional/ap';
 import * as _curry from './functional/curry';
 import * as _compose from './functional/compose';
 import * as _f from './functional/f';
@@ -12,7 +12,7 @@ import * as _sequence from './functional/sequence';
 import * as _t from './functional/t';
 
 export const always = _always.always;
-export const apply = _apply.apply;
+export const ap = _ap.ap;
 export const curry = _curry.curry;
 export const compose = _compose.compose;
 export const f = _f.f;
