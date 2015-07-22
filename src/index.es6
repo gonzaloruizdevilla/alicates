@@ -32,6 +32,7 @@ export const filter = list.filter;
 export const head = list.head;
 export const init = list.init;
 export const intersection = list.intersection;
+export const groupBy = list.groupBy;
 export const last = list.last;
 export const map = list.map;
 export const none = list.none;
