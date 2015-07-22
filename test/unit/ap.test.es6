@@ -1,6 +1,6 @@
 let assert = require('chai').assert;
 
-import {add,apply} from '../../src/index.es6';
+import {add, ap} from '../../src/index.es6';
 
 describe('ap', () => {
   const mult10 = x => x * 10;
