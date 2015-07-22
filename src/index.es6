@@ -50,6 +50,7 @@ export const without = list.without;
 export const xprod = list.xprod;
 export const zip = list.zip;
 export const zipObj = list.zipObj;
+export const zipWith = list.zipWith;
 
 import * as math from './modules/math';
 export const add = math.add;

@@ -26,6 +26,7 @@ import * as _without      from './list/without';
 import * as _xprod        from './list/xprod';
 import * as _zip          from './list/zip';
 import * as _zipObj       from './list/zipObj';
+import * as _zipWith      from './list/zipWith';
 
 
 export const all = _all.all;
@@ -56,3 +57,4 @@ export const without = _without.without;
 export const xprod = _xprod.xprod;
 export const zip = _zip.zip;
 export const zipObj = _zipObj.zipObj;
+export const zipWith = _zipWith.zipWith;
