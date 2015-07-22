@@ -23,6 +23,7 @@ import * as _take         from './list/take';
 import * as _unfold       from './list/unfold';
 import * as _unique       from './list/unique';
 import * as _without      from './list/without';
+import * as _xprod        from './list/xprod';
 import * as _zip          from './list/zip';
 
 
@@ -51,4 +52,5 @@ export const take = _take.take;
 export const unfold = _unfold.unfold;
 export const unique = _unique.unique;
 export const without = _without.without;
+export const xprod = _xprod.xprod;
 export const zip = _zip.zip;

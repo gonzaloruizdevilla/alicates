@@ -47,6 +47,7 @@ export const take = list.take;
 export const unfold = list.unfold;
 export const unique = list.unique;
 export const without = list.without;
+export const xprod = list.xprod;
 export const zip = list.zip;
 
 import * as math from './modules/math';
