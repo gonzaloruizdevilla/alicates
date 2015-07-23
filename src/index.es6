@@ -71,3 +71,4 @@ export const keys = object.keys;
 export const mapObj = object.mapObj;
 export const prop = object.prop;
 export const where = object.where;
+export const whereEq = object.whereEq;
