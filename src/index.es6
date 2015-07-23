@@ -11,6 +11,7 @@ export const memoize = functional.memoize;
 export const once = functional.once;
 export const sequence = functional.sequence;
 export const t = functional.t;
+export const wrap = functional.wrap;
 
 import * as logic from './modules/logic';
 export const allPass = logic.allPass;
