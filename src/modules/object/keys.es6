@@ -1,4 +1,4 @@
-export const keys = a => {
-  return a ? Object.keys(a).sort()
-           : [];
-}
+export const keys =
+  a =>
+    a ? Object.keys(a).sort()
+      : [];
