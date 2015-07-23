@@ -69,6 +69,7 @@ export const toString = string.toString;
 
 import * as object from './modules/object';
 export const keys = object.keys;
+export const keysIn = object.keysIn;
 export const mapObj = object.mapObj;
 export const prop = object.prop;
 export const values = object.values;
