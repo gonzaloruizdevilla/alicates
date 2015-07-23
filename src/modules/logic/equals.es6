@@ -1,7 +1,7 @@
 import {curry} from '../functional/curry';
 import {all, zip} from '../list';
 import {hasMethod} from '../object/hasMethod';
-import {isDate, isArray, isFunction, isObject, isRegExp} from '../type';
+import {isArray, isDate, isFunction, isObject, isRegExp} from '../type';
 
 let _equals;
 
@@ -33,8 +33,12 @@ const equalObjects = (a, b) =>  isArray(a)   ? (isArray(b)    && equalArrays(a, 
                                 !isMap(b)    ? false
                                              : equalMaps(a, b);
 
+const differnciateZeroes =
+  (a, b) => a === 0 ? (1/a === 1/b)
+                    : true;
+
 _equals = (a,b) =>
-  a === b                            ? true  :
+  a === b                            ? differnciateZeroes(a,b)  :
   a === null || b === null           ? false :
   (a !== a && b !== b)               ? true  : //NaN !== NaN =>  true
   hasMethod('equals', a)             ? a.equals(b) :

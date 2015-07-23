@@ -53,6 +53,10 @@ describe('equals', () => {
     assert.equal(equals(NaN, NaN), true);
   });
 
+  it('should return false when 0 to -0', () => {
+    assert.equal(equals(0, -0), false);
+  });
+
   it('should compare dates', () => {
     assert.equal(equals(new Date(0), new Date(0)), true);
     assert.equal(equals(new Date(0), new Date(1)), false);
