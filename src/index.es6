@@ -69,3 +69,4 @@ export const toString = string.toString;
 import * as object from './modules/object';
 export const keys = object.keys;
 export const prop = object.prop;
+export const where = object.where;
