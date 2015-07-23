@@ -71,5 +71,6 @@ import * as object from './modules/object';
 export const keys = object.keys;
 export const mapObj = object.mapObj;
 export const prop = object.prop;
+export const values = object.values;
 export const where = object.where;
 export const whereEq = object.whereEq;
