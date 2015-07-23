@@ -31,6 +31,7 @@ export const contains = list.contains;
 export const difference = list.difference;
 export const filter = list.filter;
 export const head = list.head;
+export const indexOf = list.indexOf;
 export const init = list.init;
 export const intersection = list.intersection;
 export const groupBy = list.groupBy;
