@@ -7,7 +7,6 @@ export const groupBy =
       reduce(
         (acc, a) => (
           key = fn(a),
-          console.log(key, acc),
           (acc[key] = acc[key] || []).push(a),
           acc
         ),
