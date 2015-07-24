@@ -44,6 +44,7 @@ export const reduce = list.reduce;
 export const reduceRight = list.reduceRight;
 export const repeat = list.repeat;
 export const reverse = list.reverse;
+export const slice = list.slice;
 export const tail = list.tail;
 export const take = list.take;
 export const unfold = list.unfold;
