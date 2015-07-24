@@ -1,2 +1,5 @@
+import {uniqWith} from './uniqWith';
+import {equals} from '../logic/equals';
+
 export
-  const uniq = arr => [...(new Set(arr))];
+  const uniq = uniqWith(equals);
