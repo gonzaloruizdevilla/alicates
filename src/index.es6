@@ -50,6 +50,7 @@ export const tail = list.tail;
 export const take = list.take;
 export const unfold = list.unfold;
 export const unique = list.unique;
+export const unnest = list.unnest;
 export const update = list.update;
 export const without = list.without;
 export const xprod = list.xprod;
