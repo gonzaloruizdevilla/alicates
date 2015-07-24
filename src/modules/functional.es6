@@ -10,6 +10,7 @@ import * as _memoize from './functional/memoize';
 import * as _once from './functional/once';
 import * as _sequence from './functional/sequence';
 import * as _t from './functional/t';
+import * as _useWith from './functional/useWith';
 import * as _wrap from './functional/wrap';
 
 export const always = _always.always;
@@ -24,4 +25,5 @@ export const memoize = _memoize.memoize;
 export const once = _once.once;
 export const sequence = _sequence.sequence;
 export const t = _t.t;
+export const useWith = _useWith.useWith;
 export const wrap = _wrap.wrap;
