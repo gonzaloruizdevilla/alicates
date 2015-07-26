@@ -50,6 +50,7 @@ export const tail = list.tail;
 export const take = list.take;
 export const unfold = list.unfold;
 export const uniq = list.uniq;
+export const uniqBy = list.uniqBy;
 export const uniqWith = list.uniqWith;
 export const unnest = list.unnest;
 export const update = list.update;
