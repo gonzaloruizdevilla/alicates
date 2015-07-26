@@ -60,6 +60,7 @@ export const slice = _slice.slice;
 export const tail = _tail.tail;
 export const take = _take.take;
 export const unfold = _unfold.unfold;
+export const unionWith = _unionWith.unionWith;
 export const uniq = _uniq.uniq;
 export const uniqBy = _uniqBy.uniqBy;
 export const uniqWith = _uniqWith.uniqWith;

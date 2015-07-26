@@ -49,6 +49,7 @@ export const slice = list.slice;
 export const tail = list.tail;
 export const take = list.take;
 export const unfold = list.unfold;
+export const unionWith = list.unionWith;
 export const uniq = list.uniq;
 export const uniqBy = list.uniqBy;
 export const uniqWith = list.uniqWith;
