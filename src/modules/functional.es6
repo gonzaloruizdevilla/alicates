@@ -1,5 +1,6 @@
 import * as _always from './functional/always';
 import * as _ap from './functional/ap';
+import * as _apply from './functional/apply';
 import * as _bind from './functional/bind';
 import * as _curry from './functional/curry';
 import * as _compose from './functional/compose';
@@ -16,6 +17,7 @@ import * as _wrap from './functional/wrap';
 
 export const always = _always.always;
 export const ap = _ap.ap;
+export const apply = _apply.apply;
 export const bind = _bind.bind;
 export const curry = _curry.curry;
 export const compose = _compose.compose;
