@@ -1,6 +1,7 @@
 import * as functional from './modules/functional';
 export const always = functional.always;
 export const ap = functional.ap;
+export const bind = functional.bind;
 export const compose = functional.compose;
 export const curry = functional.curry;
 export const f = functional.f;
