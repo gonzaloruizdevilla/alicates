@@ -13,6 +13,7 @@ export const memoize = functional.memoize;
 export const once = functional.once;
 export const sequence = functional.sequence;
 export const t = functional.t;
+export const unary = functional.unary;
 export const useWith = functional.useWith;
 export const wrap = functional.wrap;
 
