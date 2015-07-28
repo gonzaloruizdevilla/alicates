@@ -79,6 +79,7 @@ export const type = _type.type;
 
 import * as string from './modules/string';
 export const toString = string.toString;
+export const toUpper = string.toUpper;
 export const trim = string.trim;
 
 import * as object from './modules/object';
