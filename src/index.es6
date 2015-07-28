@@ -70,11 +70,12 @@ import * as math from './modules/math';
 export const add = math.add;
 export const addAll = math.addAll;
 
-import * as type from './modules/type';
-export const isDate = type.isDate;
-export const isRegExp = type.isRegExp;
-export const isFunction = type.isFunction;
-export const isObject = type.isObject;
+import * as _type from './modules/type';
+export const isDate = _type.isDate;
+export const isRegExp = _type.isRegExp;
+export const isFunction = _type.isFunction;
+export const isObject = _type.isObject;
+export const type = _type.type;
 
 import * as string from './modules/string';
 export const toString = string.toString;
