@@ -14,6 +14,7 @@ import * as _sequence from './functional/sequence';
 import * as _t from './functional/t';
 import * as _unapply from './functional/unapply';
 import * as _unary from './functional/unary';
+import * as _uncurryN from './functional/uncurryN';
 import * as _useWith from './functional/useWith';
 import * as _wrap from './functional/wrap';
 
@@ -33,5 +34,6 @@ export const sequence = _sequence.sequence;
 export const t = _t.t;
 export const unapply = _unapply.unapply;
 export const unary = _unary.unary;
+export const uncurryN = _uncurryN.uncurryN;
 export const useWith = _useWith.useWith;
 export const wrap = _wrap.wrap;

@@ -15,6 +15,7 @@ export const sequence = functional.sequence;
 export const t = functional.t;
 export const unapply = functional.unapply;
 export const unary = functional.unary;
+export const uncurryN = functional.uncurryN;
 export const useWith = functional.useWith;
 export const wrap = functional.wrap;
 
