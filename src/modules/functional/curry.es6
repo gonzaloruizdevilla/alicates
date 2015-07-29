@@ -1,9 +1,14 @@
-/* jshint -W067 */
+import {arity} from './arity';
+
+const _curry =
+  (fn, farity, more) =>
+      arity(
+          farity,
+          function (...args) {
+            return (args.length < farity) ? _curry(fn, farity - args.length, [...more, ...args])
+                                          : fn.call(this, ...more, ...args)
+          }
+    );
+
 export const curry =
-  (fn, arity) =>
-    (curried =>
-      curried = (...args) =>
-        args.length < (arity || fn.length) ? (...more) => curried(...args, ...more)
-                                           : fn(...args)
-    )();
-/* jshint +W067 */
+  (fn, farity) => _curry(fn, farity || fn.length, []);
