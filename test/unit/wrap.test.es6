@@ -26,13 +26,13 @@ describe('wrap', () => {
     assert.strictEqual(extendedGreet('joe'), 'Hello my dear joe, how are you?');
   });
 
-/*
+
   it('maintains the arity of the function that is being wrapped', () => {
     let extendedGreet = wrap(greet, (gr, name) => gr('my dear ' + name) + ', how are you?');
 
     assert.strictEqual(greet.length, extendedGreet.length);
   });
-*/
+
   it('returns a curried function', () => {
     let sideEffect;
     let add = (a, b) => a + b;
