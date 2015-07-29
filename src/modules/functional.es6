@@ -12,6 +12,7 @@ export {memoize} from './functional/memoize';
 export {once} from './functional/once';
 export {sequence} from './functional/sequence';
 export {t} from './functional/t';
+export {tap} from './functional/tap';
 export {unapply} from './functional/unapply';
 export {unary} from './functional/unary';
 export {uncurryN} from './functional/uncurryN';
