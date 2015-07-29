@@ -21,6 +21,7 @@ export {repeat}       from './list/repeat';
 export {reverse}      from './list/reverse';
 export {slice}        from './list/slice';
 export {tail}         from './list/tail';
+export {times}        from './list/times';
 export {take}         from './list/take';
 export {transduce}    from './list/transduce';
 export {unfold}       from './list/unfold';
