@@ -20,6 +20,7 @@ export {reduceRight}  from './list/reduceRight';
 export {repeat}       from './list/repeat';
 export {reverse}      from './list/reverse';
 export {slice}        from './list/slice';
+export {sortBy}       from './list/sortBy';
 export {splitEvery}   from './list/splitEvery';
 export {tail}         from './list/tail';
 export {times}        from './list/times';
