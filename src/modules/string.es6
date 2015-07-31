@@ -1,3 +1,4 @@
+export {split} from './string/split';
 export {test} from './string/test';
 export {toLower} from './string/toLower';
 export {toString} from './string/toString';
