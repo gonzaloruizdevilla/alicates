@@ -19,6 +19,7 @@ export {reduce}       from './list/reduce';
 export {reduceRight}  from './list/reduceRight';
 export {repeat}       from './list/repeat';
 export {reverse}      from './list/reverse';
+export {scan}         from './list/scan';
 export {slice}        from './list/slice';
 export {sort}         from './list/sort';
 export {sortBy}       from './list/sortBy';
