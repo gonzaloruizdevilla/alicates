@@ -24,6 +24,7 @@ export {tail}         from './list/tail';
 export {times}        from './list/times';
 export {take}         from './list/take';
 export {takeLastWhile}from './list/takeLastWhile';
+export {takeWhile}    from './list/takeWhile';
 export {transduce}    from './list/transduce';
 export {unfold}       from './list/unfold';
 export {union}        from './list/union';
