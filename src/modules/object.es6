@@ -2,6 +2,7 @@ export {keys} from './object/keys';
 export {keysIn} from './object/keysIn';
 export {mapObj} from './object/mapObj';
 export {prop} from './object/prop';
+export {propOr} from './object/propOr';
 export {props} from './object/props';
 export {toPairs} from './object/toPairs';
 export {toPairsIn} from './object/toPairsIn';
