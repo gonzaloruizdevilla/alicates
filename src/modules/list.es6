@@ -13,6 +13,7 @@ export {groupBy}      from './list/groupBy';
 export {map}          from './list/map';
 export {none}         from './list/none';
 export {last}         from './list/last';
+export {prepend}      from './list/prepend';
 export {pluck}        from './list/pluck';
 export {range}        from './list/range';
 export {reduced}      from './list/reduced';
