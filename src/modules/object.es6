@@ -1,6 +1,7 @@
 export {keys} from './object/keys';
 export {keysIn} from './object/keysIn';
 export {mapObj} from './object/mapObj';
+export {project} from './object/project';
 export {prop} from './object/prop';
 export {propOr} from './object/propOr';
 export {props} from './object/props';
