@@ -1,3 +1,4 @@
+export {is} from './type/is'
 export {isArray} from './type/isArray'
 export {isDate} from './type/isDate'
 export {isRegExp} from './type/isRegExp'
