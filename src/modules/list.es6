@@ -15,6 +15,7 @@ export {none}         from './list/none';
 export {last}         from './list/last';
 export {pluck}        from './list/pluck';
 export {range}        from './list/range';
+export {reduced}      from './list/reduced';
 export {reject}       from './list/reject';
 export {remove}       from './list/remove';
 export {reduce}       from './list/reduce';
