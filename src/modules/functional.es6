@@ -10,6 +10,7 @@ export {identity} from './functional/identity';
 export {lift} from './functional/lift';
 export {memoize} from './functional/memoize';
 export {once} from './functional/once';
+export {pipeP} from './functional/pipeP';
 export {sequence} from './functional/sequence';
 export {t} from './functional/t';
 export {tap} from './functional/tap';
