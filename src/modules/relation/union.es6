@@ -1,6 +1,6 @@
-import {concat} from './concat';
+import {concat} from '../list/concat';
 import {curry} from '../functional/curry';
-import {uniq} from './uniq';
+import {uniq} from '../list/uniq';
 
 export const union =
   curry(
