@@ -1,3 +1,4 @@
+export {countBy}    from './relation/countBy';
 export {propEq}     from './relation/propEq';
 export {sortBy}     from './relation/sortBy';
 export {union}      from './relation/union';
