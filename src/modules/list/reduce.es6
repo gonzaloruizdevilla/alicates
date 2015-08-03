@@ -1,4 +1,5 @@
 import {curry} from '../functional/curry';
+import {hasMethod} from '../object/hasMethod';
 
 const _reduce =
   (fn, acc, [x, ...arr], length) =>
@@ -8,5 +9,6 @@ const _reduce =
 
 export
   const reduce = curry(
-    (fn, acc, arr) => _reduce(fn, acc, arr, arr.length)
+    (fn, acc, arr) => hasMethod('reduce', arr) ? arr.reduce(fn, acc)
+                                               : _reduce(fn, acc, arr, arr.length)
   );
