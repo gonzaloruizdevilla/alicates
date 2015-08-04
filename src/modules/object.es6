@@ -1,3 +1,4 @@
+export {createMapEntry} from './object/createMapEntry';
 export {keys} from './object/keys';
 export {keysIn} from './object/keysIn';
 export {mapObj} from './object/mapObj';
