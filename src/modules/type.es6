@@ -1,5 +1,6 @@
 export {is} from './type/is'
 export {isArray} from './type/isArray'
+export {isArrayLike} from './type/isArrayLike'
 export {isDate} from './type/isDate'
 export {isFunction} from './type/isFunction'
 export {isObject} from './type/isObject'
