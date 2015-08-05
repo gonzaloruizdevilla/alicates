@@ -9,6 +9,7 @@ export {head}         from './list/head';
 export {indexOf}      from './list/indexOf';
 export {init}         from './list/init';
 export {intersection} from './list/intersection';
+export {into}         from './list/into';
 export {groupBy}      from './list/groupBy';
 export {map}          from './list/map';
 export {none}         from './list/none';
