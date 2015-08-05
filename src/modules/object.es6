@@ -2,6 +2,7 @@ export {createMapEntry} from './object/createMapEntry';
 export {keys} from './object/keys';
 export {keysIn} from './object/keysIn';
 export {mapObj} from './object/mapObj';
+export {merge} from './object/merge';
 export {project} from './object/project';
 export {prop} from './object/prop';
 export {propOr} from './object/propOr';
