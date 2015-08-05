@@ -1,9 +1,10 @@
 let assert = require('chai').assert;
 
-import {filter} from '../../src/index.es6';
+import {filter, into} from '../../src/index.es6';
 
 describe('filter', () => {
   const criteria =  a => a > 1;
+
 
   it('should filter arrays', () => {
     const result = filter(criteria, [0,1,2]);
@@ -38,4 +39,11 @@ describe('filter', () => {
     var onlyEven = filter(even);
     assert.deepEqual(onlyEven([1, 2, 3, 4, 5, 6, 7]), [2, 4, 6]);
   });
+
+  it('filters simple functions into arrays', function() {
+    const intoArray = into([]);
+    const isOdd = b => b % 2 === 1;
+    assert.deepEqual(intoArray(filter(isOdd), [1, 2, 3, 4]), [1, 3]);
+  });
+
 });
