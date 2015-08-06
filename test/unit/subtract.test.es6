@@ -5,7 +5,7 @@ import {subtract} from '../../src/index.es6';
 
 describe('subtract', () => {
 
-  it('subtracts two numbers', function() {
+ it('subtracts two numbers', function() {
    assert.strictEqual(subtract(22, 7), 15);
  });
 
