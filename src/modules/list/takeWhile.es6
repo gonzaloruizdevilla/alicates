@@ -7,5 +7,5 @@ const _takeWhile =
 
 export const takeWhile =
   curry(
-    (fn, xs) => _takeWhile(fn, xs, [])
+    (fn, xs) => xs.length > 0 ? _takeWhile(fn, xs, []) : []
   );
