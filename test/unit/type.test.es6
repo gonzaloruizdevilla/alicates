@@ -8,10 +8,10 @@ describe('type', () => {
     assert.strictEqual(type([1, 2, 3]), 'Array');
   });
 
-  // it('"Arguments" if given an arguments object', () => {
-  //   var args = (() => { return arguments; }());
-  //   assert.strictEqual(type(args), 'Arguments');
-  // });
+  it('"Arguments" if given an arguments object', () => {
+     var args = (function() { return arguments; }());
+     assert.strictEqual(type(args), 'Arguments');
+  });
 
   it('"Object" if given an object literal', () => {
     assert.strictEqual(type({batman: 'na na na na na na na'}), 'Object');
