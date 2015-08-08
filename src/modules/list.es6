@@ -1,3 +1,4 @@
+export {adjust}       from './list/adjust';
 export {all}          from './list/all';
 export {any}          from './list/any';
 export {append}       from './list/append';
