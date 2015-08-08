@@ -2,6 +2,7 @@ export {adjust}       from './list/adjust';
 export {all}          from './list/all';
 export {any}          from './list/any';
 export {append}       from './list/append';
+export {chain}        from './list/chain';
 export {concat}       from './list/concat';
 export {contains}     from './list/contains';
 export {difference}   from './list/difference';
