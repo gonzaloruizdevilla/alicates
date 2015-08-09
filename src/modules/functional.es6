@@ -1,3 +1,4 @@
+export {addIndex} from './functional/addIndex';
 export {always} from './functional/always';
 export {ap} from './functional/ap';
 export {apply} from './functional/apply';

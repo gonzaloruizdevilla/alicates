@@ -1,0 +1,19 @@
+import {curry} from './curry';
+import {head} from '../list/head';
+import {last} from '../list/last';
+import {tail} from '../list/tail';
+
+/* jshint -W016*/
+const _addIndex =
+  (idx, indexed, fn, xs, rest) => indexed(
+    ((...args) => fn(...args, idx++, xs)),
+    ...rest
+  );
+/* jshint +W016*/
+
+export const addIndex =
+  (indexed) =>
+    curry(
+      (...args) => _addIndex(0, indexed, head(args), last(args), tail(args)),
+      indexed.length
+    );
