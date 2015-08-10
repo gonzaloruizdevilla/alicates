@@ -1,4 +1,3 @@
-import {keysIn} from './keysIn';
 import {reduce} from '../list/reduce';
 import {curry} from '../functional/curry';
 
