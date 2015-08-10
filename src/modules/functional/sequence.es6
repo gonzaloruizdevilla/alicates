@@ -1,6 +1,6 @@
 import {reduce} from '../list/reduce';
 import {tail} from '../list/tail';
-import {curry} from '../functional/curry';
+import {curry} from './curry';
 
 const throwError = () => {throw new Error('pipe requires at least one argument');};
 
