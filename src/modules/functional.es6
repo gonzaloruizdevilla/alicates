@@ -12,6 +12,7 @@ export {lift} from './functional/lift';
 export {memoize} from './functional/memoize';
 export {once} from './functional/once';
 export {pipe} from './functional/pipe';
+export {pipeK} from './functional/pipeK';
 export {pipeP} from './functional/pipeP';
 export {sequence} from './functional/sequence';
 export {t} from './functional/t';
