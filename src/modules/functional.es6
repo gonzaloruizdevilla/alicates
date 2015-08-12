@@ -10,6 +10,7 @@ export {flip} from './functional/flip';
 export {identity} from './functional/identity';
 export {lift} from './functional/lift';
 export {memoize} from './functional/memoize';
+export {nthArg} from './functional/nthArg';
 export {once} from './functional/once';
 export {partial} from './functional/partial';
 export {partialRight} from './functional/partialRight';
