@@ -4,6 +4,7 @@ export {keysIn} from './object/keysIn';
 export {mapObj} from './object/mapObj';
 export {merge} from './object/merge';
 export {mergeAll} from './object/mergeAll';
+export {path} from './object/path';
 export {pick} from './object/pick';
 export {pickAll} from './object/pickAll';
 export {pickBy} from './object/pickBy';
