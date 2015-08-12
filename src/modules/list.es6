@@ -16,6 +16,7 @@ export {groupBy}      from './list/groupBy';
 export {map}          from './list/map';
 export {none}         from './list/none';
 export {last}         from './list/last';
+export {partition}    from './list/partition';
 export {pluck}        from './list/pluck';
 export {prepend}      from './list/prepend';
 export {range}        from './list/range';
