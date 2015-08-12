@@ -3,6 +3,7 @@ export {gt}         from './relation/gt';
 export {gte}        from './relation/gte';
 export {lt}         from './relation/lt';
 export {lte}        from './relation/lte';
+export {pathEq}     from './relation/pathEq';
 export {propEq}     from './relation/propEq';
 export {sortBy}     from './relation/sortBy';
 export {union}      from './relation/union';
