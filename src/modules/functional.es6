@@ -11,6 +11,7 @@ export {identity} from './functional/identity';
 export {lift} from './functional/lift';
 export {memoize} from './functional/memoize';
 export {once} from './functional/once';
+export {partial} from './functional/partial';
 export {partialRight} from './functional/partialRight';
 export {pipe} from './functional/pipe';
 export {pipeK} from './functional/pipeK';
