@@ -1,6 +1,7 @@
 export {countBy}    from './relation/countBy';
 export {gt}         from './relation/gt';
 export {gte}        from './relation/gte';
+export {identical}  from './relation/identical';
 export {lt}         from './relation/lt';
 export {lte}        from './relation/lte';
 export {minBy}      from './relation/minBy';
