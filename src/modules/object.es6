@@ -1,4 +1,5 @@
 export {assoc}          from './object/assoc';
+export {assocPath}      from './object/assocPath';
 export {createMapEntry} from './object/createMapEntry';
 export {keys}           from './object/keys';
 export {keysIn}         from './object/keysIn';
