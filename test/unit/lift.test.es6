@@ -1,6 +1,6 @@
 let assert = require('chai').assert;
 
-import {addAll, lift} from '../../src/index.es6';
+import {lift} from '../../src/index.es6';
 
 describe('lift', () => {
   const add3 = (a,b,c) => a + b + c;
@@ -35,13 +35,4 @@ describe('lift', () => {
     assert.deepEqual(liftedAdd5([1, 10], [2], [3], [40], [500, 1000]), [546, 1046, 555, 1055]);
   });
 
-  it('can lift functions specifying arity', function() {
-    const liftedAdd3 = lift(addAll, 3);
-    const liftedAdd4 = lift(addAll, 4);
-    const liftedAdd5 = lift(addAll, 5);
-
-    assert.deepEqual(liftedAdd3([1, 10], [2], [3]), [6, 15]);
-    assert.deepEqual(liftedAdd4([1, 10], [2], [3], [40]), [46, 55]);
-    assert.deepEqual(liftedAdd5([1, 10], [2], [3], [40], [500, 1000]), [546, 1046, 555, 1055]);
-  });
 });
