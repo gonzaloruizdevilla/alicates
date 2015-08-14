@@ -4,6 +4,7 @@ export {gte}        from './relation/gte';
 export {identical}  from './relation/identical';
 export {lt}         from './relation/lt';
 export {lte}        from './relation/lte';
+export {maxBy}      from './relation/maxBy';
 export {minBy}      from './relation/minBy';
 export {pathEq}     from './relation/pathEq';
 export {propEq}     from './relation/propEq';
