@@ -3,6 +3,7 @@ export {assocPath}      from './object/assocPath';
 export {createMapEntry} from './object/createMapEntry';
 export {keys}           from './object/keys';
 export {keysIn}         from './object/keysIn';
+export {invertObj}      from './object/invertObj';
 export {lens}           from './object/lens';
 export {lensIndex}      from './object/lensIndex';
 export {lensProp}       from './object/lensProp';
