@@ -32,7 +32,7 @@ describe('addIndex', () => {
 
   describe('works with binary functions like `reduce`', () => {
     var reduceIndexed = addIndex(reduce);
-    var timesIndexed = function(tot, num, idx) {console.log(arguments); return  tot + (num * idx);};
+    var timesIndexed = function(tot, num, idx) {return  tot + (num * idx);};
     var objectify = function(acc, elem, idx) { acc[elem] = idx; return acc;};
 
     it('passing the index as a third parameter to the predicate', () => {
