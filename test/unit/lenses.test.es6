@@ -13,12 +13,12 @@ let alice = {
 };
 
 
-describe('view, over, and set', function() {
+describe('view, over, and set', () => {
   let nameLens = lens(prop('name'), assoc('name'));
   let addressLens = lensProp('address');
   let headLens = lensIndex(0);
 
-  it('may be applied to a lens created by `lens`', function() {
+  it('may be applied to a lens created by `lens`', () => {
     eq(view(nameLens, alice), 'Alice Jones');
 
     eq(over(nameLens, toUpper, alice),
@@ -31,7 +31,7 @@ describe('view, over, and set', function() {
         address: ['22 Walnut St', 'San Francisco', 'CA']});
   });
 
-  it('may be applied to a lens created by `lensIndex`', function() {
+  it('may be applied to a lens created by `lensIndex`', () => {
     eq(view(headLens, alice.address), '22 Walnut St');
 
     eq(over(headLens, toUpper, alice.address),
@@ -41,7 +41,7 @@ describe('view, over, and set', function() {
        ['52 Crane Ave', 'San Francisco', 'CA']);
   });
 
-  it('may be applied to composed lenses', function() {
+  it('may be applied to composed lenses', () => {
     let streetLens = compose(addressLens, headLens);
 
     eq(view(streetLens, alice), '22 Walnut St');
