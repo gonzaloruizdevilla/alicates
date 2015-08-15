@@ -1,9 +1,10 @@
+import {shallowClone} from './shallowClone';
 import {curry} from '../functional/curry';
 
 export const assoc =
   curry(
     (key, value, obj) => {
-      let newObj = Object.create(obj);
+      let newObj = shallowClone(obj);
       newObj[key] = value;
       return newObj;
     }
