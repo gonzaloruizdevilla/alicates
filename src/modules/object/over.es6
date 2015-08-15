@@ -1,12 +1,5 @@
 import {curry} from '../functional/curry';
-
-let Identity =
-  x => (
-    {
-      value: x,
-      map: f => new Identity(f(x))
-    }
-  )
+import {Identity} from '../functor/Identity';
 
 export const over =
   curry(

@@ -1,11 +1,9 @@
 import {curry} from '../functional/curry';
-
-let Const = function(x) {
-  return {value: x, map: function() { return this; }};
-};
+import {construct} from '../functional/construct';
+import {Const} from '../functor/Const';
 
 export const view =
   curry(
     (lens, x) =>
-      lens(Const)(x).value
+      lens(construct(Const))(x).value
   );
