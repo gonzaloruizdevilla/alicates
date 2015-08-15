@@ -9,6 +9,7 @@ export {curry}        from './functional/curry';
 export {f}            from './functional/f';
 export {flip}         from './functional/flip';
 export {identity}     from './functional/identity';
+export {invoker}      from './functional/invoker';
 export {lift}         from './functional/lift';
 export {liftN}        from './functional/liftN';
 export {memoize}      from './functional/memoize';
