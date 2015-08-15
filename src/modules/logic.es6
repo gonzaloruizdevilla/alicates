@@ -3,6 +3,7 @@ export {anyPass} from './logic/anyPass';
 export {cond} from './logic/cond';
 export {defaultTo} from './logic/defaultTo';
 export {equals} from './logic/equals';
+export {isEmpty} from './logic/isEmpty';
 export {not} from './logic/not';
 export {or} from './logic/or';
 export {propSatisfies} from './logic/propSatisfies';
