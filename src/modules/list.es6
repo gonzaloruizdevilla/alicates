@@ -13,6 +13,7 @@ export {indexOf}       from './list/indexOf';
 export {init}          from './list/init';
 export {intersection}  from './list/intersection';
 export {into}          from './list/into';
+export {isSet}         from './list/isSet';
 export {join}          from './list/join';
 export {lastIndexOf}   from './list/lastIndexOf';
 export {length}        from './list/length';
