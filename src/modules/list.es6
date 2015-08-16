@@ -12,6 +12,7 @@ export {head}          from './list/head';
 export {indexOf}       from './list/indexOf';
 export {init}          from './list/init';
 export {intersection}  from './list/intersection';
+export {intersperse}   from './list/intersperse';
 export {into}          from './list/into';
 export {isSet}         from './list/isSet';
 export {join}          from './list/join';
