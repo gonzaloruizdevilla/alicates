@@ -11,6 +11,7 @@ export {groupBy}       from './list/groupBy';
 export {head}          from './list/head';
 export {indexOf}       from './list/indexOf';
 export {init}          from './list/init';
+export {insert}        from './list/insert';
 export {insertAll}     from './list/insertAll';
 export {intersection}  from './list/intersection';
 export {intersperse}   from './list/intersperse';
