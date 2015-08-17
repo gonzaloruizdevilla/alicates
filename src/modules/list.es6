@@ -7,6 +7,7 @@ export {concat}        from './list/concat';
 export {contains}      from './list/contains';
 export {difference}    from './list/difference';
 export {filter}        from './list/filter';
+export {fromPairs}     from './list/fromPairs';
 export {groupBy}       from './list/groupBy';
 export {head}          from './list/head';
 export {indexOf}       from './list/indexOf';
