@@ -15,12 +15,13 @@ describe('into', function() {
     assert.deepEqual(into([], filter(isOdd), [1, 2, 3, 4]), [1, 3]);
     assert.deepEqual(into([], compose(map(add(1)), take(2)), [1, 2, 3, 4]), [2, 3]);
   });
-/*
+
   it('transduces into strings', function() {
     assert.deepEqual(into('', map(add(1)), [1, 2, 3, 4]), '2345');
     assert.deepEqual(into('', filter(isOdd), [1, 2, 3, 4]), '13');
     assert.deepEqual(into('', compose(map(add(1)), take(2)), [1, 2, 3, 4]), '23');
   });
+
 
   it('transduces into objects', function() {
     assert.deepEqual(into({}, identity, [['a', 1], ['b', 2]]), {a: 1, b: 2});
@@ -50,5 +51,5 @@ describe('into', function() {
   it('correctly reports the arity of curried versions', function() {
     var sum = into([], map(add));
     assert.strictEqual(sum.length, 1);
-  });*/
+  });
 });
