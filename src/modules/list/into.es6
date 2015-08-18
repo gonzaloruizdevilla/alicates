@@ -8,5 +8,5 @@ export const into =
   curry(
     (acc, xf, xs) =>
       isTransducer(acc) ? reduce(xf(acc), acc['@@transducer/init'](), xs)
-                        : reduce(xf(xfFor(acc)), acc, xs)
+                        : reduce(xf(xfFor(acc)), xfFor(acc)['@@transducer/init'](), xs)
   );
