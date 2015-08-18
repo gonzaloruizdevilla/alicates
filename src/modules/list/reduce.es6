@@ -20,10 +20,10 @@ class XfWrap {
 
 
 const arrayReduce =
-  (xf, acc, [x, ...arr], length) =>
+  (xf, acc, arr, pos, length) =>
     acc && acc['@@transducer/reduced'] ? acc['@@transducer/value'] :
-    length === 0                       ? xf['@@transducer/result'](acc)
-                                       : arrayReduce(xf, xf['@@transducer/step'](acc, x), arr, length - 1);
+    length === pos                     ? xf['@@transducer/result'](acc)
+                                       : arrayReduce(xf, xf['@@transducer/step'](acc, arr[pos]), arr, pos + 1, length);
 
 export
   const reduce = curry(
@@ -31,7 +31,7 @@ export
       (
         fn = isFunction(fn) ? new XfWrap(fn) : fn,
 
-        isArrayLike(arr)          ? arrayReduce(fn, acc, arr, arr.length) :
+        isArrayLike(arr)          ? arrayReduce(fn, acc, arr, 0, arr.length) :
         hasMethod('reduce', arr)  ? arr.reduce(fn, acc)
                                   : null
       )
