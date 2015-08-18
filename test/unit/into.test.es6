@@ -1,6 +1,7 @@
 let assert = require('chai').assert;
 
 import {add, always, compose, filter, take, identity, into, map} from '../../src/index.es6';
+import {cons, Nil} from '../../src/modules/list/list';
 
 describe('into', function() {
   var isOdd = function(b) {return b % 2 === 1;};
@@ -22,6 +23,10 @@ describe('into', function() {
     assert.deepEqual(into('', compose(map(add(1)), take(2)), [1, 2, 3, 4]), '23');
   });
 
+  it('transduces into lists', function() {
+    assert.deepEqual(into(Nil, map(add(1)), [1, 2]), cons(3, cons(2, Nil)));
+    assert.deepEqual(into(cons(1, Nil), map(add(1)), [2, 3]), cons(4, cons(3, cons(1, Nil))));
+  });
 
   it('transduces into objects', function() {
     assert.deepEqual(into({}, identity, [['a', 1], ['b', 2]]), {a: 1, b: 2});
