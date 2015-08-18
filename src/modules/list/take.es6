@@ -13,7 +13,7 @@ class Taker extends Base {
   '@@transducer/step'(result, input) {
     this.pos = this.pos + 1;
     return this.pos <= this.max ? this.xf['@@transducer/step'](result, input)
-                               : reduced(result);
+                                : reduced(this.xf['@@transducer/result'](result));
    }
 }
 
