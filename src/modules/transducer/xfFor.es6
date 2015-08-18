@@ -1,5 +1,4 @@
 import {identity} from '../functional/identity';
-import {concat} from '../list/concat';
 import {merge} from '../object/merge';
 import {isTransducer} from '../type/isTransducer';
 import {isArrayLike} from '../type/isArrayLike';
@@ -7,9 +6,9 @@ import {createMapEntry} from '../object/createMapEntry';
 import {cons, Cons, Nil, toArray}  from '../list/list'
 
 const arrayXf = {
-  '@@transducer/init': Array,
-  '@@transducer/step': function(xs, x) { return concat(xs, [x]); },
-  '@@transducer/result': identity
+  '@@transducer/init': () =>  Nil,
+  '@@transducer/step': (result, input)  => cons(input, result),
+  '@@transducer/result': toArray
 };
 
 const listXf =
