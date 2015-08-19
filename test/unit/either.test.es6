@@ -22,9 +22,9 @@ describe('either', () => {
   });
 
   it('does not evaluate the second expression if the first one is true', () => {
+    let effect = 'not evaluated';
     let T = () => true;
     let Z = () => { effect = 'Z got evaluated'; };
-    let effect = 'not evaluated';
     either(T, Z);
     assert.strictEqual(effect, 'not evaluated');
   });
