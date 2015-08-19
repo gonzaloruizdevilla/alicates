@@ -28,7 +28,7 @@ describe('unnest', () => {
   });
 
   it('handles ridiculously large inputs', () => {
-    assert.strictEqual(unnest([new Array(1500000), range(0, 560), 5, 1, 3]).length, 1500563);
+    assert.strictEqual(unnest([new Array(1000000), range(0, 560000), 5, 1, 3]).length, 1560003);
   });
 /*
   it('is equivalent to chain(identity)', () => {

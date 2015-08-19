@@ -2,7 +2,7 @@ import {curry} from '../functional/curry';
 
 const _unfold =
   (fn, res, acc) =>
-    res ? _unfold(fn, fn(res[1]), [...acc, res[0]])
+    res ? _unfold(fn, fn(res[1]), (acc[acc.length] = res[0], acc))
         : acc;
 
 export
