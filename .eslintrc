@@ -2,6 +2,7 @@
     "root": true,
     "rules": {
         "indent": [
+            2,
             2
         ],
         "quotes": [
@@ -18,7 +19,9 @@
         ]
     },
     "ecmaFeatures": {
-      "modules": true
+      "forOf": true,
+      "modules": true,
+      "generators": true
     },
     "env": {
         "es6": true,
