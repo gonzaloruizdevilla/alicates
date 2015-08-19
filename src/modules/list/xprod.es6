@@ -1,7 +1,17 @@
 import {curry} from '../functional/curry';
+import {unnest} from './unnest';
+import {map} from './map';
 
 export const xprod =
   curry(
-    (arr1, arr2) =>
-      [for (a of arr1) for (b of arr2) [a,b]]
+    (xs, ys) =>
+      unnest(
+        map(
+          x => map(
+              y => [x, y],
+              ys
+            ),
+          xs
+        )
+      )
   );
