@@ -23,7 +23,7 @@ describe('curry', () => {
     assert.strictEqual(g(3, 6).length, 1);
   });
 
- it('preserves context', function() {
+  it('preserves context', function() {
     var ctx = {x: 10};
     var f = function(a, b) { return a + b * this.x; };
     var g = curry(f);

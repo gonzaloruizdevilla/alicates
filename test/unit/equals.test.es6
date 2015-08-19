@@ -24,7 +24,7 @@ describe('equals', () => {
   });
 
   it('should ignore functions', () => {
-     assert.equal(equals({func: () => {}}, {bar: () => {}}), true);
+    assert.equal(equals({func: () => {}}, {bar: () => {}}), true);
   });
 
   it('should work well with nulls', () => {
@@ -71,27 +71,27 @@ describe('equals', () => {
   });
 
   it('should compare regular expressions', () => {
-     assert.equal(equals(/abc/, /abc/), true);
-     assert.equal(equals(/abc/i, new RegExp('abc', 'i')), true);
-     assert.equal(equals(new RegExp('abc', 'i'), new RegExp('abc', 'i')), true);
-     assert.equal(equals(new RegExp('abc', 'i'), new RegExp('abc')), false);
-     assert.equal(equals(/abc/i, /abc/), false);
-     assert.equal(equals(/abc/, /def/), false);
-     assert.equal(equals(/^abc/, /abc/), false);
-     assert.equal(equals(/^abc/, '/^abc/'), false);
-     assert.equal(equals(/abc/, new Date()), false);
-   });
+    assert.equal(equals(/abc/, /abc/), true);
+    assert.equal(equals(/abc/i, new RegExp('abc', 'i')), true);
+    assert.equal(equals(new RegExp('abc', 'i'), new RegExp('abc', 'i')), true);
+    assert.equal(equals(new RegExp('abc', 'i'), new RegExp('abc')), false);
+    assert.equal(equals(/abc/i, /abc/), false);
+    assert.equal(equals(/abc/, /def/), false);
+    assert.equal(equals(/^abc/, /abc/), false);
+    assert.equal(equals(/^abc/, '/^abc/'), false);
+    assert.equal(equals(/abc/, new Date()), false);
+  });
 
   it('should correctly test for keys that are present on Object.prototype', () => {
-     /* jshint -W001 */
-     assert.equal(equals({}, {hasOwnProperty: 1}), false);
-     assert.equal(equals({}, {toString: null}), false);
-   });
+    /* jshint -W001 */
+    assert.equal(equals({}, {hasOwnProperty: 1}), false);
+    assert.equal(equals({}, {toString: null}), false);
+  });
 
-   it('should return false when comparing an object and an array', () => {
-     assert.equal(equals({}, []), false);
-     assert.equal(equals([], {}), false);
-   });
+  it('should return false when comparing an object and an array', () => {
+    assert.equal(equals({}, []), false);
+    assert.equal(equals([], {}), false);
+  });
 
   it('should return false when comparing an object and a RegExp', () => {
     assert.equal(equals({}, /abc/), false);
@@ -115,22 +115,22 @@ describe('equals', () => {
   });*/
 
   it('should safely compare objects which shadow Object.prototype.hasOwnProperty', () => {
-      /* jshint -W001 */
-      let o1 = {
-        hasOwnProperty: true,
-        a: 1,
-        b: 2,
-        c: 3
-      };
-      let o2 = {
-        hasOwnProperty: true,
-        a: 1,
-        b: 2,
-        c: 3
-      };
-      assert.equal(equals(o1, o2), true);
-      o1.hasOwnProperty = () => {};
-      assert.equal(equals(o1, o2), false);
+    /* jshint -W001 */
+    let o1 = {
+      hasOwnProperty: true,
+      a: 1,
+      b: 2,
+      c: 3
+    };
+    let o2 = {
+      hasOwnProperty: true,
+      a: 1,
+      b: 2,
+      c: 3
+    };
+    assert.equal(equals(o1, o2), true);
+    o1.hasOwnProperty = () => {};
+    assert.equal(equals(o1, o2), false);
   });
 
 
@@ -166,5 +166,4 @@ describe('equals', () => {
     let isA = equals(a);
     assert.strictEqual(isA([]), true);
   });
-
 });

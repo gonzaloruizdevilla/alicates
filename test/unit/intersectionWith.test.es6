@@ -13,5 +13,5 @@ describe('intersectionWith', () => {
 
   it('is curried', () => {
     assert.deepEqual(intersectionWith(eqA)(Ro, So), [{a: 3}, {a: 4}]);
-  })
+  });
 });

@@ -28,7 +28,7 @@ let derivedGenre = (() => {
     let genre = prop('genre', album);
     return remap[genre] || genre;
   };
-}());
+})();
 
 
 describe('countBy', () => {
