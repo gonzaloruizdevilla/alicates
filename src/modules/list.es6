@@ -6,6 +6,7 @@ export {chain}         from './list/chain';
 export {concat}        from './list/concat';
 export {contains}      from './list/contains';
 export {difference}    from './list/difference';
+export {dropWhile}     from './list/dropWhile';
 export {find}          from './list/find';
 export {findIndex}     from './list/findIndex';
 export {findLast}      from './list/findLast';
