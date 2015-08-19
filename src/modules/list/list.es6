@@ -1,3 +1,5 @@
+import {curry} from '../functional/curry';
+
 export const Nil = {
   isEmpty: true,
   get head() {
@@ -42,9 +44,11 @@ export const listLength=
 const _toArray =
   (acc, pos, list) =>
     list.isEmpty ? acc
-                 : (acc[pos] = list.head, _toArray(acc, pos + 1, list.tail));
+                 : (acc[pos] = list.head, _toArray(acc, pos - 1, list.tail));
 
 export const toArray =
-  list =>(
-    _toArray([], 0, reverse(list))
+  curry(
+    (start, list) =>(
+      _toArray(start, start.length + listLength(list) - 1, list)
+    )
   );
