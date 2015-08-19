@@ -1,6 +1,6 @@
 let assert = require('chai').assert;
 
-import {contains, mapObjIndexed} from '../../src/index.es6'
+import {contains, mapObjIndexed} from '../../src/index.es6';
 
 describe('mapObjIndexed', function() {
   var times2 = function(x) {return x * 2;};

@@ -1,6 +1,6 @@
 let assert = require('chai').assert;
 
-import {mapObj} from '../../src/index.es6'
+import {mapObj} from '../../src/index.es6';
 
 describe('mapObj', () => {
   var square = n => n * n;

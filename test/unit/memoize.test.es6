@@ -48,9 +48,10 @@ describe('memoize', () => {
     let count = 0;
     let f = memoize(function concat(a, b) {
       count += 1;
+      /*eslint-disable no-fallthrough */
       switch (arguments.length) {
-        case 0: a = 'foo';  // jshint ignore:line
-        case 1: b = 'bar';
+      case 0: a = 'foo';  // jshint ignore:line
+      case 1: b = 'bar';
       }
       return a + b;
     });
