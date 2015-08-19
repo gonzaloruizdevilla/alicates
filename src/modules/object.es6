@@ -1,6 +1,7 @@
 export {assoc}          from './object/assoc';
 export {assocPath}      from './object/assocPath';
 export {createMapEntry} from './object/createMapEntry';
+export {eqProps}        from './object/eqProps';
 export {evolve}         from './object/evolve';
 export {functions}      from './object/functions';
 export {functionsIn}    from './object/functionsIn';
