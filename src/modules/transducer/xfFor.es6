@@ -21,11 +21,13 @@ const listXf =
       '@@transducer/result': identity
     });
 
-const stringXf = {
-  '@@transducer/init': String,
-  '@@transducer/step': function(a, b) { return a + b; },
-  '@@transducer/result': identity
-};
+const stringXf =
+  init =>
+    ({
+      '@@transducer/init': () => init,
+      '@@transducer/step': function(a, b) { return a + b; },
+      '@@transducer/result': identity
+    });
 
 const objectXf = {
   '@@transducer/init': Object,
@@ -49,6 +51,6 @@ export const xfFor =
     isTransducer(obj)           ? obj :
     isArrayLike(obj)            ? arrayXf(obj) :
     isList(obj)                 ? listXf(obj) :
-    (typeof obj === 'string')   ? stringXf :
+    (typeof obj === 'string')   ? stringXf(obj) :
     (typeof obj === 'object')   ? objectXf
                                 : throwError();

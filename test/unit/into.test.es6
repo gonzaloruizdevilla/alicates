@@ -22,6 +22,7 @@ describe('into', function() {
     assert.deepEqual(into('', map(add(1)), [1, 2, 3, 4]), '2345');
     assert.deepEqual(into('', filter(isOdd), [1, 2, 3, 4]), '13');
     assert.deepEqual(into('', compose(map(add(1)), take(2)), [1, 2, 3, 4]), '23');
+    assert.deepEqual(into('01', compose(map(add(1)), take(2)), [1, 2, 3, 4]), '0123');
   });
 
   it('transduces into lists', function() {
