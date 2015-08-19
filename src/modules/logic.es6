@@ -2,6 +2,7 @@ export {allPass}       from './logic/allPass';
 export {anyPass}       from './logic/anyPass';
 export {cond}          from './logic/cond';
 export {defaultTo}     from './logic/defaultTo';
+export {either}        from './logic/either';
 export {equals}        from './logic/equals';
 export {ifElse}        from './logic/ifElse';
 export {isEmpty}       from './logic/isEmpty';
