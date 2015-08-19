@@ -15,6 +15,6 @@ describe('any', () => {
   });
 
   it('should be curried', () =>{
-      assert.ok(any(pred)([1,1,3]));
+    assert.ok(any(pred)([1,1,3]));
   });
 });
