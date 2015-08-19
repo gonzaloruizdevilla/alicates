@@ -3,7 +3,7 @@ let assert = require('chai').assert;
 import {reduce, concat} from '../../src/index.es6';
 
 describe('reduce', () => {
-  
+
   const mult = (a, b) => a * b;
   const add =  (a,b) => a + b;
 
@@ -14,8 +14,10 @@ describe('reduce', () => {
 
   it('should reduce arrays with holes', () => {
     /* jshint -W128*/
+    /* eslint-disable no-sparse-arrays */
     assert.equal(reduce(add, '', ['0', undefined, ,'1','2']), '0undefinedundefined12');
     /* jshint +W128*/
+    /* eslint-enable no-sparse-arrays */
   });
 
   it('should be curried', () =>{

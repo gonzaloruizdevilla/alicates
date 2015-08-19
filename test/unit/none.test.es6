@@ -16,6 +16,6 @@ describe('none', () => {
   });
 
   it('should be curried', () =>{
-      assert.ok(none(pred)([1,1,1]));
+    assert.ok(none(pred)([1,1,1]));
   });
 });

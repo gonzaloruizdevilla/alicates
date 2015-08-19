@@ -14,10 +14,10 @@ describe('reduceRight', () => {
 
   it('should be curried', () =>{
     let result = reduceRight(add)('')(['0','1','2']);
-    assert.equal(result,'210')
+    assert.equal(result,'210');
     result = reduceRight(add, '')(['0','1','2']);
-    assert.equal(result,'210')
+    assert.equal(result,'210');
     result = reduceRight(add)('', ['0','1','2']);
-    assert.equal(result,'210')
+    assert.equal(result,'210');
   });
 });

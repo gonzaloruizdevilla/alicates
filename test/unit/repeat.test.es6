@@ -13,7 +13,7 @@ describe('repeat', () => {
 
   it('returns an empty array if given a negative number of times', () => {
     assert.deepEqual(repeat(0, -3), []);
-  })
+  });
 
   it('is curried', () => {
     var makeFoos = repeat('foo');

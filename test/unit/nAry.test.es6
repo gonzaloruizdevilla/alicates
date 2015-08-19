@@ -5,20 +5,24 @@ import {nAry, range, repeat} from '../../src/index.es6';
 describe('nAry', function() {
 
   it('turns multiple-argument function into a nullary one', () => {
-    var fn = nAry(0, function (x, y, z){return [...arguments]});
+    /* eslint-disable no-unused-vars */
+    var fn = nAry(0, function (x, y, z){return [...arguments];});
+    /* eslint-enable no-unused-vars */
     assert.strictEqual(fn.length, 0);
     assert.deepEqual(fn(1, 2, 3), []);
   });
 
   it('turns multiple-argument function into a ternary one', () => {
-    var fn = nAry(3, function(a, b, c, d){return [...arguments]});
+    /* eslint-disable no-unused-vars */
+    var fn = nAry(3, function(a, b, c, d){return [...arguments];});
+    /* eslint-enable no-unused-vars */
     assert.strictEqual(fn.length, 3);
     assert.deepEqual(fn(1, 2, 3, 4), [1, 2, 3]);
     assert.deepEqual(fn(1), [1, undefined, undefined]);
   });
 
   it('creates functions of arity less than or equal to ten', () => {
-    var fn = nAry(10, function() {return [...arguments]});
+    var fn = nAry(10, function() {return [...arguments];});
     assert.strictEqual(fn.length, 10);
     assert.deepEqual(fn.apply(null, range(0, 25)), range(0, 10));
 
