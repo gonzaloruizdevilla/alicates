@@ -9,8 +9,8 @@ describe('type', () => {
   });
 
   it('"Arguments" if given an arguments object', () => {
-     var args = (function() { return arguments; }());
-     assert.strictEqual(type(args), 'Arguments');
+    var args = (function() { return arguments; }());
+    assert.strictEqual(type(args), 'Arguments');
   });
 
   it('"Object" if given an object literal', () => {

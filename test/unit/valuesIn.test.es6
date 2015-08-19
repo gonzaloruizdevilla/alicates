@@ -31,6 +31,7 @@ describe('valuesIn', () => {
 
   it('works for primitives', () => {
     /* jshint elision: true */
+    /* eslint-disable no-sparse-arrays */
     let result = map(function(val) {
       return values(val);
     }, [null, undefined, 55, '', true, false, NaN, Infinity, , []]);

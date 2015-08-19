@@ -61,7 +61,7 @@ describe('uncurryN', function() {
   });
 
   it('works with ordinary wierdly curried functions', function() {
-    assert.strictEqual(uncurryN(3, function(a, b) { return function (c) {return a + b + c; }})(10, 20, 30), 60);
+    assert.strictEqual(uncurryN(3, function(a, b) { return function (c) {return a + b + c; };})(10, 20, 30), 60);
   });
 
 
