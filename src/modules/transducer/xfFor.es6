@@ -3,13 +3,15 @@ import {merge} from '../object/merge';
 import {isTransducer} from '../type/isTransducer';
 import {isArrayLike} from '../type/isArrayLike';
 import {createMapEntry} from '../object/createMapEntry';
-import {cons, Cons, Nil, toArray}  from '../list/list';
+import {cons, Cons, Nil}  from '../list/list';
 
-const arrayXf = {
-  '@@transducer/init': () =>  Nil,
-  '@@transducer/step': (result, input)  => cons(input, result),
-  '@@transducer/result': toArray
-};
+const arrayXf =
+  init =>
+    ({
+      '@@transducer/init': () =>  [...init],
+      '@@transducer/step': (result, input)  => (result[result.length] = input, result),
+      '@@transducer/result': identity
+    });
 
 const listXf =
   list =>
@@ -45,7 +47,7 @@ const isList =
 export const xfFor =
   obj =>
     isTransducer(obj)           ? obj :
-    isArrayLike(obj)            ? arrayXf :
+    isArrayLike(obj)            ? arrayXf(obj) :
     isList(obj)                 ? listXf(obj) :
     (typeof obj === 'string')   ? stringXf :
     (typeof obj === 'object')   ? objectXf

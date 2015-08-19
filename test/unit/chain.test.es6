@@ -4,7 +4,7 @@ import {compose, chain, into} from '../../src/index.es6';
 
 
 describe('chain', function() {
-  var intoArray = into([]);
+
   function dupl(x) { return [x, x]; }
   function add1(x) { return [x + 1]; }
   function dec(x) { return [x - 1]; }
@@ -23,6 +23,7 @@ describe('chain', function() {
   });
 
   it('maps a function (a -> [b]) into a (shallow) flat result', function() {
+    let intoArray = into([]);
     assert.deepEqual(intoArray(chain(times2), [1, 2, 3, 4]), [2, 4, 6, 8]);
   });
 
@@ -44,6 +45,7 @@ describe('chain', function() {
   });
 
   it('can compose transducer-style', function() {
+    let intoArray = into([]);
     var mdupl = chain(dupl);
     var mdouble = chain(times2);
     var mdec = chain(dec);

@@ -15,6 +15,7 @@ describe('into', function() {
     assert.deepEqual(into([], map(add(1)), [1, 2, 3, 4]), [2, 3, 4, 5]);
     assert.deepEqual(into([], filter(isOdd), [1, 2, 3, 4]), [1, 3]);
     assert.deepEqual(into([], compose(map(add(1)), take(2)), [1, 2, 3, 4]), [2, 3]);
+    assert.deepEqual(into([1], map(add(1)), [1, 2, 3, 4]), [1, 2, 3, 4, 5]);
   });
 
   it('transduces into strings', function() {
