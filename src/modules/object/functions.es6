@@ -8,4 +8,4 @@ export const functions =
       (acc, key) => isFunction(x[key]) ? [...acc, key] : acc,
       [],
       keys(x)
-    )
+    );

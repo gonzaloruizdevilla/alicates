@@ -5,4 +5,4 @@ export const keysIn =
       ks[ks.length] = prop;
     }
     return ks;
-  }
+  };

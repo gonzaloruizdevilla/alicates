@@ -3,7 +3,7 @@ import {reduce} from '../list/reduce';
 import {curry} from '../functional/curry';
 import {tail} from '../list/tail';
 
-const throwError = () => {throw new Error('pipeP requires at least one argument')}
+const throwError = () => {throw new Error('pipeP requires at least one argument');};
 
 export const pipeP =
   (...fns) =>

@@ -2,7 +2,7 @@ export class Const {
   constructor(value) {
     this.value = value;
   }
-  map(f) {
+  map() {
     return this;
   }
 }

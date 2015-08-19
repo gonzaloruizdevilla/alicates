@@ -14,12 +14,12 @@ class Taker extends Base {
     this.pos = this.pos + 1;
     return this.pos <= this.max ? this.xf['@@transducer/step'](result, input)
                                 : reduced(this.xf['@@transducer/result'](result));
-   }
+  }
 }
 
- const _take =
-   (n, arr) =>
-     typeof arr === 'string' ? arr.substr(0, (n < 0 ? undefined : n))
+const _take =
+  (n, arr) =>
+    typeof arr === 'string' ? arr.substr(0, (n < 0 ? undefined : n))
                              : arr.slice(0, (n < 0 ? undefined : n));
 
 export const take =

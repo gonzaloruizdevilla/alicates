@@ -12,8 +12,8 @@ class Mapper extends Base{
     this.f = fn;
   }
   '@@transducer/step'(result, input) {
-     return this.xf['@@transducer/step'](result, this.f(input));
-   }
+    return this.xf['@@transducer/step'](result, this.f(input));
+  }
 }
 
 export const map =

@@ -27,4 +27,4 @@ export const isArrayLike =
            length === 0                                   ? true :
            isPositive(length) && startAndEnd(length, obj) ? true
                                                           : false;
-  }
+  };

@@ -5,4 +5,4 @@ import {curry} from '../functional/curry';
 export const reject =
   curry(
     (fn, xs) => filter(x => not(fn(x)), xs)
-  )
+  );

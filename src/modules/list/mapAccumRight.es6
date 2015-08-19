@@ -10,6 +10,7 @@ const _mapAccumRight =
       ),
       [a, []],
       xs
-    )
+    );
+
 export const mapAccumRight =
   curry(_mapAccumRight);

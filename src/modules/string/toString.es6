@@ -14,7 +14,7 @@ const nAry = (fn, pos) => (...args) => fn(args[pos]);
 const quote = a => '"' + a.replace(/"/g, '\\"') + '"';
 
 const isNull = equals('[object Null]');
-const nullToString = (seen,a) => 'null';
+const nullToString = () => 'null';
 
 const isUndefined = equals('[object Undefined]');
 const undefinedToString = () => 'undefined';
@@ -90,7 +90,6 @@ _toString =
       [nAry(isArguments, 2),        argumentsToString],
       [nAry(objectWithToString, 1), selfToString],
       [t,                           objectToString]
-    ]
-  )(seen, a, Object.prototype.toString.call(a));
+  ])(seen, a, Object.prototype.toString.call(a));
 
 export const toString = (a) => _toString([], a);

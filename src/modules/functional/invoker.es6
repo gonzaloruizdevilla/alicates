@@ -6,7 +6,8 @@ import {isNil} from '../type/isNil';
 import {toString} from '../string/toString';
 
 const throwError =
-  (x, method) => { throw new TypeError(`${x} does not have a method named "${method}"`); }
+  (x, method) =>
+    { throw new TypeError(`${x} does not have a method named "${method}"`); };
 
 export const invoker =
   (n, method) =>
@@ -16,4 +17,4 @@ export const invoker =
         isFunction(last(args)[method]) ? last(args)[method](...init(args))
                                        : throwError(toString(last(args)), method),
       n + 1
-    )
+    );

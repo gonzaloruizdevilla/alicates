@@ -11,8 +11,8 @@ class Filterer extends Base{
     this.f = fn;
   }
   '@@transducer/step'(result, input) {
-     return (this.f(input)) ? this.xf['@@transducer/step'](result, input) : result;
-   }
+    return (this.f(input)) ? this.xf['@@transducer/step'](result, input) : result;
+  }
 }
 
 export

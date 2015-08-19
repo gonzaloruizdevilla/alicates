@@ -25,7 +25,7 @@ const nextSeed =
       fn:  !lastRun(seed) && applyFn(seed),
       n: seed.n,
       args: seed.args
-     }
+    }
   );
 
 const nextValue =

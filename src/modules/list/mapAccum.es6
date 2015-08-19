@@ -10,6 +10,7 @@ const _mapAccum =
       ),
       [a, []],
       xs
-    )
+    );
+
 export const mapAccum =
   curry(_mapAccum);

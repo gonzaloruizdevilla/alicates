@@ -10,13 +10,13 @@ const isMap = a => isObject(a) && !isArray(a) && !isRegExp(a) && !isDate(a);
 const equalArrays = (a,b) => a.length === b.length && all(([x,y]) => _equals(x,y), zip(a,b));
 
 const getPropertiesKeys = (o) => {
-  const keys = new Set()
+  const keys = new Set();
   for(let key in o) {
     if(!isFunction(o[key]))
       keys.add(key);
   }
   return keys;
-}
+};
 
 const equalMaps = (a, b) => {
   const aKeys = getPropertiesKeys(a);

@@ -2,7 +2,7 @@ import {curry} from '../functional/curry';
 import {unfold} from './unfold';
 
 const notIsNumber = a => Object.prototype.toString.call(a) !== '[object Number]';
-const throwErrors = name => {throw new TypeError(name + ' argument to range must be a number')};
+const throwErrors = name => {throw new TypeError(name + ' argument to range must be a number');};
 
 export const range =
   curry((start, end, step = 1) =>

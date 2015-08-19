@@ -11,7 +11,8 @@ const _forEach =
           xs
       ),
       xs
-    )
+    );
+
 export const forEach =
   curry(
     (fn, xs) =>

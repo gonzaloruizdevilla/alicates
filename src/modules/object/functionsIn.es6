@@ -8,4 +8,4 @@ export const functionsIn =
       (acc, key) => isFunction(x[key]) ? [...acc, key] : acc,
       [],
       keysIn(x)
-    )
+    );

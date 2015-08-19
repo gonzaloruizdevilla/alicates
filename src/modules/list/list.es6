@@ -13,7 +13,7 @@ export class Cons {
     this.head = head;
     this.tail = tail;
   }
-  get isEmpty() {return false}
+  get isEmpty() {return false;}
 }
 
 export const cons =
