@@ -1,5 +1,6 @@
 import {curry} from '../functional/curry';
 import {isArrayLike} from '../type/isArrayLike';
+import {isString} from '../type/isString';
 import {isFunction} from '../type/isFunction';
 import {hasMethod} from '../object/hasMethod';
 
@@ -25,13 +26,16 @@ const arrayReduce =
     length === pos                     ? xf['@@transducer/result'](acc)
                                        : arrayReduce(xf, xf['@@transducer/step'](acc, arr[pos]), arr, pos + 1, length);
 
+const canBeReduced =
+  x =>
+    isArrayLike(x) || isString(x);
+
 export
   const reduce = curry(
     (fn, acc, arr) =>
       (
         fn = isFunction(fn) ? new XfWrap(fn) : fn,
-
-        isArrayLike(arr)          ? arrayReduce(fn, acc, arr, 0, arr.length) :
+        canBeReduced(arr)         ? arrayReduce(fn, acc, arr, 0, arr.length) :
         hasMethod('reduce', arr)  ? arr.reduce(fn, acc)
                                   : null
       )
