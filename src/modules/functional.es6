@@ -6,6 +6,7 @@ export {bind}         from './functional/bind';
 export {compose}      from './functional/compose';
 export {construct}    from './functional/construct';
 export {curry}        from './functional/curry';
+export {empty}        from './functional/empty';
 export {f}            from './functional/f';
 export {flip}         from './functional/flip';
 export {identity}     from './functional/identity';
