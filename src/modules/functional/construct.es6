@@ -1,11 +1,11 @@
-import {curry} from './curry';
+import {curryN} from './curryN';
 
 const _construct =
   Fn =>
-    curry(
+    curryN(
+      Fn.length,
       (...args) =>
-        new Fn(...args),
-        Fn.length
+        new Fn(...args)
     );
 
 const throwError = () => {throw new Error('Constructor with greater than ten arguments');};

@@ -1,11 +1,19 @@
 import {reduce} from '../list/reduce';
 import {map} from '../list/map';
-import {curry} from './curry';
+import {curryN} from './curryN';
 import {ap} from './ap';
 
 export const liftN =
-  curry(
+  curryN(
+    2,
     (arity, fn) =>
-      curry((x, ...args) =>
-        reduce(ap, map(curry(fn, arity), x), args), arity)
+      curryN(
+        arity,
+        (x, ...args) =>
+          reduce(
+            ap,
+            map(curryN(arity, fn), x),
+            args
+          )
+      )
   );

@@ -1,3 +1,8 @@
-import {curry} from '../functional/curry';
+import {curryN} from '../functional/curryN';
 
-export const concat = curry((...args) => [].concat(...args), 2);
+export const concat =
+  curryN(
+    2,
+    (...args) =>
+      [].concat(...args)
+  );

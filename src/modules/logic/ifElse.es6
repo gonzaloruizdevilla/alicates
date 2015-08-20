@@ -1,11 +1,11 @@
-import {curry} from '../functional/curry';
+import {curryN} from '../functional/curryN';
 
 export const ifElse =
-  curry(
+  curryN(
+    3,
     (cond, onTrue, onFalse) =>
-      curry(
-        (...args) => cond(...args) ? onTrue(...args)
-                                   : onFalse(...args),
-        Math.max(cond.length, onTrue.length, onFalse.length)
+      curryN(
+        Math.max(cond.length, onTrue.length, onFalse.length),
+        (...args) => cond(...args) ? onTrue(...args) : onFalse(...args)
       )
   );

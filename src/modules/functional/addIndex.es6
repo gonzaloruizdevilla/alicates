@@ -1,4 +1,4 @@
-import {curry} from './curry';
+import {curryN} from './curryN';
 import {head} from '../list/head';
 import {last} from '../list/last';
 import {tail} from '../list/tail';
@@ -13,7 +13,7 @@ const _addIndex =
 
 export const addIndex =
   (indexed) =>
-    curry(
-      (...args) => _addIndex(0, indexed, head(args), last(args), tail(args)),
-      indexed.length
+    curryN(
+      indexed.length,
+      (...args) => _addIndex(0, indexed, head(args), last(args), tail(args))
     );

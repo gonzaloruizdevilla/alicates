@@ -1,6 +1,6 @@
 import {init} from '../list/init';
 import {last} from '../list/last';
-import {curry} from '../functional/curry';
+import {curryN} from '../functional/curryN';
 import {isFunction} from '../type/isFunction';
 import {isNil} from '../type/isNil';
 import {toString} from '../string/toString';
@@ -11,10 +11,10 @@ const throwError =
 
 export const invoker =
   (n, method) =>
-    curry(
+    curryN(
+      n + 1,
       (...args) =>
         isNil(last(args))              ? throwError(last(args), method) :
         isFunction(last(args)[method]) ? last(args)[method](...init(args))
-                                       : throwError(toString(last(args)), method),
-      n + 1
+                                       : throwError(toString(last(args)), method)
     );

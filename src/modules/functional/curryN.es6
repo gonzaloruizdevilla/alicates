@@ -4,15 +4,15 @@ const combine =
   (oldArgs, newArgs) => {
     let values = oldArgs
       .map(x =>
-        x['@@functional/placeholder'] ? (newArgs.length ? newArgs.shift() : x)
-                                      : x
+        x && x['@@functional/placeholder'] ? (newArgs.length ? newArgs.shift() : x)
+                                           : x
       )
       .concat(newArgs);
     return {
       values: values,
       length: values.filter(x => !x || !x['@@functional/placeholder']).length
-    }
-  }
+    };
+  };
 
 
 const _curryN =
