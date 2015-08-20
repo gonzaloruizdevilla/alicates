@@ -20,7 +20,7 @@ describe('dropWhile', () => {
     assert.strictEqual(sublist[2], 7);
   });
 
-  it('drops simple functions into arrays', function() {
+  it('can act as a transducer', function() {
     const intoArray = into([]);
     const dropLt7 = dropWhile(x => x < 7);
     assert.deepEqual(intoArray(dropLt7, [1, 3, 5, 7, 9]), [7, 9]);

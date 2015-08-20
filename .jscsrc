@@ -1,0 +1,6 @@
+{
+	"preset": "google",
+  "fileExtensions": [".es6"],
+  "disallowMultipleLineBreaks": null,
+  "esnext": true
+}

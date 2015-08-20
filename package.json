@@ -8,8 +8,10 @@
   "scripts": {
     "compile": "babel -e -d lib/ src/",
     "prepublish": "npm run compile",
-    "test": "npm run lint && npm run compile && istanbul cover _mocha",
-    "lint": "find . -name '*.es6' | xargs eslint"
+    "test": "npm run compile && istanbul cover _mocha",
+    "lint": "find . -name '*.es6' | xargs eslint",
+    "jscs": "jscs src/ test/",
+    "all":  "npm run lint && npm test"
   },
   "devDependencies": {
     "babel": "*",
