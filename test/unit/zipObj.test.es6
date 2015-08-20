@@ -3,7 +3,7 @@ let assert = require('chai').assert;
 import {zipObj} from '../../src/index.es6';
 
 describe('zipObj', () => {
-  it('combines an array of keys with an arrau of values into a single object', () => {
+  it('combines an array of keys with an array of values into a single object', () => {
     assert.deepEqual(zipObj(['a', 'b', 'c'], [1, 2, 3]), {a: 1, b: 2, c: 3});
   });
   it('ignores extra values', () => {
