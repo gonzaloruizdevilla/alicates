@@ -5,6 +5,7 @@ export {ap}           from './functional/ap';
 export {apply}        from './functional/apply';
 export {bind}         from './functional/bind';
 export {compose}      from './functional/compose';
+export {composeK}     from './functional/composeK';
 export {composeP}     from './functional/composeP';
 export {converge}     from './functional/converge';
 export {construct}    from './functional/construct';
