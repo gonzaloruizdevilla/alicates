@@ -2,6 +2,7 @@ export {assoc}          from './object/assoc';
 export {assocPath}      from './object/assocPath';
 export {createMapEntry} from './object/createMapEntry';
 export {dissoc}         from './object/dissoc';
+export {dissocPath}     from './object/dissocPath';
 export {eqProps}        from './object/eqProps';
 export {evolve}         from './object/evolve';
 export {functions}      from './object/functions';
