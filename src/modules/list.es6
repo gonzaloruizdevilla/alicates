@@ -7,6 +7,7 @@ export {concat}          from './list/concat';
 export {contains}        from './list/contains';
 export {difference}      from './list/difference';
 export {drop}            from './list/drop';
+export {dropLast}        from './list/dropLast';
 export {dropLastWhile}   from './list/dropLastWhile';
 export {dropRepeats}     from './list/dropRepeats';
 export {dropRepeatsWith} from './list/dropRepeatsWith';
