@@ -1,3 +1,4 @@
+export {__}           from './functional/__';
 export {addIndex}     from './functional/addIndex';
 export {always}       from './functional/always';
 export {ap}           from './functional/ap';
@@ -6,6 +7,7 @@ export {bind}         from './functional/bind';
 export {compose}      from './functional/compose';
 export {construct}    from './functional/construct';
 export {curry}        from './functional/curry';
+export {curryN}       from './functional/curryN';
 export {empty}        from './functional/empty';
 export {f}            from './functional/f';
 export {flip}         from './functional/flip';
