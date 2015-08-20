@@ -1,4 +1,4 @@
-import {arity} from './arity';
+import {curryN} from './curryN';
 import {unfold} from '../list/unfold';
 import {last} from '../list/last';
 
@@ -33,7 +33,7 @@ const nextValue =
     lastRun(seed) && applyFn(seed, true);
 
 export const uncurryN =
-  (n, fn) => arity(
+  (n, fn) => curryN(
     n,
     (...args) => last(
       unfold(

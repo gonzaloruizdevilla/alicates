@@ -1,9 +1,8 @@
 let assert = require('chai').assert;
 
-import {add, uncurryN} from '../../src/index.es6';
+import {add, uncurryN, __} from '../../src/index.es6';
 
-
-describe('uncurryN', function() {
+describe('uncurryN', () => {
   function a2(a) {
     return function(b) {
       return a + b;
@@ -36,18 +35,18 @@ describe('uncurryN', function() {
     };
   }
 
-  it('accepts an arity', function() {
+  it('accepts an arity', () => {
     var uncurried = uncurryN(3, a3);
     assert.strictEqual(uncurried(1, 2, 3), 6);
   });
 
-  it('returns a function of the specified arity', function() {
+  it('returns a function of the specified arity', () => {
     assert.strictEqual(uncurryN(2, a2).length, 2);
     assert.strictEqual(uncurryN(3, a3).length, 3);
     assert.strictEqual(uncurryN(4, a4).length, 4);
   });
 
-  it('forwards extra arguments', function() {
+  it('forwards extra arguments', () => {
     var g = uncurryN(3, a3b);
 
     assert.deepEqual(g(1, 2, 3), 6);
@@ -55,22 +54,22 @@ describe('uncurryN', function() {
     assert.deepEqual(g(1, 2, 3, 4, 5), 15);
   });
 
-  it('works with ordinary uncurried functions', function() {
+  it('works with ordinary uncurried functions', () => {
     assert.strictEqual(uncurryN(2, function(a, b) { return a + b; })(10, 20), 30);
     assert.strictEqual(uncurryN(3, function(a, b, c) { return a + b + c; })(10, 20, 30), 60);
   });
 
-  it('works with ordinary wierdly curried functions', function() {
+  it('works with ordinary wierdly curried functions', () => {
     assert.strictEqual(uncurryN(3, function(a, b) { return function (c) {return a + b + c; };})(10, 20, 30), 60);
   });
 
 
-  it('works with alicates-curried functions', function() {
+  it('works with alicates-curried functions', () => {
     assert.strictEqual(uncurryN(2, add)(10, 20), 30);
   });
 
-/*
-  it('returns a function that supports __ placeholder', function() {
+
+  it('returns a function that supports __ placeholder', () => {
     var g = uncurryN(3, a3);
     var _ = __;
 
@@ -98,6 +97,6 @@ describe('uncurryN', function() {
     assert.deepEqual(g(_, _, _)(_, _)(_)(1, 2, 3), 6);
     assert.deepEqual(g(_, _, _)(1, _, _)(_, _)(2, _)(_)(3), 6);
   });
-*/
+
 
 });
