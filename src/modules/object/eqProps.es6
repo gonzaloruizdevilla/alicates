@@ -1,7 +1,8 @@
 import {curry} from '../functional/curry';
 import {equals} from '../logic/equals';
+import {prop} from '../object/prop';
 
 export const eqProps =
   curry(
-    (prop, x, y) => equals(x[prop], y[prop])
+    (p, x, y) => equals(prop(p,x), prop(p,y))
   );
