@@ -5,6 +5,7 @@ export {append}          from './list/append';
 export {chain}           from './list/chain';
 export {concat}          from './list/concat';
 export {contains}        from './list/contains';
+export {containsWith}    from './list/containsWith';
 export {difference}      from './list/difference';
 export {drop}            from './list/drop';
 export {dropLast}        from './list/dropLast';
