@@ -1,28 +1,28 @@
 import {arity} from './arity';
 
+const argsLength =
+  args =>
+    args.filter(x => !x || !x['@@functional/placeholder']).length;
+
 const combine =
-  (oldArgs, newArgs) => {
-    let values = oldArgs
+  (oldArgs, newArgs) =>
+    oldArgs
       .map(x =>
         x && x['@@functional/placeholder'] ? (newArgs.length ? newArgs.shift() : x)
                                            : x
       )
       .concat(newArgs);
-    return {
-      values: values,
-      length: values.filter(x => !x || !x['@@functional/placeholder']).length
-    };
-  };
+
 
 
 const _curryN =
   (n, fn, oldArgs) =>
     arity(
-      n - oldArgs.length,
+      n - argsLength(oldArgs),
       function (...newArgs) {
         let args = combine(oldArgs, newArgs);
-        return args.length < n ? _curryN(n, fn, args.values)
-                               : fn.call(this, ...args.values);
+        return argsLength(args) < n ? _curryN(n, fn, args)
+                                    : fn.call(this, ...args);
       });
 
 export const curryN =

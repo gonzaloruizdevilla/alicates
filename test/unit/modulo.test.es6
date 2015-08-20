@@ -1,6 +1,6 @@
 let assert = require('chai').assert;
 
-import {modulo} from '../../src/index.es6';
+import {modulo, __} from '../../src/index.es6';
 
 describe('modulo', function() {
   it('divides the first param by the second and returns the remainder', function() {
@@ -17,14 +17,14 @@ describe('modulo', function() {
     assert.strictEqual(hundredMod(17), 15);
   });
 
-/*
+
   it('behaves right curried when passed `__` for its first argument', function() {
     var isOdd = modulo(__, 2);
     assert.strictEqual(typeof isOdd, 'function');
     assert.strictEqual(isOdd(3), 1);
     assert.strictEqual(isOdd(198), 0);
   });
-*/
+
 
   it('preserves javascript-style modulo evaluation for negative numbers', function() {
     assert.strictEqual(modulo(-5, 4), -1);

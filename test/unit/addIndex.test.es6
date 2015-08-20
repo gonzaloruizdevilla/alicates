@@ -1,6 +1,6 @@
 let assert = require('chai').assert;
 
-import {all, addIndex, gt, map, reduce} from '../../src/index.es6';
+import {all, addIndex, gt, map, reduce, filter, __, multiply, compose} from '../../src/index.es6';
 
 
 describe('addIndex', () => {
@@ -58,7 +58,7 @@ describe('addIndex', () => {
     });
   });
 
-/*
+
   describe('works with arbitrary user-defined functions', () => {
     var mapFilter = function(m, f, list) {
       return filter(compose(f, m), list);
@@ -72,5 +72,5 @@ describe('addIndex', () => {
       ), [7, 5, 9]); // 2 * 7 > 13, 3 * 5 > 13, 6 * 9 > 13
     });
   });
-*/
+
 });

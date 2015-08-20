@@ -1,6 +1,6 @@
 let assert = require('chai').assert;
 
-import {lte} from '../../src/index.es6';
+import {lte, __} from '../../src/index.es6';
 
 describe('lte', function() {
   it('reports whether one item is less than another', function() {
@@ -17,11 +17,11 @@ describe('lte', function() {
     assert.strictEqual(gte20(20), true);
     assert.strictEqual(gte20(25), true);
   });
-/*
+
   it('behaves right curried when passed `__` for its first argument', function() {
     var upTo20 = lte(__, 20);
     assert.strictEqual(upTo20(10), true);
     assert.strictEqual(upTo20(20), true);
     assert.strictEqual(upTo20(25), false);
-  });*/
+  });
 });

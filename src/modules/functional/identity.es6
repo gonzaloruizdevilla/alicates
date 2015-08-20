@@ -1,2 +1,6 @@
+import {curry} from './curry';
+
 export const identity =
-  a => a;
+  curry(
+    a => a
+  );

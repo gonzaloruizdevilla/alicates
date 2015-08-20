@@ -1,6 +1,6 @@
 let assert = require('chai').assert;
 
-import {identity} from '../../src/index.es6';
+import {identity,__} from '../../src/index.es6';
 
 describe('identity', () => {
   it('returns its first argument', () => {
@@ -11,5 +11,10 @@ describe('identity', () => {
 
   it('has length 1', () => {
     assert.strictEqual(identity.length, 1);
+  });
+
+  it('returns the identity function given no arguments', () => {
+    assert.strictEqual(identity(__)(42), 42);
+    assert.strictEqual(identity(__).length, 1);
   });
 });

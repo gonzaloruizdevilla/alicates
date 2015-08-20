@@ -1,6 +1,6 @@
 let assert = require('chai').assert;
 
-import {has} from '../../src/index.es6';
+import {has, __} from '../../src/index.es6';
 
 describe('has', function() {
   let fred = {name: 'Fred', age: 23};
@@ -28,12 +28,12 @@ describe('has', function() {
     let hasName = has('name');
     assert.strictEqual(hasName(fred), true);
     assert.strictEqual(hasName(anon), false);
-/*
+
     var point = {x: 0, y: 0};
     var pointHas = has(__, point);
     assert.strictEqual(pointHas('x'), true);
     assert.strictEqual(pointHas('y'), true);
     assert.strictEqual(pointHas('z'), false);
-    */
+    
   });
 });

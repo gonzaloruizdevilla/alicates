@@ -1,6 +1,6 @@
 let assert = require('chai').assert;
 
-import {chain, pipe, pipeK} from '../../src/index.es6';
+import {chain, __, pipe, pipeK} from '../../src/index.es6';
 
 
 var Identity = function(x) {
@@ -12,14 +12,14 @@ Identity.prototype.chain = function(f) {
 };
 
 
-describe('pipeK', function() {
+describe('pipeK', () => {
 
-  it('is a variadic function', function() {
+  it('is a variadic function', () => {
     assert.strictEqual(typeof pipeK, 'function');
     assert.strictEqual(pipeK.length, 0);
   });
 
-  it('performs left-to-right Kleisli composition', function() {
+  it('performs left-to-right Kleisli composition', () => {
     var f = function(x) { return new Identity(x - 1); };
     var g = function(x) { return new Identity(x * x); };
     var h = function(x) { return new Identity(x + 1); };
@@ -32,10 +32,10 @@ describe('pipeK', function() {
   });
 
 
-  it('returns the identity function given no arguments', function() {
+  it('returns the identity function given no arguments', () => {
     var identity = pipeK();
     assert.strictEqual(identity.length, 1);
-    //assert.strictEqual(identity(__).length, 1);
+    assert.strictEqual(identity(__).length, 1);
     assert.strictEqual(identity(42), 42);
   });
 
