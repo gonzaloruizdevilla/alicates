@@ -1,4 +1,5 @@
 export {countBy}          from './relation/countBy';
+export {differenceWith}   from './relation/differenceWith';
 export {gt}               from './relation/gt';
 export {gte}              from './relation/gte';
 export {identical}        from './relation/identical';
