@@ -1,4 +1,5 @@
 export {allPass}       from './logic/allPass';
+export {and}           from './logic/and';
 export {anyPass}       from './logic/anyPass';
 export {cond}          from './logic/cond';
 export {defaultTo}     from './logic/defaultTo';
