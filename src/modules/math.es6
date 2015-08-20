@@ -1,5 +1,6 @@
 export {add}      from './math/add';
 export {addAll}   from './math/addAll';
+export {divide}   from './math/divide';
 export {inc}      from './math/inc';
 export {mathMod}  from './math/mathMod';
 export {mean}     from './math/mean';
