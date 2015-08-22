@@ -32,9 +32,9 @@ describe('chain', function() {
     assert.deepEqual(chain(add1, obj), [101]);
   });
 
-  it('dispatches to transformer objects', function() {
-  //  assert.strictEqual(_isTransformer(chain(add1, listXf)), true);
-  });
+  /*it('dispatches to transformer objects', function() {
+    assert.strictEqual(_isTransformer(chain(add1, listXf)), true);
+  });*/
 
   it('composes', function() {
     var mdouble = chain(times2);

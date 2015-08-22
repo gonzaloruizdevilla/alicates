@@ -60,7 +60,7 @@ describe('deep clone objects', () => {
   });
 
   it('clone instances', () => {
-    
+
     let Obj = function(x) {
       this.x = x;
     };
@@ -167,12 +167,12 @@ describe('deep clone deep nested mixed objects', () => {
     assert.notStrictEqual(cloned[0].b, list[0].b);
     assert.notStrictEqual(cloned[1].b, list[1].b);
 
-    assert.deepEqual(cloned[0].b, {a:1});
-    assert.deepEqual(cloned[1].b, {a:1});
+    assert.deepEqual(cloned[0].b, {a: 1});
+    assert.deepEqual(cloned[1].b, {a: 1});
 
     obj.a = 2;
-    assert.deepEqual(cloned[0].b, {a:1});
-    assert.deepEqual(cloned[1].b, {a:1});
+    assert.deepEqual(cloned[0].b, {a: 1});
+    assert.deepEqual(cloned[1].b, {a: 1});
   });
 });
 
