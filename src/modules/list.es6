@@ -5,6 +5,7 @@ export {aperture}        from './list/aperture';
 export {append}          from './list/append';
 export {chain}           from './list/chain';
 export {concat}          from './list/concat';
+export {commute}         from './list/commute';
 export {commuteMap}      from './list/commuteMap';
 export {contains}        from './list/contains';
 export {containsWith}    from './list/containsWith';
