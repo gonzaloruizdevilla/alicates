@@ -1,5 +1,6 @@
 export {assoc}          from './object/assoc';
 export {assocPath}      from './object/assocPath';
+export {clone}          from './object/clone';
 export {createMapEntry} from './object/createMapEntry';
 export {dissoc}         from './object/dissoc';
 export {dissocPath}     from './object/dissocPath';
