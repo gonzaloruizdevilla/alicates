@@ -10,7 +10,7 @@
     "prepublish": "npm run compile",
     "test": "npm run compile && istanbul cover _mocha",
     "lint": "find . -name '*.es6' | xargs eslint",
-    "jscs": "jscs src/ test/",
+    "jscs": "jscs test/ --config=./test/.jscsrc && jscs src/ ",
     "all":  "npm run lint && npm test"
   },
   "devDependencies": {
