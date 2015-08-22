@@ -3,7 +3,7 @@ let assert = require('chai').assert;
 import {curry, liftN, reduce} from '../../src/index.es6';
 
 
-var addN = function () {
+var addN = function() {
   return reduce(function(a, b) { return a + b; }, 0, arguments);
 };
 var add3 = curry(function add3(a, b, c) {

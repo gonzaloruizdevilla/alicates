@@ -4,7 +4,7 @@ import {isFunction} from '../../src/index.es6';
 
 describe('isFunction', () => {
   it('should return true for functions', () => {
-    assert.ok(isFunction(function (){}));
+    assert.ok(isFunction(function() {}));
     assert.ok(isFunction(() => true));
   });
 

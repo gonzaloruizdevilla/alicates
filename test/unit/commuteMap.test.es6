@@ -14,9 +14,9 @@ describe('commuteMap', () => {
     assert.deepEqual(commuteMap(plus10map, of, cs), [[11, 13], [12, 13], [11, 14], [12, 14]]);
   });
 
-  it('works on Algebraic Data Types such as "Maybe"', () => {
-  //  assert.deepEqual(commuteMap(plus10map, Maybe, [Maybe(3), Maybe(4), Maybe(5)]), Maybe([13, 14, 15]));
-  });
+  /*it('works on Algebraic Data Types such as "Maybe"', () => {
+    assert.deepEqual(commuteMap(plus10map, Maybe, [Maybe(3), Maybe(4), Maybe(5)]), Maybe([13, 14, 15]));
+  });*/
 
   it('is curried', () => {
     let cmtPlus10 = commuteMap(plus10map);

@@ -14,9 +14,9 @@ describe('commute', () => {
     assert.deepEqual(commute(of, cs), [[1, 3], [2, 3], [1, 4], [2, 4]]);
   });
 
-  it('works on Algebraic Data Types such as "Maybe"', () => {
-  //  assert.deepEqual(commute(Maybe.of, [Maybe(3), Maybe(4), Maybe(5)]), Maybe([3, 4, 5]));
-  });
+  /*it('works on Algebraic Data Types such as "Maybe"', () => {
+    assert.deepEqual(commute(Maybe.of, [Maybe(3), Maybe(4), Maybe(5)]), Maybe([3, 4, 5]));
+  });*/
 
   it('is curried', () => {
     var cmtArr = commute(of);

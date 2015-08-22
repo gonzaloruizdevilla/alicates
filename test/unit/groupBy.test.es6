@@ -50,7 +50,7 @@ describe('groupBy', () => {
     assert.deepEqual(groupBy(prop('x'), []), {});
   });
 
-/*
+  /*
   it('dispatches on transformer objects in list position', () => {
     var byType = prop('type');
     var xf = {
@@ -60,5 +60,5 @@ describe('groupBy', () => {
     };
     assert.strictEqual(_isTransformer(groupBy(byType, xf)), true);
   });
-*/
+  */
 });

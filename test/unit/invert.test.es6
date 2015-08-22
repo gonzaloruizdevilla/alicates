@@ -24,14 +24,14 @@ describe('invert', function() {
   });
 
   it('returns the input\'s values as keys, and keys as values of an array', function() {
-    assert.deepEqual(invert(['a', 'b', 'c']),       {a:['0'], b:['1'], c:['2']});
-    assert.deepEqual(invert({x:'a', y:'b', z:'c'}), {a:['x'], b:['y'], c:['z']});
+    assert.deepEqual(invert(['a', 'b', 'c']),       {a: ['0'], b: ['1'], c: ['2']});
+    assert.deepEqual(invert({x: 'a', y: 'b', z: 'c'}), {a: ['x'], b: ['y'], c: ['z']});
   });
 
   it('puts keys that have the same value into the appropriate an array', function() {
-    assert.deepEqual(invert(['a', 'b', 'a']), {a:['0', '2'], b:['1']});
+    assert.deepEqual(invert(['a', 'b', 'a']), {a: ['0', '2'], b: ['1']});
 
-    var inverted = invert({x:'a', y:'b', z:'a', _id:'a'});
+    var inverted = invert({x: 'a', y: 'b', z: 'a', _id: 'a'});
     assert.strictEqual(indexOf('x', inverted.a) >= 0, true);
     assert.strictEqual(indexOf('z', inverted.a) >= 0, true);
     assert.strictEqual(indexOf('_id', inverted.a) >= 0, true);
@@ -40,9 +40,9 @@ describe('invert', function() {
 
   // this one is more of a sanity check
   it('is not destructive', function() {
-    var input = {x:'a', y:'b', z:'a', _id:'a'};
+    var input = {x: 'a', y: 'b', z: 'a', _id: 'a'};
     invert(input);
-    assert.deepEqual(input, {x:'a', y:'b', z:'a', _id:'a'});
+    assert.deepEqual(input, {x: 'a', y: 'b', z: 'a', _id: 'a'});
   });
 
   it('ignores inherited properties', function() {

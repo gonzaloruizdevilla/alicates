@@ -5,11 +5,11 @@ import {constructN} from '../../src/index.es6';
 describe('constructN', () => {
 
   class Circle {
-    constructor(r,...args) {
+    constructor(r, ...args) {
       this.r = r;
       this.colors = args;
     }
-    area(){
+    area() {
       return Math.PI * Math.pow(this.r, 2);
     }
   }

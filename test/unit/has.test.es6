@@ -16,8 +16,8 @@ describe('has', function() {
 
   it('does not check properties from the prototype chain', function() {
     class Person {
-      constructor(){}
-      age(){}
+      constructor() {}
+      age() {}
     }
 
     let bob = new Person();
@@ -34,6 +34,6 @@ describe('has', function() {
     assert.strictEqual(pointHas('x'), true);
     assert.strictEqual(pointHas('y'), true);
     assert.strictEqual(pointHas('z'), false);
-    
+
   });
 });

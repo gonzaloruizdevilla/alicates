@@ -15,8 +15,8 @@ describe('hasIn', () => {
 
   it('checks properties from the prototype chain', () => {
     class Person {
-      constructor(){}
-      age(){}
+      constructor() {}
+      age() {}
     }
 
     var bob = new Person();

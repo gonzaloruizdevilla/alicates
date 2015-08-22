@@ -14,10 +14,10 @@ describe('equals', () => {
 
   it('should recurse into object', () => {
     assert.equal(equals({}, {}), true);
-    assert.equal(equals({name:'gonzalo'}, {name:'gonzalo'}), true);
-    assert.equal(equals({name:'gonzalo', age:1}, {name:'gonzalo'}), false);
-    assert.equal(equals({name:'gonzalo'}, {name:'gonzalo', age:1}), false);
-    assert.equal(equals({name:'gonzalo'}, {name:'manuel'}), false);
+    assert.equal(equals({name: 'gonzalo'}, {name: 'gonzalo'}), true);
+    assert.equal(equals({name: 'gonzalo', age: 1}, {name: 'gonzalo'}), false);
+    assert.equal(equals({name: 'gonzalo'}, {name: 'gonzalo', age: 1}), false);
+    assert.equal(equals({name: 'gonzalo'}, {name: 'manuel'}), false);
     assert.equal(equals(['gonzalo'], ['gonzalo']), true);
     assert.equal(equals(['gonzalo'], ['manuel']), false);
     assert.equal(equals(['gonzalo'], ['gonzalo', 'manuel']), false);
@@ -31,7 +31,7 @@ describe('equals', () => {
     assert.equal(equals(null, '123'), false);
     assert.equal(equals('123', null), false);
 
-    let obj = {foo:'bar'};
+    let obj = {foo: 'bar'};
     assert.equal(equals(null, obj), false);
     assert.equal(equals(obj, null), false);
 
@@ -42,7 +42,7 @@ describe('equals', () => {
     assert.equal(equals(undefined, '123'), false);
     assert.equal(equals('123', undefined), false);
 
-    let obj = {foo:'bar'};
+    let obj = {foo: 'bar'};
     assert.equal(equals(undefined, obj), false);
     assert.equal(equals(obj, undefined), false);
 
@@ -136,18 +136,18 @@ describe('equals', () => {
 
   it('dispatches to `equals` method', () => {
     class Left{
-      constructor(x){
+      constructor(x) {
         this.value = x;
       }
-      equals(x){
+      equals(x) {
         return x instanceof Left && equals(x.value, this.value);
       }
     }
     class Right{
-      constructor(x){
+      constructor(x) {
         this.value = x;
       }
-      equals(x){
+      equals(x) {
         return x instanceof Right && equals(x.value, this.value);
       }
     }

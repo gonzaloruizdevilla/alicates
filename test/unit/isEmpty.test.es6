@@ -20,7 +20,7 @@ describe('isEmpty', () => {
   });
 
   it('returns true for empty arguments object', () => {
-    assert.strictEqual(isEmpty((function () { return arguments; }())), true);
+    assert.strictEqual(isEmpty((function() { return arguments; }())), true);
   });
 
   it('returns true for object with own length property whose value is 0', () => {
