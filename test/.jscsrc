@@ -3,5 +3,8 @@
   "fileExtensions": [".es6"],
   "disallowMultipleLineBreaks": null,
   "esnext": true,
-	"maxErrors": 5
+	"maxErrors": 5,
+  "maximumLineLength" : {
+    "value": 240
+  }
 }
