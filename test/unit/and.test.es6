@@ -12,13 +12,17 @@ describe('and', () => {
 
   it('dispatches to `and` method', () => {
     class Nothing {
-      and(){return this;}
+      and() {
+        return this;
+      }
     }
     class Just {
-      constructor(x){
+      constructor(x) {
         this.value = x;
       }
-      and(x){return x;}
+      and(x) {
+        return x;
+      }
     }
 
 

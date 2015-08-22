@@ -14,7 +14,7 @@ describe('any', () => {
     assert.notOk(any(pred, []));
   });
 
-  it('should be curried', () =>{
+  it('should be curried', () => {
     assert.ok(any(pred)([1,1,3]));
   });
 });

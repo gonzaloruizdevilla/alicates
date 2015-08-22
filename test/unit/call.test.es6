@@ -8,7 +8,7 @@ describe('call', () => {
   });
 
   it('accepts one or more arguments', () => {
-    var fn = function () { return arguments.length; };
+    var fn = function() { return arguments.length; };
     assert.strictEqual(call(fn), 0);
     assert.strictEqual(call(fn, 'x'), 1);
     assert.strictEqual(call(fn, 'x', 'y'), 2);

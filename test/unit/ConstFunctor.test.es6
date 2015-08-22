@@ -9,7 +9,7 @@ describe('Const', () => {
     assert.equal(typeof x.map, 'function');
   });
 
-  it('map returns itself', () =>{
+  it('map returns itself', () => {
     let add2 = add(2);
     let x = new Const(1);
     let y = x.map(add2);

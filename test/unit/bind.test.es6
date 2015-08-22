@@ -76,7 +76,7 @@ describe('bind', () => {
   });
 
   it('preserves arity', () => {
-    var f0 = function(){ return 0; };
+    var f0 = function() { return 0; };
     var f1 = function(a) { return a; };
     var f2 = function(a, b) { return a + b; };
     var f3 = function(a, b, c) { return a + b + c; };

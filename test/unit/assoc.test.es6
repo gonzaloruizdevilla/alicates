@@ -4,9 +4,9 @@ import {assoc} from '../../src/index.es6';
 
 describe('assoc', () => {
   it('makes a shallow clone of an object, overriding only the specified property', () => {
-    let obj1 = {a: 1, b: {c: 2, d: 3}, e: 4, f: 5, g:[1,2,3]};
+    let obj1 = {a: 1, b: {c: 2, d: 3}, e: 4, f: 5, g: [1,2,3]};
     let obj2 = assoc('e', {x: 42}, obj1);
-    assert.deepEqual(obj2, {a: 1, b: {c: 2, d: 3}, e: {x: 42}, f: 5, g:[1,2,3]});
+    assert.deepEqual(obj2, {a: 1, b: {c: 2, d: 3}, e: {x: 42}, f: 5, g: [1,2,3]});
 
     assert.strictEqual(obj2.a, obj1.a);
     assert.strictEqual(obj2.b, obj1.b);

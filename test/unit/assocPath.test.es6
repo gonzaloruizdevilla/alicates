@@ -4,10 +4,10 @@ import {assocPath} from '../../src/index.es6';
 
 describe('assocPath', () => {
   it('makes a shallow clone of an object, overriding only what is necessary for the path', () => {
-    let obj1 = {a: {b: 1, c: 2, d: {e: 3}}, f: {g: {h: 4, i: 5, j: {k: 6, l: 7}}}, m: 8, n:[1,2,3]};
+    let obj1 = {a: {b: 1, c: 2, d: {e: 3}}, f: {g: {h: 4, i: 5, j: {k: 6, l: 7}}}, m: 8, n: [1,2,3]};
     let obj2 = assocPath(['f', 'g', 'i'], {x: 42}, obj1);
     assert.deepEqual(obj2,
-      {a: {b: 1, c: 2, d: {e: 3}}, f: {g: {h: 4, i: {x: 42}, j: {k: 6, l: 7}}}, m: 8, n:[1,2,3]}
+      {a: {b: 1, c: 2, d: {e: 3}}, f: {g: {h: 4, i: {x: 42}, j: {k: 6, l: 7}}}, m: 8, n: [1,2,3]}
     );
 
     assert.strictEqual(obj2.a, obj1.a);

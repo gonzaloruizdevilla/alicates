@@ -13,7 +13,7 @@ describe('all', () => {
     assert.ok(all(pred, []));
   });
 
-  it('should be curried', () =>{
+  it('should be curried', () => {
     assert.ok(all(pred)([3,3,3]));
   });
 });
