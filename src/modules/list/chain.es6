@@ -7,12 +7,12 @@ import {isTransducer} from '../type/isTransducer';
 import {Base} from '../transducer/Base';
 
 class Chainer extends Base {
-  constructor(fn, xf){
+  constructor(fn, xf) {
     super();
     this.xf = xf;
     this.f = fn;
   }
-  valueStep(result, value){
+  valueStep(result, value) {
     return isArrayLike(value) ? this.arrayStep(result, value)
                               : this.elementStep(result, value) ;
   }
@@ -23,8 +23,8 @@ class Chainer extends Base {
       value
     );
   }
-  elementStep(result, value){
-    return this.xf['@@transducer/step'](result,value);
+  elementStep(result, value) {
+    return this.xf['@@transducer/step'](result, value);
   }
   '@@transducer/step'(result, input) {
     return this.valueStep(result, this.f(input));
