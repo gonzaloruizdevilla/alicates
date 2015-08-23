@@ -6,7 +6,7 @@ export const converge =
   (fn, ...fns) =>
     curryN(
       Math.max(...map(prop('length'), fns)),
-      function (...args){
+      function(...args) {
         var ctx = this;
         return fn.call(ctx,
           ...map(
