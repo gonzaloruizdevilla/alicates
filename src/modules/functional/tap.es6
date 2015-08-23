@@ -1,7 +1,7 @@
 import {curry} from './curry';
 
 export const tap =
-  curry(  
+  curry(
     (fn, a) =>
         (fn(a), a)
   );
