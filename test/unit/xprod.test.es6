@@ -2,9 +2,9 @@ let assert = require('chai').assert;
 
 import {xprod} from '../../src/index.es6';
 
-
 describe('xprod', () => {
-  var a = [1, 2], b = ['a', 'b', 'c'];
+  let a = [1, 2];
+  let b = ['a', 'b', 'c'];
 
   it('returns an empty list if either input list is empty', () => {
     assert.deepEqual(xprod([], [1, 2, 3]), []);

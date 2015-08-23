@@ -4,7 +4,7 @@ import {apply, identity, unapply} from '../../src/index.es6';
 
 describe('unapply', () => {
   it('returns a function which is always passed one argument', () => {
-    var fn = unapply(function () { return arguments.length; });
+    let fn = unapply(function() { return arguments.length; });
     assert.strictEqual(fn(), 1);
     assert.strictEqual(fn('x'), 1);
     assert.strictEqual(fn('x', 'y'), 1);
@@ -12,7 +12,7 @@ describe('unapply', () => {
   });
 
   it('forwards arguments to decorated function as an array', () => {
-    var fn = unapply(function(xs) { return '[' + xs + ']'; });
+    let fn = unapply(function(xs) { return '[' + xs + ']'; });
     assert.strictEqual(fn(), '[]');
     assert.strictEqual(fn(2), '[2]');
     assert.strictEqual(fn(2, 4), '[2,4]');
@@ -20,21 +20,24 @@ describe('unapply', () => {
   });
 
   it('returns a function with length 0', () => {
-    var fn = unapply(identity);
+    let fn = unapply(identity);
     assert.strictEqual(fn.length, 0);
   });
 
   it('is the inverse of apply', () => {
-    var a, b, c, d, e, f, g, n;
-    var rand = () => {
+    let rand = () => {
       return Math.floor(200 * Math.random()) - 100;
     };
 
-    f = Math.max;
-    g = unapply(apply(f));
-    n = 1;
+    let f = Math.max;
+    let g = unapply(apply(f));
+    let n = 1;
     while (n <= 100) {
-      a = rand(); b = rand(); c = rand(); d = rand(); e = rand();
+      let a = rand();
+      let b = rand();
+      let c = rand();
+      let d = rand();
+      let e = rand();
       assert.strictEqual(f(a, b, c, d, e), g(a, b, c, d, e));
       n += 1;
     }
@@ -43,7 +46,11 @@ describe('unapply', () => {
     g = apply(unapply(f));
     n = 1;
     while (n <= 100) {
-      a = rand(); b = rand(); c = rand(); d = rand(); e = rand();
+      let a = rand();
+      let b = rand();
+      let c = rand();
+      let d = rand();
+      let e = rand();
       assert.strictEqual(f([a, b, c, d, e]), g([a, b, c, d, e]));
       n += 1;
     }

@@ -55,12 +55,12 @@ describe('uncurryN', () => {
   });
 
   it('works with ordinary uncurried functions', () => {
-    assert.strictEqual(uncurryN(2, function(a, b) { return a + b; })(10, 20), 30);
-    assert.strictEqual(uncurryN(3, function(a, b, c) { return a + b + c; })(10, 20, 30), 60);
+    assert.strictEqual(uncurryN(2, (a, b) => a + b)(10, 20), 30);
+    assert.strictEqual(uncurryN(3, (a, b, c)=> a + b + c)(10, 20, 30), 60);
   });
 
   it('works with ordinary wierdly curried functions', () => {
-    assert.strictEqual(uncurryN(3, function(a, b) { return function (c) {return a + b + c; };})(10, 20, 30), 60);
+    assert.strictEqual(uncurryN(3, function(a, b) { return function(c) {return a + b + c; };})(10, 20, 30), 60);
   });
 
 

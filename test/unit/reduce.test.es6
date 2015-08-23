@@ -7,7 +7,7 @@ describe('reduce', () => {
   const mult = (a, b) => a * b;
   const add =  (a,b) => a + b;
 
-  it('should reduce arrays', () =>{
+  it('should reduce arrays', () => {
     assert.equal(reduce(add, 0, [0,1,2]), 3);
     assert.equal(reduce(add, '', ['0','1','2']), '012');
   });
@@ -20,7 +20,7 @@ describe('reduce', () => {
     /* eslint-enable no-sparse-arrays */
   });
 
-  it('should be curried', () =>{
+  it('should be curried', () => {
     let result = reduce(add)(0)([0,1,2]);
     assert.equal(result,3);
     result = reduce(add, 0)([0,1,2]);

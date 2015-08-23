@@ -3,7 +3,9 @@ let assert = require('chai').assert;
 import {zipWith} from '../../src/index.es6';
 
 describe('zipWith', () => {
-  let a = [1, 2, 3], b = [100, 200, 300], c = [10, 20, 30, 40, 50, 60];
+  let a = [1, 2, 3];
+  let b = [100, 200, 300];
+  let c = [10, 20, 30, 40, 50, 60];
   let add = (a, b) => a + b;
   let x = (a, b) => a * b;
   let s = (a, b) => a + ' cow ' + b;

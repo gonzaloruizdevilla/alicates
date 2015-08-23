@@ -11,7 +11,7 @@ describe('slice', () => {
 
 
   it('handles array-like object', () => {
-    var args = (function () { return arguments; }(1, 2, 3, 4, 5));
+    var args = (function() { return arguments; }(1, 2, 3, 4, 5));
     assert.deepEqual(slice(1, 4, args), [2, 3, 4]);
   });
 

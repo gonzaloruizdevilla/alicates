@@ -11,7 +11,7 @@ describe('unfold', () => {
     /* jshint -W067 */
     let fib = n => (count => (
       count = 0,
-      pair => (count += 1, (count <= n) ?[pair[0], [pair[1], pair[0] + pair[1]]] :null)
+      pair => (count += 1, (count <= n) ? [pair[0], [pair[1], pair[0] + pair[1]]] : null)
     ))();
     /* jshint +W067 */
     assert.deepEqual(unfold(fib(10), [0, 1]), [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]);

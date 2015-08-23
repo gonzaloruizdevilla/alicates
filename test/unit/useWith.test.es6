@@ -6,7 +6,7 @@ describe('useWith', () => {
   let max = Math.max;
   let add1 = x => x + 1;
   let mult2 = x => x * 2;
-  let div3 = x =>  x / 3; 
+  let div3 = x =>  x / 3;
   let f = useWith(max, add1, mult2, div3);
 
   it('takes a arbitrary number of function arguments and returns a function', () => {

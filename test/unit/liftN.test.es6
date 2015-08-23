@@ -43,10 +43,10 @@ describe('liftN', () => {
     assert.deepEqual(f4(addN)([1], [2], [3], [4, 5]), [10, 11]);
   });
 
-/*
-  it('works with other functors such as "Maybe"', () => {
-    var addM = liftN(2, add);
-    assert.deepEqual(addM(Maybe(3), Maybe(5)), Maybe(8));
-  });
-*/
+  /*
+    it('works with other functors such as "Maybe"', () => {
+      var addM = liftN(2, add);
+      assert.deepEqual(addM(Maybe(3), Maybe(5)), Maybe(8));
+    });
+  */
 });

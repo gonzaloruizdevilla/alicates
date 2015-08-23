@@ -6,7 +6,7 @@ describe('nAry', function() {
 
   it('turns multiple-argument function into a nullary one', () => {
     /* eslint-disable no-unused-vars */
-    var fn = nAry(0, function (x, y, z){return [...arguments];});
+    var fn = nAry(0, function(x, y, z) {return [...arguments];});
     /* eslint-enable no-unused-vars */
     assert.strictEqual(fn.length, 0);
     assert.deepEqual(fn(1, 2, 3), []);
@@ -14,7 +14,7 @@ describe('nAry', function() {
 
   it('turns multiple-argument function into a ternary one', () => {
     /* eslint-disable no-unused-vars */
-    var fn = nAry(3, function(a, b, c, d){return [...arguments];});
+    var fn = nAry(3, function(a, b, c, d) {return [...arguments];});
     /* eslint-enable no-unused-vars */
     assert.strictEqual(fn.length, 3);
     assert.deepEqual(fn(1, 2, 3, 4), [1, 2, 3]);

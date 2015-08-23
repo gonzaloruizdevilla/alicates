@@ -5,12 +5,10 @@ import {once} from '../../src/index.es6';
 
 describe('once', () => {
   it('returns a function that calls the supplied function only once', () => {
-    let fn;
-    {
-      let value = 0;
-      fn = () => (value = value + 1);
-    }
+    let value = 0;
+    let fn = () => (value = value + 1);
     let onceFn = once(fn);
+
     assert.equal(onceFn(), 1);
     assert.equal(onceFn(), 1);
     assert.equal(onceFn(), 1);

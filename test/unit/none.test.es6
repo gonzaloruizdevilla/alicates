@@ -15,7 +15,7 @@ describe('none', () => {
     assert.ok(none(pred, []));
   });
 
-  it('should be curried', () =>{
+  it('should be curried', () => {
     assert.ok(none(pred)([1,1,1]));
   });
 });

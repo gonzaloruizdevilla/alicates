@@ -30,16 +30,17 @@ describe('unnest', () => {
   it('handles ridiculously large inputs', () => {
     assert.strictEqual(unnest([new Array(1000000), range(0, 560000), 5, 1, 3]).length, 1560003);
   });
-/*
-  it('is equivalent to chain(identity)', () => {
-    var Nothing = Maybe.Nothing;
-    var Just = Maybe.Just;
 
-    assert.strictEqual(toString(unnest(Nothing())), 'Nothing()');
-    assert.strictEqual(toString(unnest(Just(Nothing()))), 'Nothing()');
-    assert.strictEqual(toString(unnest(Just(Just(Nothing())))), 'Just(Nothing())');
-    assert.strictEqual(toString(unnest(Just(Just(42)))), 'Just(42)');
-    assert.strictEqual(toString(unnest(Just(Just(Just(42))))), 'Just(Just(42))');
-  });
-*/
+  /*
+    it('is equivalent to chain(identity)', () => {
+      var Nothing = Maybe.Nothing;
+      var Just = Maybe.Just;
+
+      assert.strictEqual(toString(unnest(Nothing())), 'Nothing()');
+      assert.strictEqual(toString(unnest(Just(Nothing()))), 'Nothing()');
+      assert.strictEqual(toString(unnest(Just(Just(Nothing())))), 'Just(Nothing())');
+      assert.strictEqual(toString(unnest(Just(Just(42)))), 'Just(42)');
+      assert.strictEqual(toString(unnest(Just(Just(Just(42))))), 'Just(Just(42))');
+    });
+  */
 });

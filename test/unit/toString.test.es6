@@ -114,7 +114,7 @@ describe('toString', () => {
 
   it('dispatches to custom `toString` method', () => {
     class Point {
-      constructor(x, y){
+      constructor(x, y) {
         this.x = x;
         this.y = y;
       }
