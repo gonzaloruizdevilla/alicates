@@ -8,7 +8,7 @@ const _sequence =
   fns =>
     curryN(
         fns[0].length,
-        function (...args) {
+        function(...args) {
           return reduce(
             (a, fn) => fn.call(this, a),
             fns[0].call(this, ...args),
