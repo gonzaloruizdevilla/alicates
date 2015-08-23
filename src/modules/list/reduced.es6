@@ -1,5 +1,5 @@
 export const reduced =
   value => ({
-    '@@transducer/value':value,
-    '@@transducer/reduced':true
+    '@@transducer/value': value,
+    '@@transducer/reduced': true
   });

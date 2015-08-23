@@ -35,8 +35,8 @@ const isNumber = equals('[object Number]');
 const numberToString =
   (seen, a) =>
     isObject(a) ?  'new Number(' + recur([...seen, a], a.valueOf()) + ')'
-                : (1/a) === -Infinity ? '-0'
-                                      : a.toString();
+                : (1 / a) === -Infinity ? '-0'
+                                        : a.toString();
 
 const isDate = equals('[object Date]');
 const dateToString = (seen, a) => 'new Date(' + quote(a.toISOString()) + ')';

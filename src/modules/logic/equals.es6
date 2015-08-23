@@ -5,15 +5,20 @@ import {isArray, isDate, isFunction, isObject, isRegExp} from '../type';
 
 let _equals;
 
-const isMap = a => isObject(a) && !isArray(a) && !isRegExp(a) && !isDate(a);
+const isMap =
+  a =>
+    isObject(a) && !isArray(a) && !isRegExp(a) && !isDate(a);
 
-const equalArrays = (a,b) => a.length === b.length && all(([x,y]) => _equals(x,y), zip(a,b));
+const equalArrays =
+  (a,b) =>
+    a.length === b.length && all(([x,y]) => _equals(x,y), zip(a,b));
 
 const getPropertiesKeys = (o) => {
   const keys = new Set();
-  for(let key in o) {
-    if(!isFunction(o[key]))
+  for (let key in o) {
+    if (!isFunction(o[key])) {
       keys.add(key);
+    }
   }
   return keys;
 };
@@ -34,7 +39,7 @@ const equalObjects = (a, b) =>  isArray(a)   ? (isArray(b)    && equalArrays(a, 
                                              : equalMaps(a, b);
 
 const differnciateZeroes =
-  (a, b) => a === 0 ? (1/a === 1/b)
+  (a, b) => a === 0 ? (1 / a === 1 / b)
                     : true;
 
 _equals = (a,b) =>

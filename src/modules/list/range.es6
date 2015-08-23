@@ -9,6 +9,6 @@ export const range =
     notIsNumber(start) ? throwErrors('First') :
     notIsNumber(end)   ? throwErrors('Second') :
     notIsNumber(step)  ? throwErrors('Step') :
-    step > 0           ? unfold( n => (n < end ? [n, n + step] : null), start)
-                       : unfold( n => (n > end ? [n, n + step] : null), start)
+    step > 0           ? unfold(n => (n < end ? [n, n + step] : null), start)
+                       : unfold(n => (n > end ? [n, n + step] : null), start)
   );

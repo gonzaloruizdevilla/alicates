@@ -3,7 +3,7 @@ import {isNil} from '../type/isNil';
 const _prop =
   (p, x) =>
     isNil(x) ? undefined : x[p];
-    
+
 export const prop =
   (p, ...args) =>
     args.length > 0 ? _prop(p, args[0])

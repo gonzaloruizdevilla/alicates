@@ -5,7 +5,7 @@ import {hasMethod} from '../object/hasMethod';
 import {isTransducer} from '../type/isTransducer';
 
 class Filterer extends Base{
-  constructor(fn, xf){
+  constructor(fn, xf) {
     super();
     this.xf = xf;
     this.f = fn;

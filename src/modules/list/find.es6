@@ -3,7 +3,7 @@ import {isTransducer} from '../type/isTransducer';
 import {reduced} from './reduced';
 
 class Finder {
-  constructor(fn, xf){
+  constructor(fn, xf) {
     this.pos = -1;
     this.xf = xf;
     this.f = fn;
@@ -16,7 +16,7 @@ class Finder {
     }
     return result;
   }
-  '@@transducer/result'(result){
+  '@@transducer/result'(result) {
     result = this.xf['@@transducer/step'](result, undefined);
     return this.xf['@@transducer/result'](result);
   }
@@ -32,6 +32,6 @@ const _find =
 export const find =
   curry(
     (fn, xf) =>
-      isTransducer (xf) ? new Finder(fn, xf)
-                        : _find(fn, xf, 0)
+      isTransducer(xf) ? new Finder(fn, xf)
+                       : _find(fn, xf, 0)
   );

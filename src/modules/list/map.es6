@@ -5,8 +5,8 @@ import {hasMethod} from '../object/hasMethod';
 import {isTransducer} from '../type/isTransducer';
 
 
-class Mapper extends Base{
-  constructor(fn, xf){
+class Mapper extends Base {
+  constructor(fn, xf) {
     super();
     this.xf = xf;
     this.f = fn;

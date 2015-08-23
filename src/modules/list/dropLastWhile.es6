@@ -41,6 +41,6 @@ const _dropLastWhile =
 export const dropLastWhile =
   curry(
     (fn, xf) =>
-      isTransducer (xf) ? new DropLastWhileFilter(fn, xf)
-                        : _dropLastWhile(fn, xf, xf.length - 1)
+      isTransducer(xf) ? new DropLastWhileFilter(fn, xf)
+                       : _dropLastWhile(fn, xf, xf.length - 1)
   );

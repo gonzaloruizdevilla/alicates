@@ -13,14 +13,14 @@ let _clone;
 const get =
   (seen, seenkey) =>
     find(
-      ([key, value]) => key === seenkey,
+      ([key]) => key === seenkey,
       seen
     )[1];
 
 const has =
-  (seen, key, s) =>
+  (seen, key) =>
     containsWith(
-      (key, [pairkey, value]) => key === pairkey,
+      (key, [pairkey]) => key === pairkey,
       key,
       seen
     );

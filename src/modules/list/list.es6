@@ -11,7 +11,7 @@ export const Nil = {
 };
 
 export class Cons {
-  constructor (head, tail) {
+  constructor(head, tail) {
     this.head = head;
     this.tail = tail;
   }
@@ -37,7 +37,7 @@ const _length =
     list.isEmpty ? acc
                  : _length(acc + 1, list.tail);
 
-export const listLength=
+export const listLength =
   list =>
     _length(0, list);
 

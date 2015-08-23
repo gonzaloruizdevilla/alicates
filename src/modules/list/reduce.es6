@@ -5,7 +5,7 @@ import {isFunction} from '../type/isFunction';
 import {hasMethod} from '../object/hasMethod';
 
 class XfWrap {
-  constructor(fn){
+  constructor(fn) {
     this.f = fn;
   }
   '@@transducer/init'() {

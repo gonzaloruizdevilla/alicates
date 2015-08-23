@@ -2,8 +2,8 @@ import {curry} from '../functional/curry';
 import {isTransducer} from '../type/isTransducer';
 import {reduced} from './reduced';
 
-class IndexFinder{
-  constructor(fn, xf){
+class IndexFinder {
+  constructor(fn, xf) {
     this.pos = -1;
     this.xf = xf;
     this.f = fn;
@@ -16,7 +16,7 @@ class IndexFinder{
     }
     return result;
   }
-  '@@transducer/result'(result){
+  '@@transducer/result'(result) {
     result = this.xf['@@transducer/step'](result, -1);
     return this.xf['@@transducer/result'](result);
   }
@@ -32,6 +32,6 @@ const _findIndex =
 export const findIndex =
   curry(
     (fn, xf) =>
-      isTransducer (xf) ? new IndexFinder(fn, xf)
-                        : _findIndex(fn, xf, 0)
+      isTransducer(xf) ? new IndexFinder(fn, xf)
+                       : _findIndex(fn, xf, 0)
   );

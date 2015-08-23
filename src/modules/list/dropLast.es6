@@ -20,7 +20,7 @@ class DropLastWhileFilter extends Base {
   '@@transducer/step'(result, input) {
     return this.retain(result, input);
   }
-  '@@transducer/result'(result){
+  '@@transducer/result'(result) {
     return this.xf['@@transducer/result'](this.flush(result));
   }
   flush(result) {
@@ -41,6 +41,6 @@ class DropLastWhileFilter extends Base {
 export const dropLast =
   curry(
     (n, xf) =>
-      isTransducer (xf) ? new DropLastWhileFilter(n, xf)
-                        : _dropLast(n, xf)
+      isTransducer(xf) ? new DropLastWhileFilter(n, xf)
+                      : _dropLast(n, xf)
   );

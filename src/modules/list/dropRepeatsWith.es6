@@ -4,7 +4,7 @@ import {Base} from '../transducer/Base';
 import {isTransducer} from '../type/isTransducer';
 
 class DropRepeatsWithFilter extends Base{
-  constructor(fn, xf){
+  constructor(fn, xf) {
     super();
     this.dropping = true;
     this.xf = xf;
@@ -22,6 +22,6 @@ class DropRepeatsWithFilter extends Base{
 export
   const dropRepeatsWith = curry(
     (fn, xf) =>
-      isTransducer(xf)        ? (new DropRepeatsWithFilter(fn, xf))
-                              : into([], dropRepeatsWith(fn), xf)
+      isTransducer(xf) ? (new DropRepeatsWithFilter(fn, xf))
+                       : into([], dropRepeatsWith(fn), xf)
   );

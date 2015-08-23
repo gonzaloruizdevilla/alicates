@@ -6,7 +6,7 @@ import {isArrayLike} from '../type/isArrayLike';
 let _flatten;
 
 class Flattener extends Base {
-  constructor(xf){
+  constructor(xf) {
     super();
     this.xf = xf;
   }

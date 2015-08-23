@@ -8,5 +8,5 @@ const _takeLastWhile =
 
 export const takeLastWhile =
   curry(
-    (fn, xs) => _takeLastWhile(fn, xs, xs && xs.length -1)
+    (fn, xs) => _takeLastWhile(fn, xs, xs && xs.length - 1)
   );

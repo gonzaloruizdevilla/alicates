@@ -4,7 +4,7 @@ import {Base} from '../transducer/Base';
 import {isTransducer} from '../type/isTransducer';
 
 class Taker extends Base {
-  constructor(n, xf){
+  constructor(n, xf) {
     super();
     this.max = n;
     this.pos = 0;
