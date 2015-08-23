@@ -16,7 +16,7 @@ class Chainer extends Base {
     return isArrayLike(value) ? this.arrayStep(result, value)
                               : this.elementStep(result, value) ;
   }
-  arrayStep(result,value) {
+  arrayStep(result, value) {
     return reduce(
       this.xf['@@transducer/step'].bind(this.xf),
       result,
