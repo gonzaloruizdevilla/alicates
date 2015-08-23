@@ -19,7 +19,7 @@ const _curryN =
   (n, fn, oldArgs) =>
     arity(
       n - argsLength(oldArgs),
-      function (...newArgs) {
+      function(...newArgs) {
         let args = combine(oldArgs, newArgs);
         return argsLength(args) < n ? _curryN(n, fn, args)
                                     : fn.call(this, ...args);
