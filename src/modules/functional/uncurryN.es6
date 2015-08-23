@@ -38,11 +38,11 @@ export const uncurryN =
     (...args) => last(
       unfold(
         seed => (
-          continues(seed) ? [nextValue(seed), nextSeed(seed) ]
+          continues(seed) ? [nextValue(seed), nextSeed(seed)]
                           : false
 
         ),
-        { args: args, n: n,  fn: fn,  count:0 }
+        {args: args, n: n,  fn: fn,  count: 0}
       )
     )
   );
