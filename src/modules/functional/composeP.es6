@@ -4,10 +4,9 @@ import {last} from '../list/last';
 import {reduceRight} from '../list/reduceRight';
 
 const throwError =
- () =>
-   {
-     throw new Error('composeP requires at least one argument');
-   };
+ () => {
+   throw new Error('composeP requires at least one argument');
+ };
 
 export const composeP =
   (...ps) =>
