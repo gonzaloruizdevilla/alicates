@@ -1,6 +1,6 @@
 let assert = require('chai').assert;
 
-import {groupBy, prop} from '../../src/index.es6';
+import {groupBy, into, prop} from '../../src/index.es6';
 
 
 describe('groupBy', () => {
@@ -50,15 +50,22 @@ describe('groupBy', () => {
     assert.deepEqual(groupBy(prop('x'), []), {});
   });
 
-  /*
-  it('dispatches on transformer objects in list position', () => {
-    var byType = prop('type');
-    var xf = {
-      '@@transducer/init': () => { return {}; },
-      '@@transducer/result': function(x) { return x; },
-      '@@transducer/step': merge
-    };
-    assert.strictEqual(_isTransformer(groupBy(byType, xf)), true);
+
+  it('filters simple functions into arrays', function() {
+    let splitByType = groupBy(prop('type'));
+    const intoObject = into({});
+
+    assert.deepEqual(intoObject(splitByType, [
+      {type: 'A', val: 10},
+      {type: 'B', val: 20},
+      {type: 'A', val: 30},
+      {type: 'A', val: 40},
+      {type: 'C', val: 50},
+      {type: 'B', val: 60}
+    ]), {
+      A: [{type: 'A', val: 10}, {type: 'A', val: 30}, {type: 'A', val: 40}],
+      B: [{type: 'B', val: 20}, {type: 'B', val: 60}],
+      C: [{type: 'C', val: 50}]
+    });
   });
-  */
 });
