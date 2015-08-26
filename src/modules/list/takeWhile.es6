@@ -1,11 +1,23 @@
-import {curry} from '../functional/curry';
+import {Base}         from '../transducer/Base';
+import {curry}        from '../functional/curry';
+import {into}         from './into';
+import {isTransducer} from '../type/isTransducer';
+import {reduced}      from './reduced';
 
-const _takeWhile =
-  (fn, [x, ...xs], acc) =>
-    xs.length > 0 ? (fn(x) ? _takeWhile(fn, xs, [...acc, x]) : acc)
-                  : (fn(x) ? [...acc, x] : acc);
+class TakerWhile extends Base {
+  constructor(fn, xf) {
+    super();
+    this.fn = fn;
+    this.xf = xf;
+  }
+  '@@transducer/step'(result, input) {
+    return this.fn(input) ? this.xf['@@transducer/step'](result, input)
+                          : reduced(this.xf['@@transducer/result'](result));
+  }
+}
 
 export const takeWhile =
   curry(
-    (fn, xs) => xs.length > 0 ? _takeWhile(fn, xs, []) : []
+    (fn, xf) => isTransducer(xf) ? (new TakerWhile(fn, xf))
+                                 : into([], takeWhile(fn), xf)
   );
