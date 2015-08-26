@@ -1,6 +1,6 @@
 let assert = require('chai').assert;
 
-import {take} from '../../src/index.es6';
+import {into, take} from '../../src/index.es6';
 
 describe('take', () => {
 
@@ -33,8 +33,8 @@ describe('take', () => {
     assert.strictEqual(take(0, 'Ramda'), '');
   });
 
-  /*it('handles zero correctly (#1224)', () => {
+  it('handles zero correctly (#1224)', () => {
     assert.deepEqual(into([], take(0), [1, 2, 3]), []);
-  });*/
+  });
 
 });
