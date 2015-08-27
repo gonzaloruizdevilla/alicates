@@ -1,6 +1,6 @@
 let assert = require('chai').assert;
 
-import {takeLast} from '../../src/index.es6';
+import {takeLast, into} from '../../src/index.es6';
 
 
 describe('takeLast', () => {
@@ -39,6 +39,13 @@ describe('takeLast', () => {
     var takeLast3 = takeLast(3);
     assert.deepEqual(takeLast3(['a', 'b', 'c', 'd', 'e', 'f', 'g']), ['e', 'f', 'g']);
     assert.deepEqual(takeLast3(['w', 'x', 'y', 'z']), ['x', 'y', 'z']);
+  });
+
+  it('can act as a transducer', function() {
+    const takeLast2 = takeLast(2);
+    const takeLast10 = takeLast(10);
+    assert.deepEqual(into([])(takeLast2, [1, 3, 5, 7, 9]), [7, 9]);
+    assert.deepEqual(into([])(takeLast10, [1, 3, 5, 7, 9]), [1, 3, 5, 7, 9]);
   });
 
 });
