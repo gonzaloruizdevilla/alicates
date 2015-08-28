@@ -1,4 +1,38 @@
-import {curry} from '../functional/curry';
+import {Base}         from '../transducer/Base';
+import {curry}        from '../functional/curry';
+import {isTransducer} from '../type/isTransducer';
+import {reduce}       from './reduce';
+import {slice}        from './slice';
+
+
+class LastWhileTaker extends Base {
+  constructor(fn, xf) {
+    super();
+    this.fn = fn;
+    this.xf = xf;
+    this.storage = [];
+  }
+  '@@transducer/step'(result, input) {
+    if (this.fn(input)) {
+      this.storage[this.storage.length] = input;
+    } else {
+      this.storage.length = 0;
+    }
+    return result;
+  }
+  '@@transducer/result'(result) {
+    let step = this.xf['@@transducer/step'].bind(this);
+    return reduce(
+      step,
+      result,
+      this.storage
+    );
+  }
+  lastElements() {
+    return this.moreThanN ? [ ...slice(this.pos, this.n, this.storage), ...slice(0, this.pos, this.storage) ]
+                          : slice(0, this.pos, this.storage);
+  }
+}
 
 const _takeLastWhile =
   (fn, xs, pos) =>
@@ -8,5 +42,7 @@ const _takeLastWhile =
 
 export const takeLastWhile =
   curry(
-    (fn, xs) => _takeLastWhile(fn, xs, xs && xs.length - 1)
+    (fn, xf) =>
+      isTransducer(xf) ? (new LastWhileTaker(fn, xf))
+                       : _takeLastWhile(fn, xf, xf && xf.length - 1)
   );
