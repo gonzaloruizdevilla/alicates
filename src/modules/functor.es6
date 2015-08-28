@@ -1,2 +1,2 @@
-export {Const}     from './functor/Const';
-export {Identity}  from './functor/Identity';
+export * from './functor/Const';
+export * from './functor/Identity';
