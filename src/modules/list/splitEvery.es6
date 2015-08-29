@@ -1,3 +1,4 @@
+import {curry}  from '../functional/curry';
 import {unfold} from './unfold';
 
 const throwErrors = () => {throw new Error('First argument to splitEvery must be a positive integer');};
@@ -9,5 +10,7 @@ const _splitEvery =
   );
 
 export const splitEvery =
-  (n, xs) => n <= 0 ? throwErrors()
-                    : _splitEvery(n, xs);
+  curry(
+    (n, xs) => n <= 0 ? throwErrors()
+                      : _splitEvery(n, xs)
+  );

@@ -27,4 +27,8 @@ describe('splitEvery', () => {
     assert.throws(function() { splitEvery(-1, ''); }, Error, 'First argument to splitEvery must be a positive integer');
   });
 
+  it('is curried', function() {
+    assert.deepEqual(splitEvery(1)([1, 2, 3, 4]), [[1], [2], [3], [4]]);
+  })
+
 });
