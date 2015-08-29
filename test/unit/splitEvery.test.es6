@@ -1,6 +1,6 @@
 let assert = require('chai').assert;
 
-import {splitEvery} from '../../src/index.es6';
+import {into, splitEvery} from '../../src/index.es6';
 
 describe('splitEvery', () => {
 
@@ -20,7 +20,6 @@ describe('splitEvery', () => {
   });
 
   it('throws if first argument is not positive', function() {
-
     assert.throws(function() { splitEvery(0, []); }, Error, 'First argument to splitEvery must be a positive integer');
     assert.throws(function() { splitEvery(0, ''); }, Error, 'First argument to splitEvery must be a positive integer');
     assert.throws(function() { splitEvery(-1, []); }, Error, 'First argument to splitEvery must be a positive integer');
@@ -30,5 +29,9 @@ describe('splitEvery', () => {
   it('is curried', function() {
     assert.deepEqual(splitEvery(1)([1, 2, 3, 4]), [[1], [2], [3], [4]]);
   })
+
+  it('can act as a transducer', function() {
+    assert.deepEqual(into([], splitEvery(3), [1, 2, 3, 4]), [[1, 2, 3], [4]]);
+  });
 
 });
