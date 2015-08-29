@@ -1,6 +1,6 @@
 let assert = require('chai').assert;
 
-import {scan} from '../../src/index.es6';
+import {into, scan} from '../../src/index.es6';
 
 describe('scan', function() {
   var add = function(a, b) {return a + b;};
@@ -28,4 +28,9 @@ describe('scan', function() {
     var sum = scan(add, 0);
     assert.strictEqual(sum.length, 1);
   });
+
+  it('can act as a transducer', function() {
+    assert.deepEqual(into([], scan(add, 0), [1, 2, 3, 4]), [0, 1, 3, 6, 10]);
+  });
+
 });

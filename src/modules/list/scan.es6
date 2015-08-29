@@ -1,14 +1,33 @@
-import {curry} from '../functional/curry';
+import {Base}         from '../transducer/Base';
+import {curry}        from '../functional/curry';
+import {into}         from './into';
+import {isTransducer} from '../type/isTransducer';
 
-const _scan =
-  (fn, result, [x, ...xs], length) =>
-    length === 0 ? result
-                 : (
-                     result[result.length] = fn(result[result.length - 1], x),
-                     _scan(fn, result, xs, length - 1)
-                   );
+class Scanner extends Base {
+  constructor(fn, acc, xf) {
+    super();
+    this.fn = fn;
+    this.acc = acc;
+    this.xf = xf;
+    this.first = true;
+  }
+  '@@transducer/step'(result, input) {
+    result = this.firstTime(result);
+    this.acc = this.fn(this.acc, input);
+    return this.xf['@@transducer/step'](result, this.acc);
+  }
+  '@@transducer/result'(result) {
+    result = this.firstTime(result);
+    return this.xf['@@transducer/result'](result);
+  }
+  firstTime(result) {
+    return this.first ? (this.first = false, this.xf['@@transducer/step'](result, this.acc))
+                      : result;
+  }
+}
 
 export const scan =
   curry(
-    (fn, acc, xs) => _scan(fn, [acc], xs, xs.length)
+    (fn, acc, xf) => isTransducer(xf) ? (new Scanner(fn, acc, xf))
+                                      : into([], scan(fn, acc), xf)
   );
