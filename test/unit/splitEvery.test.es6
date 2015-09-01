@@ -28,7 +28,7 @@ describe('splitEvery', () => {
 
   it('is curried', function() {
     assert.deepEqual(splitEvery(1)([1, 2, 3, 4]), [[1], [2], [3], [4]]);
-  })
+  });
 
   it('can act as a transducer', function() {
     assert.deepEqual(into([], splitEvery(3), [1, 2, 3, 4]), [[1, 2, 3], [4]]);

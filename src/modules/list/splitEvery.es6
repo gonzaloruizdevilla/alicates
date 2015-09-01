@@ -1,7 +1,6 @@
 import {Base}         from '../transducer/Base';
 import {curry}        from '../functional/curry';
-import {into}         from './into';
-import {isTransducer} from '../type/isTransducer'
+import {isTransducer} from '../type/isTransducer';
 import {unfold}       from './unfold';
 
 class Splitter extends Base {
