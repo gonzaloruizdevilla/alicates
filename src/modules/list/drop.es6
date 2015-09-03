@@ -1,7 +1,7 @@
 import {curry} from '../functional/curry';
 import {slice} from './slice';
 import {dropWhile} from './dropWhile';
-import {isTransducer} from '../type/isTransducer';
+import {isTransformer} from '../type/isTransformer';
 
 const firstN =
   n => {
@@ -12,7 +12,7 @@ const firstN =
 export
   const drop = curry(
     (n, xf) =>
-      isTransducer(xf)        ? dropWhile(firstN(n), xf)
+      isTransformer(xf)       ? dropWhile(firstN(n), xf)
                               : slice(
                                   n < 0 ? 0 : n,
                                   Infinity, xf

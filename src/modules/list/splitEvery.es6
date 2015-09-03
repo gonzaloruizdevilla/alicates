@@ -1,6 +1,6 @@
 import {Base}         from '../transducer/Base';
 import {curry}        from '../functional/curry';
-import {isTransducer} from '../type/isTransducer';
+import {isTransformer} from '../type/isTransformer';
 import {unfold}       from './unfold';
 
 class Splitter extends Base {
@@ -39,7 +39,7 @@ const _splitEvery =
 
 export const splitEvery =
   curry(
-    (n, xf) => n <= 0           ? throwErrors() :
-               isTransducer(xf) ? new Splitter(n, xf)
-                                : _splitEvery(n, xf)
+    (n, xf) => n <= 0            ? throwErrors() :
+               isTransformer(xf) ? new Splitter(n, xf)
+                                 : _splitEvery(n, xf)
   );

@@ -1,6 +1,6 @@
 import {Base}         from '../transducer/Base';
 import {curry}        from '../functional/curry';
-import {isTransducer} from '../type/isTransducer';
+import {isTransformer} from '../type/isTransformer';
 import {reduce}       from './reduce';
 import {slice}        from './slice';
 
@@ -43,6 +43,6 @@ const _takeLastWhile =
 export const takeLastWhile =
   curry(
     (fn, xf) =>
-      isTransducer(xf) ? (new LastWhileTaker(fn, xf))
-                       : _takeLastWhile(fn, xf, xf && xf.length - 1)
+      isTransformer(xf) ? (new LastWhileTaker(fn, xf))
+                        : _takeLastWhile(fn, xf, xf && xf.length - 1)
   );

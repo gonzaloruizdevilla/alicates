@@ -1,4 +1,4 @@
 import {isFunction} from './isFunction';
 
-export const isTransducer =
+export const isTransformer =
   x => isFunction(x['@@transducer/step']);

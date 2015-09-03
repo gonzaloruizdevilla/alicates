@@ -1,7 +1,7 @@
 import {Base}         from '../transducer/Base';
 import {curry}        from '../functional/curry';
 import {reduce}       from './reduce';
-import {isTransducer} from '../type/isTransducer';
+import {isTransformer} from '../type/isTransformer';
 import {slice}        from './slice';
 
 class LastTaker extends Base {
@@ -48,6 +48,6 @@ const _takeLast =
 export const takeLast =
   curry(
     (n, xf) =>
-      isTransducer(xf) ? (new LastTaker(n, xf))
-                       : _takeLast(n, xf)
+      isTransformer(xf) ? (new LastTaker(n, xf))
+                        : _takeLast(n, xf)
   );

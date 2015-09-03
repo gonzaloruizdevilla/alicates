@@ -1,6 +1,6 @@
 import {into} from './into';
 import {Base} from '../transducer/Base';
-import {isTransducer} from '../type/isTransducer';
+import {isTransformer} from '../type/isTransformer';
 import {isArrayLike} from '../type/isArrayLike';
 
 let _flatten;
@@ -18,7 +18,7 @@ class Flattener extends Base {
 
 _flatten =
    xf =>
-     isTransducer(xf) ? new Flattener(xf)
-                      : into([], _flatten, xf);
+     isTransformer(xf) ? new Flattener(xf)
+                       : into([], _flatten, xf);
 
 export const flatten = _flatten;

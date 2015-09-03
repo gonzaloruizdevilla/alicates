@@ -1,5 +1,5 @@
 import {curry} from '../functional/curry';
-import {isTransducer} from '../type/isTransducer';
+import {isTransformer} from '../type/isTransformer';
 
 class IndexFinder {
   constructor(fn, xf) {
@@ -29,6 +29,6 @@ const _findLast =
 export const findLast =
   curry(
     (fn, xf) =>
-      isTransducer(xf) ? new IndexFinder(fn, xf)
-                       : _findLast(fn, xf, xf.length - 1)
+      isTransformer(xf) ? new IndexFinder(fn, xf)
+                        : _findLast(fn, xf, xf.length - 1)
   );

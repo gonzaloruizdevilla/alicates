@@ -1,6 +1,6 @@
 import {identity} from '../functional/identity';
 import {merge} from '../object/merge';
-import {isTransducer} from '../type/isTransducer';
+import {isTransformer} from '../type/isTransformer';
 import {isArrayLike} from '../type/isArrayLike';
 import {createMapEntry} from '../object/createMapEntry';
 import {cons, Cons, Nil}  from '../list/list';
@@ -48,7 +48,7 @@ const isList =
 
 export const xfFor =
   obj =>
-    isTransducer(obj)           ? obj :
+    isTransformer(obj)          ? obj :
     isArrayLike(obj)            ? arrayXf(obj) :
     isList(obj)                 ? listXf(obj) :
     (typeof obj === 'string')   ? stringXf(obj) :

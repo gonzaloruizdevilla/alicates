@@ -1,7 +1,7 @@
 import {Base}         from '../transducer/Base';
 import {curry}        from '../functional/curry';
 import {into}         from './into';
-import {isTransducer} from '../type/isTransducer';
+import {isTransformer} from '../type/isTransformer';
 
 class Scanner extends Base {
   constructor(fn, acc, xf) {
@@ -28,6 +28,6 @@ class Scanner extends Base {
 
 export const scan =
   curry(
-    (fn, acc, xf) => isTransducer(xf) ? (new Scanner(fn, acc, xf))
-                                      : into([], scan(fn, acc), xf)
+    (fn, acc, xf) => isTransformer(xf) ? (new Scanner(fn, acc, xf))
+                                       : into([], scan(fn, acc), xf)
   );

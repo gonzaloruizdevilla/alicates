@@ -1,5 +1,5 @@
 import {curry} from '../functional/curry';
-import {isTransducer} from '../type/isTransducer';
+import {isTransformer} from '../type/isTransformer';
 import {reduced} from './reduced';
 
 class Finder {
@@ -32,6 +32,6 @@ const _find =
 export const find =
   curry(
     (fn, xf) =>
-      isTransducer(xf) ? new Finder(fn, xf)
-                       : _find(fn, xf, 0)
+      isTransformer(xf) ? new Finder(fn, xf)
+                        : _find(fn, xf, 0)
   );

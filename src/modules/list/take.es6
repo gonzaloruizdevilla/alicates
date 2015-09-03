@@ -1,7 +1,7 @@
 import {curry} from '../functional/curry';
 import {reduced} from './reduced';
 import {Base} from '../transducer/Base';
-import {isTransducer} from '../type/isTransducer';
+import {isTransformer} from '../type/isTransformer';
 
 class Taker extends Base {
   constructor(n, xf) {
@@ -25,6 +25,6 @@ const _take =
 export const take =
   curry(
     (n, xf) =>
-      isTransducer(xf)     ? (new Taker(n, xf))
+      isTransformer(xf)    ? (new Taker(n, xf))
                            : _take(n, xf)
   );

@@ -2,7 +2,7 @@ import {curry} from '../functional/curry';
 import {into} from './into';
 import {Base} from '../transducer/Base';
 import {hasMethod} from '../object/hasMethod';
-import {isTransducer} from '../type/isTransducer';
+import {isTransformer} from '../type/isTransformer';
 
 class Filterer extends Base{
   constructor(fn, xf) {
@@ -19,6 +19,6 @@ export
   const filter = curry(
     (fn, xf) =>
       hasMethod('filter', xf) ? xf.filter(fn) :
-      isTransducer(xf)        ? (new Filterer(fn, xf))
+      isTransformer(xf)       ? (new Filterer(fn, xf))
                               : into([], filter(fn), xf)
   );

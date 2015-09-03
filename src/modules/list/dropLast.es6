@@ -3,7 +3,7 @@ import {slice} from './slice';
 import {Base} from '../transducer/Base';
 import {reduce} from './reduce';
 import {cons, Nil, toArray} from './list';
-import {isTransducer} from '../type/isTransducer';
+import {isTransformer} from '../type/isTransformer';
 
 const _dropLast =
   (n, xs) =>
@@ -41,6 +41,6 @@ class DropLastWhileFilter extends Base {
 export const dropLast =
   curry(
     (n, xf) =>
-      isTransducer(xf) ? new DropLastWhileFilter(n, xf)
-                      : _dropLast(n, xf)
+      isTransformer(xf) ? new DropLastWhileFilter(n, xf)
+                       : _dropLast(n, xf)
   );

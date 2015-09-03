@@ -1,7 +1,7 @@
 import {Base}         from '../transducer/Base';
 import {curry}        from '../functional/curry';
 import {into}         from './into';
-import {isTransducer} from '../type/isTransducer';
+import {isTransformer} from '../type/isTransformer';
 import {reduced}      from './reduced';
 
 class TakerWhile extends Base {
@@ -18,6 +18,6 @@ class TakerWhile extends Base {
 
 export const takeWhile =
   curry(
-    (fn, xf) => isTransducer(xf) ? (new TakerWhile(fn, xf))
-                                 : into([], takeWhile(fn), xf)
+    (fn, xf) => isTransformer(xf) ? (new TakerWhile(fn, xf))
+                                  : into([], takeWhile(fn), xf)
   );

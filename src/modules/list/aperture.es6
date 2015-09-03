@@ -1,6 +1,6 @@
 import {Base}         from '../transducer/Base';
 import {curry}        from '../functional/curry';
-import {isTransducer} from '../type/isTransducer';
+import {isTransformer} from '../type/isTransformer';
 import {range}        from './range';
 import {reduce}       from './reduce';
 import {slice}        from './slice';
@@ -37,7 +37,7 @@ const _aperture =
 
 export const aperture =
   curry(
-    (n, xf) => isTransducer(xf) ? new Aperturer(n, xf) :
+    (n, xf) => isTransformer(xf) ? new Aperturer(n, xf) :
                n > xf.length    ? []
                                 : _aperture(n, xf)
   );

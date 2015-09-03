@@ -2,7 +2,7 @@ import {curry} from '../functional/curry';
 import {into} from './into';
 import {Base} from '../transducer/Base';
 import {reduce} from './reduce';
-import {isTransducer} from '../type/isTransducer';
+import {isTransformer} from '../type/isTransformer';
 import {keys} from '../object/keys';
 
 class Grouper extends Base{
@@ -35,6 +35,6 @@ class Grouper extends Base{
 export
   const groupBy = curry(
     (fn, xf) =>
-      isTransducer(xf)        ? (new Grouper(fn, xf))
+      isTransformer(xf)       ? (new Grouper(fn, xf))
                               : into({}, groupBy(fn), xf)
   );

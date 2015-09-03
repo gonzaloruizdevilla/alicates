@@ -1,5 +1,5 @@
 import {curry} from '../functional/curry';
-import {isTransducer} from '../type/isTransducer';
+import {isTransformer} from '../type/isTransformer';
 import {reduced} from './reduced';
 
 class IndexFinder {
@@ -32,6 +32,6 @@ const _findIndex =
 export const findIndex =
   curry(
     (fn, xf) =>
-      isTransducer(xf) ? new IndexFinder(fn, xf)
-                       : _findIndex(fn, xf, 0)
+      isTransformer(xf) ? new IndexFinder(fn, xf)
+                        : _findIndex(fn, xf, 0)
   );

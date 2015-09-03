@@ -3,7 +3,7 @@ import {isArrayLike} from '../type/isArrayLike';
 import {into} from './into';
 import {hasMethod} from '../object/hasMethod';
 import {curry} from '../functional/curry';
-import {isTransducer} from '../type/isTransducer';
+import {isTransformer} from '../type/isTransformer';
 import {Base} from '../transducer/Base';
 
 class Chainer extends Base {
@@ -35,6 +35,6 @@ export const chain =
   curry(
     (fn, xf) =>
         hasMethod('chain', xf) ? xf.chain(fn) :
-        isTransducer(xf)       ? new Chainer(fn, xf)
+        isTransformer(xf)      ? new Chainer(fn, xf)
                                : into([], chain(fn), xf)
   );
