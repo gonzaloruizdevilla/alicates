@@ -3,7 +3,7 @@ import {into} from './into';
 import {Base} from '../transducer/Base';
 import {isTransformer} from '../type/isTransformer';
 
-class DropWhileFilter extends Base {
+class WhileDropper extends Base {
   constructor(fn, xf) {
     super();
     this.dropping = true;
@@ -19,6 +19,6 @@ class DropWhileFilter extends Base {
 export
   const dropWhile = curry(
     (fn, xf) =>
-      isTransformer(xf) ? (new DropWhileFilter(fn, xf))
+      isTransformer(xf) ? (new WhileDropper(fn, xf))
                         : into([], dropWhile(fn), xf)
   );
