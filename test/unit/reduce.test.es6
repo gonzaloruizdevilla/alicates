@@ -34,6 +34,17 @@ describe('reduce', () => {
     assert.strictEqual(reduce(mult, 1, [1, 2, 3, 4]), 24);
   });
 
+  it('folds simple functions over iterables', function() {
+    function* numbers4(){
+      let i = 1;
+      while(i < 5){
+        yield i;
+        i +=1;
+      }
+    }
+    assert.strictEqual(reduce(add, 0, numbers4()), 10);
+  })
+
   it('dispatches to objects that implement `reduce`', function() {
     var obj = {x: [1, 2, 3], reduce: function() { return 'override'; }};
     assert.strictEqual(reduce(add, 0, obj), 'override');
