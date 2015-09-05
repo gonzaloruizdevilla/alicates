@@ -35,7 +35,7 @@ const iterableReduce =
     return acc && acc['@@transducer/reduced'] ? acc['@@transducer/value'] :
            done                               ? xf['@@transducer/result'](acc)
                                               : iterableReduce(xf, xf['@@transducer/step'](acc, value), iter);
-  }
+  };
 
 
 const canBeReduced =

@@ -36,7 +36,7 @@ const _findIterable =
    return done      ? undefined :
           fn(value) ? value
                     : _findIterable(fn, iter);
- }
+ };
 
 export const find =
   curry(

@@ -21,6 +21,7 @@ describe('find', () => {
   it('finds elements inside iterables', () => {
     function* numbers(){
       let i = 1;
+      /*eslint-disable no-constant-condition */
       while(true){
         yield i;
         i +=1;

@@ -44,7 +44,7 @@ const equalMaps = (a, b) => {
   );
   if (keys.length < a.size) return false;
   return all(compareKeysAndValues, keys);
-}
+};
 
 const equalObjects = (a, b) =>  isArray(a)    ? (isArray(b)    && equalHashMaps(a, b)) :
                                 isRegExp(a)   ? (isRegExp(b)   && a.toString() === b.toString() && equalHashMaps(a, b)) :

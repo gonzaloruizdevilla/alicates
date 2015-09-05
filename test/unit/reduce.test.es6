@@ -43,7 +43,7 @@ describe('reduce', () => {
       }
     }
     assert.strictEqual(reduce(add, 0, numbers4()), 10);
-  })
+  });
 
   it('dispatches to objects that implement `reduce`', function() {
     var obj = {x: [1, 2, 3], reduce: function() { return 'override'; }};
