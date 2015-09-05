@@ -4,8 +4,8 @@ import {Base} from '../transducer/Base';
 import {reduce} from './reduce';
 import {cons, Nil, toArray} from './list';
 import {isTransformer} from '../type/isTransformer';
- 
-class DropLastWhileFilter extends Base {
+
+class LastWhileDropper extends Base {
   constructor(fn, xf) {
     super();
     this.retained = Nil;
@@ -41,6 +41,6 @@ const _dropLastWhile =
 export const dropLastWhile =
   curry(
     (fn, xf) =>
-      isTransformer(xf) ? new DropLastWhileFilter(fn, xf)
+      isTransformer(xf) ? new LastWhileDropper(fn, xf)
                         : _dropLastWhile(fn, xf, xf.length - 1)
   );
