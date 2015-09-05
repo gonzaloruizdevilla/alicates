@@ -1,3 +1,4 @@
+
 let assert = require('chai').assert;
 
 import {add, into, map} from '../../src/index.es6';
@@ -22,7 +23,7 @@ describe('map', () => {
   let times2 = x => x * 2;
   let add1 = x => x + 1;
   let dec = x =>  x - 1;
-  let intoArray = into([]);
+
 
   it('maps simple functions over arrays', function() {
     assert.deepEqual(map(times2, [1, 2, 3, 4]), [2, 4, 6, 8]);
@@ -34,7 +35,19 @@ describe('map', () => {
   });
 
   it('maps simple functions into arrays', function() {
-    assert.deepEqual(intoArray(map(times2), [1, 2, 3, 4]), [2, 4, 6, 8]);
+    assert.deepEqual(into([], map(times2), [1, 2, 3, 4]), [2, 4, 6, 8]);
+  });
+
+  it('maps simple functions over generator', function() {
+    function* numbers(){
+      let i = 1;
+      while(i < 5){
+        yield i;
+        i +=1;
+      }
+    }
+
+    assert.deepEqual(into([], map(times2), numbers()), [2, 4, 6, 8]);
   });
 
   it('composes', function() {
@@ -42,7 +55,6 @@ describe('map', () => {
     let mdec = map(dec);
     assert.deepEqual(mdec(mdouble([10, 20, 30])), [19, 39, 59]);
   });
-
 
   it('can compose transducer-style', function() {
     let mdouble = map(times2);
