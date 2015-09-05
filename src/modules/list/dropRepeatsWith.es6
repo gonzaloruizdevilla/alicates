@@ -3,7 +3,7 @@ import {into} from './into';
 import {Base} from '../transducer/Base';
 import {isTransformer} from '../type/isTransformer';
 
-class DropRepeatsWithFilter extends Base{
+class RepeatsWithDropper extends Base{
   constructor(fn, xf) {
     super();
     this.dropping = true;
@@ -22,6 +22,6 @@ class DropRepeatsWithFilter extends Base{
 export
   const dropRepeatsWith = curry(
     (fn, xf) =>
-      isTransformer(xf) ? (new DropRepeatsWithFilter(fn, xf))
+      isTransformer(xf) ? (new RepeatsWithDropper(fn, xf))
                         : into([], dropRepeatsWith(fn), xf)
   );
