@@ -1,4 +1,5 @@
 import {curry} from '../functional/curry';
+import {isIterable} from '../type/isIterable';
 import {isTransformer} from '../type/isTransformer';
 import {reduced} from './reduced';
 
@@ -29,9 +30,18 @@ const _find =
     fn(xs[pos])      ? xs[pos]
                      : _find(fn, xs, pos + 1);
 
+const _findIterable =
+ (fn, iter) => {
+   let {value, done} = iter.next();
+   return done      ? undefined :
+          fn(value) ? value
+                    : _findIterable(fn, iter);
+ }
+
 export const find =
   curry(
     (fn, xf) =>
-      isTransformer(xf) ? new Finder(fn, xf)
+      isTransformer(xf) ? new Finder(fn, xf) :
+      isIterable(xf)    ? _findIterable(fn, xf[Symbol.iterator]())
                         : _find(fn, xf, 0)
   );

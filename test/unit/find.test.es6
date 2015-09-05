@@ -18,6 +18,20 @@ describe('find', () => {
     assert.strictEqual(find(xGt100, a), obj2);
   });
 
+  it('finds elements inside iterables', () => {
+    function* numbers(){
+      let i = 1;
+      while(true){
+        yield i;
+        i +=1;
+      }
+    }
+    assert.strictEqual(find(gt100, numbers()), 101);
+  });
+
+
+
+
   it('transduces the first element that satisfies the predicate into an array', () => {
     assert.deepEqual(into([])(find(even), a), [10]);
     assert.deepEqual(into([])(find(gt100), a), [200]);
