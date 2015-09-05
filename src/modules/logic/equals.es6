@@ -1,17 +1,15 @@
 import {curry} from '../functional/curry';
-import {all, zip} from '../list';
+import {all} from '../list/all';
+import {find} from '../list/find';
+import {map} from '../list/map';
 import {hasMethod} from '../object/hasMethod';
 import {isArray, isDate, isFunction, isObject, isRegExp} from '../type';
 
 let _equals;
 
-const isMap =
+const isHashMap =
   a =>
     isObject(a) && !isArray(a) && !isRegExp(a) && !isDate(a);
-
-const equalArrays =
-  (a,b) =>
-    a.length === b.length && all(([x,y]) => _equals(x,y), zip(a,b));
 
 const getPropertiesKeys = (o) => {
   const keys = new Set();
@@ -23,7 +21,7 @@ const getPropertiesKeys = (o) => {
   return keys;
 };
 
-const equalMaps = (a, b) => {
+const equalHashMaps = (a, b) => {
   const aKeys = getPropertiesKeys(a);
   const bKeys = getPropertiesKeys(b);
   return aKeys.size === bKeys.size && all(
@@ -32,11 +30,28 @@ const equalMaps = (a, b) => {
     );
 };
 
-const equalObjects = (a, b) =>  isArray(a)   ? (isArray(b)    && equalArrays(a, b)) :
-                                isRegExp(a)  ? (isRegExp(b)   && a.toString() === b.toString()) :
-                                isDate(a)    ? (isDate(b)     && _equals(a.getTime(),b.getTime())) :
-                                !isMap(b)    ? false
-                                             : equalMaps(a, b);
+const isMap = a => a instanceof Map;
+
+
+
+const equalMaps = (a, b) => {
+  if (a.size !== b.size) return false;
+  const compareKeysAndValues =
+    ([keyA, keyB]) => keyB && _equals(a.get(keyA), b.get(keyB));
+  const keys = map(
+    aKey => [aKey, find(key => _equals(key, aKey), b.keys())],
+    a.keys()
+  );
+  if (keys.length < a.size) return false;
+  return all(compareKeysAndValues, keys);
+}
+
+const equalObjects = (a, b) =>  isArray(a)    ? (isArray(b)    && equalHashMaps(a, b)) :
+                                isRegExp(a)   ? (isRegExp(b)   && a.toString() === b.toString() && equalHashMaps(a, b)) :
+                                isDate(a)     ? (isDate(b)     && _equals(a.getTime(),b.getTime()) && equalHashMaps(a, b)) :
+                                isMap(a)      ? (isMap(b)      && equalMaps(a,b)) :
+                                !isHashMap(b) ? false
+                                              : equalHashMaps(a, b);
 
 const differnciateZeroes =
   (a, b) => a === 0 ? (1 / a === 1 / b)

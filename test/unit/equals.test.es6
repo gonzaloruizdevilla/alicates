@@ -160,6 +160,72 @@ describe('equals', () => {
     assert.strictEqual(equals(new Right(42), new Left(42)), false);
   });
 
+  it('requires that both objects have the same enumerable properties with the same values', () => {
+    /* jshint -W053 */
+    var a1 = [];
+    var a2 = [];
+    a2.x = 0;
+
+    var b1 = new Boolean(false);
+    var b2 = new Boolean(false);
+    b2.x = 0;
+
+    var d1 = new Date(0);
+    var d2 = new Date(0);
+    d2.x = 0;
+
+    var n1 = new Number(0);
+    var n2 = new Number(0);
+    n2.x = 0;
+
+    var r1 = /(?:)/;
+    var r2 = /(?:)/;
+    r2.x = 0;
+
+    var s1 = new String('');
+    var s2 = new String('');
+    s2.x = 0;
+    /* jshint +W053 */
+
+    assert.strictEqual(equals(a1, a2), false);
+    assert.strictEqual(equals(b1, b2), false);
+    assert.strictEqual(equals(d1, d2), false);
+    assert.strictEqual(equals(n1, n2), false);
+    assert.strictEqual(equals(r1, r2), false);
+    assert.strictEqual(equals(s1, s2), false);
+  });
+
+  if (typeof ArrayBuffer !== 'undefined' && typeof Int8Array !== 'undefined') {
+    var typArr1 = new ArrayBuffer(10);
+    typArr1[0] = 1;
+    var typArr2 = new ArrayBuffer(10);
+    typArr2[0] = 1;
+    var typArr3 = new ArrayBuffer(10);
+    var intTypArr = new Int8Array(typArr1);
+    typArr3[0] = 0;
+    it('handles typed arrays', function() {
+      assert.strictEqual(equals(typArr1, typArr2), true);
+      assert.strictEqual(equals(typArr1, typArr3), false);
+      assert.strictEqual(equals(typArr1, intTypArr), false);
+    });
+  }
+
+  it('compares Map objects by value', function() {
+    assert.strictEqual(equals(new Map([]), new Map([])), true);
+    assert.strictEqual(equals(new Map([]), new Map([[1, 'a']])), false);
+    assert.strictEqual(equals(new Map([[1, 'a']]), new Map([])), false);
+    assert.strictEqual(equals(new Map([[1, 'a']]), new Map([[1, 'a']])), true);
+    assert.strictEqual(equals(new Map([[1, 'a']]), new Map([[1, 'b']])), false);
+    assert.strictEqual(equals(new Map([[1, 'a'], [2, new Map([[3, 'c']])]]), new Map([[1, 'a'], [2, new Map([[3, 'c']])]])), true);
+    assert.strictEqual(equals(new Map([[1, 'a'], [2, new Map([[3, 'c']])]]), new Map([[1, 'a'], [2, new Map([[3, 'd']])]])), false);
+    assert.strictEqual(equals(new Map([[[1, 2, 3], [4, 5, 6]]]), new Map([[[1, 2, 3], [4, 5, 6]]])), true);
+    assert.strictEqual(equals(new Map([[[1, 2, 3], [4, 5, 6]]]), new Map([[[1, 2, 3], [7, 8, 9]]])), false);
+    assert.strictEqual(equals(
+        new Map([[[1, 2, 3], [4, 5, 6]],    [[7, 8, 9], [10, 11, 12]]]),
+        new Map([[[7, 8, 9], [10, 11, 12]], [[1, 2, 3], [4, 5, 6]]])
+      ), true);
+  });
+
 
   it('is curried', () => {
     let a = [];
