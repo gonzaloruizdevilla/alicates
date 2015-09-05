@@ -10,7 +10,7 @@ const _dropLast =
     n < -1  ? xs
             : slice(0, xs.length - n, xs);
 
-class DropLastWhileFilter extends Base {
+class LastDropper extends Base {
   constructor(n, xf) {
     super();
     this.retained = Nil;
@@ -41,6 +41,6 @@ class DropLastWhileFilter extends Base {
 export const dropLast =
   curry(
     (n, xf) =>
-      isTransformer(xf) ? new DropLastWhileFilter(n, xf)
+      isTransformer(xf) ? new LastDropper(n, xf)
                        : _dropLast(n, xf)
   );
