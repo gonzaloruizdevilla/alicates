@@ -1,9 +1,9 @@
-import {curry} from '../functional/curry';
 import {all} from '../list/all';
+import {curry} from '../functional/curry';
 import {find} from '../list/find';
-import {map} from '../list/map';
 import {hasMethod} from '../object/hasMethod';
 import {isArray, isDate, isFunction, isObject, isRegExp} from '../type';
+
 
 let _equals;
 
@@ -34,17 +34,15 @@ const isMap = a => a instanceof Map;
 
 
 
-const equalMaps = (a, b) => {
-  if (a.size !== b.size) return false;
-  const compareKeysAndValues =
-    ([keyA, keyB]) => keyB && _equals(a.get(keyA), b.get(keyB));
-  const keys = map(
-    aKey => [aKey, find(key => _equals(key, aKey), b.keys())],
-    a.keys()
+const equalMaps = (a, b) =>
+  (a.size === b.size) && all(
+    ([aKey, aValue]) =>
+      find(
+        ([bKey, bValue]) => _equals(bKey, aKey) && _equals(aValue, bValue),
+        b.entries()
+      ),
+    a.entries()
   );
-  if (keys.length < a.size) return false;
-  return all(compareKeysAndValues, keys);
-};
 
 const equalObjects = (a, b) =>  isArray(a)    ? (isArray(b)    && equalHashMaps(a, b)) :
                                 isRegExp(a)   ? (isRegExp(b)   && a.toString() === b.toString() && equalHashMaps(a, b)) :
