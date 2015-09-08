@@ -1,12 +1,11 @@
 import {curry} from '../functional/curry';
-
-const _none =
-  (fn, [x,...xs], length) =>
-    length === 0 ? true
-                 : fn(x) ? false
-                         : _none(fn, xs, length - 1);
+import {reduce} from './reduce';
+import {reduced} from './reduced';
 
 export
   const none = curry(
-    (fn, xs) => _none(fn, xs, xs.length)
+    (fn, xs) => reduce(
+      (acc, x) => fn(x) ? reduced(false) : true,
+      true,
+      xs)
   );
