@@ -12,7 +12,7 @@ class Flattener extends Base {
   }
   '@@transducer/step'(result, input) {
     return isArrayLike(input) ? into(result, _flatten, input)
-                                    : this.xf['@@transducer/step'](result, input);
+                              : this.xf['@@transducer/step'](result, input);
   }
 }
 

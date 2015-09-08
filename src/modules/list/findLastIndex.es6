@@ -30,5 +30,5 @@ export const findLastIndex =
   curry(
     (fn, xf) =>
       isTransformer(xf) ? new LastIndexFinder(fn, xf)
-                       : _findLastIndex(fn, xf, xf.length - 1)
+                        : _findLastIndex(fn, xf, xf.length - 1)
   );

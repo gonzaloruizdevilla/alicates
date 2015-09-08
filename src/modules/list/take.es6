@@ -20,11 +20,11 @@ class Taker extends Base {
 const _take =
   (n, arr) =>
     typeof arr === 'string' ? arr.substr(0, (n < 0 ? undefined : n))
-                             : arr.slice(0, (n < 0 ? undefined : n));
+                            : arr.slice(0, (n < 0 ? undefined : n));
 
 export const take =
   curry(
     (n, xf) =>
-      isTransformer(xf)    ? (new Taker(n, xf))
-                           : _take(n, xf)
+      isTransformer(xf) ? (new Taker(n, xf))
+                        : _take(n, xf)
   );

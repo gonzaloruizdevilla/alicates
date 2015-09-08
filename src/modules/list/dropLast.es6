@@ -42,5 +42,5 @@ export const dropLast =
   curry(
     (n, xf) =>
       isTransformer(xf) ? new LastDropper(n, xf)
-                       : _dropLast(n, xf)
+                        : _dropLast(n, xf)
   );

@@ -35,6 +35,6 @@ class Grouper extends Base{
 export
   const groupBy = curry(
     (fn, xf) =>
-      isTransformer(xf)       ? (new Grouper(fn, xf))
-                              : into({}, groupBy(fn), xf)
+      isTransformer(xf) ? (new Grouper(fn, xf))
+                        : into({}, groupBy(fn), xf)
   );

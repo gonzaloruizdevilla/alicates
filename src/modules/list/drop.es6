@@ -12,9 +12,6 @@ const firstN =
 export
   const drop = curry(
     (n, xf) =>
-      isTransformer(xf)       ? dropWhile(firstN(n), xf)
-                              : slice(
-                                  n < 0 ? 0 : n,
-                                  Infinity, xf
-                                )
+      isTransformer(xf) ? dropWhile(firstN(n), xf)
+                        : slice(n < 0 ? 0 : n, Infinity, xf)
   );
