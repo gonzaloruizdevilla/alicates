@@ -7,6 +7,10 @@ import {isArray, isDate, isFunction, isObject, isRegExp} from '../type';
 
 let _equals;
 
+const isMap = a => a instanceof Map;
+const isWeakMap = a => a instanceof WeakMap;
+const isSet = a => a instanceof Set;
+const isWeakSet = a => a instanceof WeakSet;
 const isHashMap =
   a =>
     isObject(a) && !isArray(a) && !isRegExp(a) && !isDate(a);
@@ -30,10 +34,6 @@ const equalHashMaps = (a, b) => {
     );
 };
 
-const isMap = a => a instanceof Map;
-
-
-
 const equalMaps = (a, b) =>
   (a.size === b.size) && all(
     ([aKey, aValue]) =>
@@ -48,15 +48,18 @@ const equalObjects = (a, b) =>  isArray(a)    ? (isArray(b)    && equalHashMaps(
                                 isRegExp(a)   ? (isRegExp(b)   && a.toString() === b.toString() && equalHashMaps(a, b)) :
                                 isDate(a)     ? (isDate(b)     && _equals(a.getTime(),b.getTime()) && equalHashMaps(a, b)) :
                                 isMap(a)      ? (isMap(b)      && equalMaps(a,b)) :
+                                isWeakMap(a)  ? (isWeakMap(b)  && a === b) :
+                                isSet(a)      ? (isSet(b)      && equalMaps(a,b)) :
+                                isWeakSet(a)  ? (isWeakSet(b)  && a === b) :
                                 !isHashMap(b) ? false
                                               : equalHashMaps(a, b);
 
-const differnciateZeroes =
+const differenciateZeroes =
   (a, b) => a === 0 ? (1 / a === 1 / b)
                     : true;
 
 _equals = (a,b) =>
-  a === b                            ? differnciateZeroes(a,b)  :
+  a === b                            ? differenciateZeroes(a,b)  :
   a === null || b === null           ? false :
   (a !== a && b !== b)               ? true  : //NaN !== NaN =>  true
   hasMethod('equals', a)             ? a.equals(b) :

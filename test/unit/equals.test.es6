@@ -227,6 +227,36 @@ describe('equals', () => {
   });
 
 
+
+  it('compares Set objects by value', function() {
+    assert.strictEqual(equals(new Set([]), new Set([])), true);
+    assert.strictEqual(equals(new Set([]), new Set([1])), false);
+    assert.strictEqual(equals(new Set([1]), new Set([])), false);
+    assert.strictEqual(equals(new Set([1, new Set([2, new Set([3])])]), new Set([1, new Set([2, new Set([3])])])), true);
+    assert.strictEqual(equals(new Set([1, new Set([2, new Set([3])])]), new Set([1, new Set([2, new Set([4])])])), false);
+    assert.strictEqual(equals(new Set([[1, 2, 3], [4, 5, 6]]), new Set([[1, 2, 3], [4, 5, 6]])), true);
+    assert.strictEqual(equals(new Set([[1, 2, 3], [4, 5, 6]]), new Set([[1, 2, 3], [7, 8, 9]])), false);
+  });
+
+
+
+  if (typeof WeakMap !== 'undefined') {
+    it('compares WeakMap objects by identity', function() {
+      var m = new WeakMap([]);
+      assert.strictEqual(equals(m, m), true);
+      assert.strictEqual(equals(m, new WeakMap([])), false);
+    });
+  }
+
+  if (typeof WeakSet !== 'undefined') {
+    it('compares WeakSet objects by identity', function() {
+      var s = new WeakSet([]);
+      assert.strictEqual(equals(s, s), true);
+      assert.strictEqual(equals(s, new WeakSet([])), false);
+    });
+  }
+
+
   it('is curried', () => {
     let a = [];
     let isA = equals(a);
