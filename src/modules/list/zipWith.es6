@@ -1,4 +1,4 @@
-import {curryN} from '../functional/curry';
+import {curry} from '../functional/curry';
 
 const _zipWith =
   (fn, iter1, iter2, acc) => {
@@ -9,8 +9,7 @@ const _zipWith =
   }
 
 export const zipWith =
-  curryN(
-    3,
-    (fn, xf1, xf2, xf3) =>
-      _zipWith(fn, xf1[Symbol.iterator](), xf2[Symbol.iterator](), [])
+  curry(
+    (fn, xs, ys) =>
+      _zipWith(fn, xs[Symbol.iterator](), ys[Symbol.iterator](), [])
   );

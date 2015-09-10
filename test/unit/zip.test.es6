@@ -37,8 +37,4 @@ describe('zip', () => {
      }
     assert.deepEqual(zip(numbers(), ticTacToe()), [ [0, 'tic'], [1, 'tac'], [2, 'toe'], [3, 'tic'] ]);
   });
-
-  it('works with transducers', () => {
-    into([], zip([1,2,3], [4,5,6]))
-  });
 });
