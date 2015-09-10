@@ -27,7 +27,7 @@ const _reverse =
     list === Nil ? acc
                  : _reverse(cons(list.head, acc), list.tail);
 
-export const reverse =
+export const reverseList =
   list =>
     _reverse(Nil, list);
 

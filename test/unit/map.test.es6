@@ -1,7 +1,7 @@
 
 let assert = require('chai').assert;
 
-import {add, into, map} from '../../src/index.es6';
+import {add, into, map, Nil, cons} from '../../src/index.es6';
 
 let listXf = {
   '@@transducer/init': () => [],
@@ -48,6 +48,7 @@ describe('map', () => {
     }
 
     assert.deepEqual(into([], map(times2), numbers()), [2, 4, 6, 8]);
+    assert.deepEqual(into(Nil, map(times2), numbers()), cons(8, cons(6, cons(4, cons(2, Nil)))));
   });
 
   it('composes', function() {
