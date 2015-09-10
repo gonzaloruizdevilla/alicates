@@ -19,4 +19,26 @@ describe('zip', () => {
   it('should be curried', () => {
     assert.deepEqual(zip([1,2,3])([4,5,6]), [[1,4], [2,5], [3,6]]);
   });
+
+  it('works with iterators', () => {
+    function* numbers(){
+      let max = 4, cont = 0;
+      while(cont < max){
+        yield cont;
+        cont += 1;
+      }
+     }
+     function* ticTacToe(){
+       while(true){
+         yield 'tic';
+         yield 'tac';
+         yield 'toe';
+       }
+     }
+    assert.deepEqual(zip(numbers(), ticTacToe()), [ [0, 'tic'], [1, 'tac'], [2, 'toe'], [3, 'tic'] ]);
+  });
+
+  it('works with transducers', () => {
+    into([], zip([1,2,3], [4,5,6]))
+  });
 });

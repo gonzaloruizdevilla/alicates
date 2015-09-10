@@ -1,12 +1,16 @@
-import {curry} from '../functional/curry';
+import {curryN} from '../functional/curry';
 
 const _zipWith =
-  (fn, [x1,...arr1], [x2,...arr2], acc) =>
-    x1 === undefined || x2 === undefined ? acc
-                                         : _zipWith(fn, arr1, arr2, [...acc, fn(x1, x2)]);
+  (fn, iter1, iter2, acc) => {
+    var {value, done} = iter1.next();
+    var pair = iter2.next();
+    return done || pair.done ? acc
+                             : _zipWith(fn, iter1, iter2, [...acc, fn(value, pair.value)]);
+  }
 
 export const zipWith =
-  curry(
-    (fn, arr1, arr2) =>
-      _zipWith(fn, arr1, arr2, [])
+  curryN(
+    3,
+    (fn, xf1, xf2, xf3) =>
+      _zipWith(fn, xf1[Symbol.iterator](), xf2[Symbol.iterator](), [])
   );
