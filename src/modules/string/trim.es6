@@ -1,2 +1,3 @@
 export const trim =
-  x => String.prototype.trim.apply(x);
+  x =>
+    String.prototype.trim.apply(x);
