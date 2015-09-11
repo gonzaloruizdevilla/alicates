@@ -1,8 +1,8 @@
-import {curry} from '../functional/curry';
-import {reduce} from './reduce';
-import {reduced} from './reduced';
-import {isTransformer} from '../type/isTransformer';
 import {Base} from '../transducer/Base';
+import {curry} from '../functional/curry';
+import {isTransformer} from '../type/isTransformer';
+import {reduced} from './reduced';
+import {reduce} from './reduce';
 
 
 class AllXf extends Base {
