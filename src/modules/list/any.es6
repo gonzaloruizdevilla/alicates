@@ -1,11 +1,43 @@
+import {Base} from '../transducer/Base';
 import {curry} from '../functional/curry';
-import {reduce} from './reduce';
+import {isTransformer} from '../type/isTransformer';
 import {reduced} from './reduced';
+import {reduce} from './reduce';
+
+class AnyXf extends Base {
+  constructor(fn, xf){
+    super();
+    this.fn = fn;
+    this.xf = xf;
+    this.any = false;
+  }
+  '@@transducer/step'(result, input) {
+    if(this.fn(input)) {
+      this.any = true;
+      result = this.xf['@@transducer/step'](result, this.any);
+      return reduced(result);
+    }
+    return result;
+  }
+  '@@transducer/result'(result){
+    if(!this.any) {
+      result = this.xf['@@transducer/step'](result, false);
+    }
+    return this.xf['@@transducer/result'](result);
+  }
+}
+
+
+const _any =
+  (fn, xs) =>
+    reduce(
+      (acc, x) => fn(x) ? reduced(true) : false,
+      false,
+      xs
+    );
 
 export
   const any = curry(
-    (fn, xs) => reduce(
-      (acc, x) => fn(x) ? reduced(true) : false,
-      false,
-      xs)
+    (fn, xf) => isTransformer(xf) ? new AnyXf(fn, xf)
+                                  : _any(fn, xf)
   );
