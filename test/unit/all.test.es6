@@ -25,7 +25,7 @@ describe('all', () => {
     assert.strictEqual(all(hasA, xs), true);
   });
 
-  it('dispatches when given a transformer in list position', () => {
+  it('can act as a transformer', () => {
     let odd = n => n % 2;
     assert.deepEqual(into([], all(odd), [3,5,7]), [true]);
     assert.deepEqual(into([], all(odd), [3,6,2]), [false]);
