@@ -1,6 +1,7 @@
 export * from './relation/countBy';
 export * from './relation/difference';
 export * from './relation/differenceWith';
+export * from './relation/eqBy';
 export * from './relation/gt';
 export * from './relation/gte';
 export * from './relation/identical';
