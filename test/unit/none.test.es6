@@ -1,6 +1,6 @@
 let assert = require('chai').assert;
 
-import {none} from '../../src/index.es6';
+import {none, into, Nil, cons} from '../../src/index.es6';
 
 describe('none', () => {
   const pred = a => a > 2;
@@ -16,5 +16,12 @@ describe('none', () => {
 
   it('should be curried', () => {
     assert.ok(none(pred)([1,1,1]));
+  });
+
+  it('can act as a transformer', () => {
+    assert.deepEqual(into([], none(pred), [1,1,1]), [true]);
+    assert.deepEqual(into([], none(pred), [3,6,2]), [false]);
+    assert.deepEqual(into(Nil, none(pred), [1,1,1]), cons(true, Nil));
+    assert.deepEqual(into(Nil, none(pred), [1,6,7]), cons(false, Nil));
   });
 });
