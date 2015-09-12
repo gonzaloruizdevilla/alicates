@@ -6,7 +6,7 @@ const _zipWith =
     var pair = iter2.next();
     return done || pair.done ? acc
                              : _zipWith(fn, iter1, iter2, [...acc, fn(value, pair.value)]);
-  }
+  };
 
 export const zipWith =
   curry(

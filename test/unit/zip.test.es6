@@ -27,14 +27,15 @@ describe('zip', () => {
         yield cont;
         cont += 1;
       }
-     }
-     function* ticTacToe(){
-       while(true){
-         yield 'tic';
-         yield 'tac';
-         yield 'toe';
-       }
-     }
+    }
+    function* ticTacToe(){
+      /*eslint-disable no-constant-condition */
+      while(true){
+        yield 'tic';
+        yield 'tac';
+        yield 'toe';
+      }
+    }
     assert.deepEqual(zip(numbers(), ticTacToe()), [ [0, 'tic'], [1, 'tac'], [2, 'toe'], [3, 'tic'] ]);
   });
 });
