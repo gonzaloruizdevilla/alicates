@@ -239,6 +239,19 @@ describe('equals', () => {
   });
 
 
+  it('handles recursive data structures', function() {
+    var c = {}; c.v = c;
+    var d = {}; d.v = d;
+    var e = []; e.push(e);
+    var f = []; f.push(f);
+    var nestA = {a:[1, 2, {c:1}], b:1};
+    var nestB = {a:[1, 2, {c:1}], b:1};
+    var nestC = {a:[1, 2, {c:2}], b:1};
+    assert.strictEqual(equals(c, d), true);
+    assert.strictEqual(equals(e, f), true);
+    assert.strictEqual(equals(nestA, nestB), true);
+    assert.strictEqual(equals(nestA, nestC), false);
+  });
 
   it('compares WeakMap objects by identity', function() {
     var m = new WeakMap([]);

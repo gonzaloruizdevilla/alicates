@@ -25,45 +25,53 @@ const getPropertiesKeys = (o) => {
   return keys;
 };
 
-const equalHashMaps = (a, b) => {
+const equalHashMaps = (a, b, acc) => {
   const aKeys = getPropertiesKeys(a);
   const bKeys = getPropertiesKeys(b);
+  acc.set(a, b);
   return aKeys.size === bKeys.size && all(
-      key => aKeys.has(key) && _equals(a[key], b[key]),
+      key => aKeys.has(key) && _equals(a[key], b[key], acc),
       bKeys
     );
 };
 
-const equalMaps = (a, b) =>
+const equalMaps = (a, b, acc) =>
   (a.size === b.size) && all(
     ([aKey, aValue]) =>
       find(
-        ([bKey, bValue]) => _equals(bKey, aKey) && _equals(aValue, bValue),
+        ([bKey, bValue]) => _equals(aKey, bKey, new Map(acc)) && _equals(aValue, bValue, acc),
         b.entries()
       ),
     a.entries()
-  );
+  ) && (acc.set(a, b), true);
 
-const equalObjects = (a, b) =>  isArray(a)    ? (isArray(b)    && equalHashMaps(a, b)) :
-                                isRegExp(a)   ? (isRegExp(b)   && a.toString() === b.toString() && equalHashMaps(a, b)) :
-                                isDate(a)     ? (isDate(b)     && _equals(a.getTime(),b.getTime()) && equalHashMaps(a, b)) :
-                                isMap(a)      ? (isMap(b)      && equalMaps(a,b)) :
-                                isWeakMap(a)  ? (isWeakMap(b)  && a === b) :
-                                isSet(a)      ? (isSet(b)      && equalMaps(a,b)) :
-                                isWeakSet(a)  ? (isWeakSet(b)  && a === b) :
-                                !isHashMap(b) ? false
-                                              : equalHashMaps(a, b);
+const equalObjects =
+  (a, b, acc) =>
+    acc.has(a)    ? (acc.get(a) === b) :
+    isArray(a)    ? (isArray(b)   && equalHashMaps(a, b, acc)) :
+    isRegExp(a)   ? (isRegExp(b)  && a.toString() === b.toString() && equalHashMaps(a, b, acc)) :
+    isDate(a)     ? (isDate(b)    && _equals(a.getTime(),b.getTime()) && equalHashMaps(a, b, acc)) :
+    isMap(a)      ? (isMap(b)     && equalMaps(a ,b, acc)) :
+    isWeakMap(a)  ? (isWeakMap(b) && a === b) :
+    isSet(a)      ? (isSet(b)     && equalMaps(a, b, acc)) :
+    isWeakSet(a)  ? (isWeakSet(b) && a === b) :
+    !isHashMap(b) ? false
+                  : equalHashMaps(a, b, acc);
 
 const differenciateZeroes =
   (a, b) => a === 0 ? (1 / a === 1 / b)
                     : true;
 
-_equals = (a,b) =>
-  a === b                            ? differenciateZeroes(a,b)  :
-  a === null || b === null           ? false :
-  (a !== a && b !== b)               ? true  : //NaN !== NaN =>  true
-  hasMethod('equals', a)             ? a.equals(b) :
-  hasMethod('equals', b)             ? b.equals(a)
-                                     : isObject(a) && isObject(b) && equalObjects(a, b);
+_equals =
+  (a, b, acc) =>
+    a === b                  ? differenciateZeroes(a,b)  :
+    a === null || b === null ? false :
+    (a !== a && b !== b)     ? true  : //NaN !== NaN =>  true
+    hasMethod('equals', a)   ? a.equals(b) :
+    hasMethod('equals', b)   ? b.equals(a)
+                             : isObject(a) && isObject(b) && equalObjects(a, b, acc);
 
-export const equals =  curry(_equals);
+export const equals =
+  curry(
+    (a, b) => _equals(a,b, new Map())
+  );
