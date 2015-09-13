@@ -240,22 +240,17 @@ describe('equals', () => {
 
 
 
-  if (typeof WeakMap !== 'undefined') {
-    it('compares WeakMap objects by identity', function() {
-      var m = new WeakMap([]);
-      assert.strictEqual(equals(m, m), true);
-      assert.strictEqual(equals(m, new WeakMap([])), false);
-    });
-  }
+  it('compares WeakMap objects by identity', function() {
+    var m = new WeakMap([]);
+    assert.strictEqual(equals(m, m), true);
+    assert.strictEqual(equals(m, new WeakMap([])), false);
+  });
 
-  if (typeof WeakSet !== 'undefined') {
-    it('compares WeakSet objects by identity', function() {
-      var s = new WeakSet([]);
-      assert.strictEqual(equals(s, s), true);
-      assert.strictEqual(equals(s, new WeakSet([])), false);
-    });
-  }
-
+  it('compares WeakSet objects by identity', function() {
+    var s = new WeakSet([]);
+    assert.strictEqual(equals(s, s), true);
+    assert.strictEqual(equals(s, new WeakSet([])), false);
+  });
 
   it('is curried', () => {
     let a = [];
