@@ -1,6 +1,6 @@
 let assert = require('chai').assert;
 
-import {add, adjust} from '../../src/index.es6';
+import {add, adjust, into} from '../../src/index.es6';
 
 
 describe('adjust', () => {
@@ -33,5 +33,10 @@ describe('adjust', () => {
       return arguments;
     }
     assert.deepEqual(adjust(add(1), 2, args(0, 1, 2, 3)), [0, 1, 3, 3]);
+  });
+
+  it('can act as a transducer', function() {
+    assert.deepEqual(into([], adjust(add(1), 2), [0, 1, 2, 3]), [0, 1, 3, 3]);
+    assert.deepEqual(into([], adjust(add(1), -3), [0, 1, 2, 3]), [0, 2, 2, 3]);
   });
 });
