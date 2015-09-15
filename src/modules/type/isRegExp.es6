@@ -1,1 +1,3 @@
-export const isRegExp = a => toString.call(a) === '[object RegExp]';
+export const isRegExp =
+  a =>
+    toString.call(a) === '[object RegExp]';

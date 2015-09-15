@@ -4,5 +4,6 @@ import {propSatisfies} from '../logic/propSatisfies';
 
 export const propIs =
   curry(
-    (type, prop, obj) => propSatisfies(is(type), prop, obj)
+    (type, prop, obj) =>
+      propSatisfies(is(type), prop, obj)
   );

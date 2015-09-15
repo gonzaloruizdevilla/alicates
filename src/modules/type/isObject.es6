@@ -1,1 +1,3 @@
-export const isObject = a => typeof a === 'object';
+export const isObject =
+  a =>
+    typeof a === 'object';
