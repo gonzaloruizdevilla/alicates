@@ -1,6 +1,6 @@
 import {curry} from '../functional/curry';
-import {propSatisfies} from '../logic/propSatisfies';
 import {is} from '../type/is';
+import {propSatisfies} from '../logic/propSatisfies';
 
 export const propIs =
   curry(

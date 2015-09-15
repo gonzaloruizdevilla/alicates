@@ -1,6 +1,6 @@
 import {isArray} from './isArray';
-import {isString} from './isString';
 import {isFunction} from './isFunction';
+import {isString} from './isString';
 
 const NODE_TYPE_ELEMENT = 1;
 
