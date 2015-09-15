@@ -1,6 +1,6 @@
 import {curryN} from './curryN';
-import {unfold} from '../list/unfold';
 import {last} from '../list/last';
+import {unfold} from '../list/unfold';
 
 const continues =
   ({count, n}) =>

@@ -1,7 +1,7 @@
 import {chain} from '../list/chain';
 import {compose} from './compose';
-import {map} from '../list/map';
 import {identity} from './identity';
+import {map} from '../list/map';
 
 export const composeK =
   (...fns) =>

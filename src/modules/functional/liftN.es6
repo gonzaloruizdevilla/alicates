@@ -1,7 +1,7 @@
-import {reduce} from '../list/reduce';
-import {map} from '../list/map';
-import {curryN} from './curryN';
 import {ap} from './ap';
+import {curryN} from './curryN';
+import {map} from '../list/map';
+import {reduce} from '../list/reduce';
 
 export const liftN =
   curryN(

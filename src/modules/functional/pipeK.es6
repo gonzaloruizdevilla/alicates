@@ -1,7 +1,7 @@
 import {chain} from '../list/chain';
-import {pipe} from './pipe';
-import {map} from '../list/map';
 import {identity} from './identity';
+import {map} from '../list/map';
+import {pipe} from './pipe';
 
 export const pipeK =
   (...fns) =>

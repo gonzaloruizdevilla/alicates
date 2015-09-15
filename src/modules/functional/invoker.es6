@@ -1,8 +1,8 @@
-import {init} from '../list/init';
-import {last} from '../list/last';
 import {curryN} from '../functional/curryN';
+import {init} from '../list/init';
 import {isFunction} from '../type/isFunction';
 import {isNil} from '../type/isNil';
+import {last} from '../list/last';
 import {toString} from '../string/toString';
 
 const throwError =

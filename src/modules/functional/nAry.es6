@@ -1,6 +1,6 @@
-import {slice} from '../list/slice';
-import {repeat} from '../list/repeat';
 import {arity} from './arity';
+import {repeat} from '../list/repeat';
+import {slice} from '../list/slice';
 
 const throwError = () => {throw new Error('First argument to nAry must be a non-negative integer no greater than ten');};
 

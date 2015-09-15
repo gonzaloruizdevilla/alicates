@@ -1,6 +1,6 @@
 import {arity} from './arity';
-import {reduce} from '../list/reduce';
 import {curryN} from '../functional/curryN';
+import {reduce} from '../list/reduce';
 import {tail} from '../list/tail';
 
 const throwError = () => {throw new Error('pipeP requires at least one argument');};

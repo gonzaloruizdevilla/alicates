@@ -1,6 +1,6 @@
+import {curryN} from './curryN';
 import {reduce} from '../list/reduce';
 import {tail} from '../list/tail';
-import {curryN} from './curryN';
 
 const throwError = () => {throw new Error('pipe requires at least one argument');};
 

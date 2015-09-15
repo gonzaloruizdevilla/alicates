@@ -1,6 +1,6 @@
 import {curryN} from './curryN';
-import {prop} from '../object/prop';
 import {map} from '../list/map';
+import {prop} from '../object/prop';
 
 export const converge =
   (fn, ...fns) =>
