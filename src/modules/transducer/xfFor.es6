@@ -1,9 +1,9 @@
-import {identity} from '../functional/identity';
-import {merge} from '../object/merge';
-import {isTransformer} from '../type/isTransformer';
-import {isArrayLike} from '../type/isArrayLike';
-import {createMapEntry} from '../object/createMapEntry';
 import {cons, Cons, Nil}  from '../list/list';
+import {createMapEntry} from '../object/createMapEntry';
+import {identity} from '../functional/identity';
+import {isArrayLike} from '../type/isArrayLike';
+import {isTransformer} from '../type/isTransformer';
+import {merge} from '../object/merge';
 
 const arrayXf =
   init =>
