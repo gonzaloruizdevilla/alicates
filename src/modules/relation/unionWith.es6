@@ -1,6 +1,6 @@
 import {concat} from '../list/concat';
-import {uniqWith} from '../list/uniqWith';
 import {curry} from '../functional/curry';
+import {uniqWith} from '../list/uniqWith';
 
 export const unionWith =
   curry((fn, xs, ys) =>

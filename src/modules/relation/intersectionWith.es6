@@ -1,8 +1,8 @@
+import {compose} from '../functional/compose';
 import {contains} from '../list/contains';
+import {curry} from '../functional/curry';
 import {reduce} from '../list/reduce';
 import {uniq} from '../list/uniq';
-import {curry} from '../functional/curry';
-import {compose} from '../functional/compose';
 
 export const intersectionWith =
   curry(

@@ -1,6 +1,6 @@
+import {head} from '../list/head';
 import {reduce} from '../list/reduce';
 import {tail} from '../list/tail';
-import {head} from '../list/head';
 
 export const maxBy =
   (fn, ...xs) => {

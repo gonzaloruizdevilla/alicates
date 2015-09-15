@@ -1,6 +1,6 @@
 import {curry} from '../functional/curry';
-import {prop} from '../object/prop';
 import {equals} from '../logic/equals';
+import {prop} from '../object/prop';
 
 export const propEq =
   curry(
