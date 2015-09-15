@@ -1,2 +1,3 @@
 export const toUpper =
-  x => String.prototype.toUpperCase.apply(x);
+  x =>
+    String.prototype.toUpperCase.apply(x);

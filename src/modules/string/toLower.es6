@@ -1,2 +1,3 @@
 export const toLower =
-  x => String.prototype.toLowerCase.apply(x);
+  x =>
+    String.prototype.toLowerCase.apply(x);
