@@ -1,5 +1,5 @@
-import {sortBy} from '../relation/sortBy';
 import {identity} from '../functional/identity';
+import {sortBy} from '../relation/sortBy';
 
 const floor = Math.floor;
 
