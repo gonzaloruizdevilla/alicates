@@ -1,9 +1,9 @@
+import {Base} from '../transducer/Base';
 import {curry} from '../functional/curry';
 import {into} from './into';
-import {Base} from '../transducer/Base';
-import {reduce} from './reduce';
 import {isTransformer} from '../type/isTransformer';
 import {keys} from '../object/keys';
+import {reduce} from './reduce';
 
 class Grouper extends Base{
   constructor(fn, xf) {

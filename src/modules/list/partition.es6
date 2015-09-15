@@ -1,6 +1,6 @@
+import {curry} from '../functional/curry';
 import {head} from './head';
 import {tail} from './tail';
-import {curry} from '../functional/curry';
 
 const _partition =
     (pred, xs, acc) =>

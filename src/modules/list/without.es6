@@ -1,7 +1,7 @@
-import {curryN} from '../functional/curryN';
-import {not} from '../logic/not';
 import {any} from './any';
+import {curryN} from '../functional/curryN';
 import {filter} from './filter';
+import {not} from '../logic/not';
 
 /* jshint -W067 */
 export

@@ -1,7 +1,7 @@
 import {curry} from '../functional/curry';
-import {slice} from './slice';
 import {dropWhile} from './dropWhile';
 import {isTransformer} from '../type/isTransformer';
+import {slice} from './slice';
 
 const firstN =
   n => {

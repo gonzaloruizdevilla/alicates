@@ -1,6 +1,6 @@
+import {Base} from '../transducer/Base';
 import {curry} from '../functional/curry';
 import {into} from './into';
-import {Base} from '../transducer/Base';
 import {isTransformer} from '../type/isTransformer';
 
 class WhileDropper extends Base {

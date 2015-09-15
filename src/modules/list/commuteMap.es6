@@ -1,8 +1,8 @@
-import {curry} from '../functional/curry';
-import {ap} from '../functional/ap';
-import {reduce} from './reduce';
 import {append} from './append';
+import {ap} from '../functional/ap';
+import {curry} from '../functional/curry';
 import {map} from './map';
+import {reduce} from './reduce';
 
 
 export const commuteMap =

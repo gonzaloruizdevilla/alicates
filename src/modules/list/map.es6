@@ -1,7 +1,7 @@
-import {curry} from '../functional/curry';
-import {into} from './into';
 import {Base} from '../transducer/Base';
+import {curry} from '../functional/curry';
 import {hasMethod} from '../object/hasMethod';
+import {into} from './into';
 import {isTransformer} from '../type/isTransformer';
 
 

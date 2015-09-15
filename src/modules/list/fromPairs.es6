@@ -1,6 +1,6 @@
-import {reduce} from './reduce';
 import {assoc} from '../object/assoc';
 import {isNil} from '../type/isNil';
+import {reduce} from './reduce';
 
 export const fromPairs =
   reduce(

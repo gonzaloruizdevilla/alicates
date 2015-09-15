@@ -1,6 +1,6 @@
 import {curry} from '../functional/curry';
-import {unnest} from './unnest';
 import {map} from './map';
+import {unnest} from './unnest';
 
 export const xprod =
   curry(

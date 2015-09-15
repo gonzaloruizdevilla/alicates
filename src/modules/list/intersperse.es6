@@ -1,11 +1,11 @@
 import {concat} from './concat';
 import {curry} from '../functional/curry';
+import {hasMethod} from '../object/hasMethod';
 import {head} from './head';
+import {isEmpty} from '../logic/isEmpty';
+import {isNil} from '../type/isNil';
 import {reduce} from './reduce';
 import {tail} from './tail';
-import {isNil} from '../type/isNil';
-import {isEmpty} from '../logic/isEmpty';
-import {hasMethod} from '../object/hasMethod';
 
 export const intersperse =
   curry(

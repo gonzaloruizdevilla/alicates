@@ -1,6 +1,6 @@
-import {not} from '../logic/not';
-import {filter} from './filter';
 import {curry} from '../functional/curry';
+import {filter} from './filter';
+import {not} from '../logic/not';
 
 export const reject =
   curry(

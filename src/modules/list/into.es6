@@ -1,6 +1,6 @@
-import {reduce} from './reduce';
-import {isTransformer} from '../type/isTransformer';
 import {curry} from '../functional/curry';
+import {isTransformer} from '../type/isTransformer';
+import {reduce} from './reduce';
 import {xfFor} from '../transducer/xfFor';
 
 

@@ -1,9 +1,9 @@
-import {curry} from '../functional/curry';
-import {slice} from './slice';
 import {Base} from '../transducer/Base';
-import {reduce} from './reduce';
 import {cons, Nil, toArray} from './list';
+import {curry} from '../functional/curry';
 import {isTransformer} from '../type/isTransformer';
+import {reduce} from './reduce';
+import {slice} from './slice';
 
 const _dropLast =
   (n, xs) =>

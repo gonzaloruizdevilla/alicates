@@ -1,10 +1,10 @@
-import {reduce} from './reduce';
-import {isArrayLike} from '../type/isArrayLike';
-import {into} from './into';
-import {hasMethod} from '../object/hasMethod';
-import {curry} from '../functional/curry';
-import {isTransformer} from '../type/isTransformer';
 import {Base} from '../transducer/Base';
+import {curry} from '../functional/curry';
+import {hasMethod} from '../object/hasMethod';
+import {into} from './into';
+import {isArrayLike} from '../type/isArrayLike';
+import {isTransformer} from '../type/isTransformer';
+import {reduce} from './reduce';
 
 class Chainer extends Base {
   constructor(fn, xf) {

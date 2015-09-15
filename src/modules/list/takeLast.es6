@@ -1,7 +1,7 @@
 import {Base}         from '../transducer/Base';
 import {curry}        from '../functional/curry';
-import {reduce}       from './reduce';
 import {isTransformer} from '../type/isTransformer';
+import {reduce}       from './reduce';
 import {slice}        from './slice';
 
 class LastTaker extends Base {

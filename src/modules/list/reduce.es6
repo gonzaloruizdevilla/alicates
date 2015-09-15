@@ -1,9 +1,9 @@
 import {curry} from '../functional/curry';
+import {hasMethod} from '../object/hasMethod';
 import {isArrayLike} from '../type/isArrayLike';
+import {isFunction} from '../type/isFunction';
 import {isIterable} from '../type/isIterable';
 import {isString} from '../type/isString';
-import {isFunction} from '../type/isFunction';
-import {hasMethod} from '../object/hasMethod';
 
 class XfWrap {
   constructor(fn) {

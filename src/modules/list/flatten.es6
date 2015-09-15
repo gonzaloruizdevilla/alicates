@@ -1,7 +1,7 @@
-import {into} from './into';
 import {Base} from '../transducer/Base';
-import {isTransformer} from '../type/isTransformer';
+import {into} from './into';
 import {isArrayLike} from '../type/isArrayLike';
+import {isTransformer} from '../type/isTransformer';
 
 let _flatten;
 

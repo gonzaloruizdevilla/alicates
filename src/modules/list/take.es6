@@ -1,7 +1,7 @@
-import {curry} from '../functional/curry';
-import {reduced} from './reduced';
 import {Base} from '../transducer/Base';
+import {curry} from '../functional/curry';
 import {isTransformer} from '../type/isTransformer';
+import {reduced} from './reduced';
 
 class Taker extends Base {
   constructor(n, xf) {
