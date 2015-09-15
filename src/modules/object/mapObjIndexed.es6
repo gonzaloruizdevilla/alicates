@@ -1,6 +1,6 @@
+import {curry} from '../functional/curry';
 import {keys} from './keys';
 import {reduce} from '../list/reduce';
-import {curry} from '../functional/curry';
 
 export const mapObjIndexed =
   curry(

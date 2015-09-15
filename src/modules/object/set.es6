@@ -1,5 +1,5 @@
-import {curry} from '../functional/curry';
 import {Identity} from '../functor/Identity';
+import {curry} from '../functional/curry';
 
 export const set =
     curry(

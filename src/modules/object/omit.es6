@@ -1,7 +1,7 @@
-import {curry} from '../functional/curry';
 import {contains} from '../list/contains';
-import {reduce} from '../list/reduce';
+import {curry} from '../functional/curry';
 import {keysIn} from './keysIn';
+import {reduce} from '../list/reduce';
 
 export const omit =
   curry(

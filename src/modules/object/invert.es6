@@ -1,7 +1,7 @@
-import {reduce} from '../list/reduce';
-import {keys} from './keys';
-import {isObject} from '../type/isObject';
 import {isArray} from '../type/isArray';
+import {isObject} from '../type/isObject';
+import {keys} from './keys';
+import {reduce} from '../list/reduce';
 
 
 const _invert =

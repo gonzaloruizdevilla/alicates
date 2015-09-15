@@ -1,5 +1,5 @@
-import {shallowClone} from './shallowClone';
 import {curry} from '../functional/curry';
+import {shallowClone} from './shallowClone';
 
 export const dissoc =
   curry(

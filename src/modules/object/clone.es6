@@ -1,12 +1,12 @@
+import {containsWith} from '../list/containsWith';
 import {curry} from '../functional/curry';
+import {find} from '../list/find';
 import {isArrayLike} from '../type/isArrayLike';
 import {isDate} from '../type/isDate';
 import {isObject} from '../type/isObject';
 import {isRegExp} from '../type/isRegExp';
-import {find} from '../list/find';
-import {reduce} from '../list/reduce';
-import {containsWith} from '../list/containsWith';
 import {keysIn} from '../object/keysIn';
+import {reduce} from '../list/reduce';
 
 let _clone;
 

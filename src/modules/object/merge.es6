@@ -1,6 +1,6 @@
 import {curry} from '../functional/curry';
-import {reduce} from '../list/reduce';
 import {keys} from './keys';
+import {reduce} from '../list/reduce';
 
 export const merge =
   curry(

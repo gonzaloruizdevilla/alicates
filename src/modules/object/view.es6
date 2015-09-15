@@ -1,6 +1,6 @@
-import {curry} from '../functional/curry';
-import {construct} from '../functional/construct';
 import {Const} from '../functor/Const';
+import {construct} from '../functional/construct';
+import {curry} from '../functional/curry';
 
 export const view =
   curry(

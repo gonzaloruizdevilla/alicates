@@ -1,6 +1,6 @@
-import {reduce} from '../list/reduce';
-import {keysIn} from './keysIn';
 import {isObject} from '../type/isObject';
+import {keysIn} from './keysIn';
+import {reduce} from '../list/reduce';
 
 const _invertObj =
   x =>

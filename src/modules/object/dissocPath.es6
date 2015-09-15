@@ -1,8 +1,8 @@
-import {shallowClone} from './shallowClone';
+import {curry} from '../functional/curry';
 import {init} from '../list/init';
 import {last} from '../list/last';
 import {reduce} from '../list/reduce';
-import {curry} from '../functional/curry';
+import {shallowClone} from './shallowClone';
 
 export const dissocPath =
   curry(

@@ -1,5 +1,5 @@
-import {map} from '../list/map';
 import {curry} from '../functional/curry';
+import {map} from '../list/map';
 
 export const lens =
   curry(
