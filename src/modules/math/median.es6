@@ -5,8 +5,8 @@ const floor = Math.floor;
 
 const sortedMedian =
   (xs, length) =>
-   (length % 2) === 1 ? xs[floor(length / 2)]
-                      : (xs[floor(length / 2) - 1] + xs[floor(length / 2)]) / 2;
+    (length % 2) === 1 ? xs[floor(length / 2)]
+                       : (xs[floor(length / 2) - 1] + xs[floor(length / 2)]) / 2;
 
 export const median =
   xs =>

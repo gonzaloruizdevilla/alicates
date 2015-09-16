@@ -6,5 +6,5 @@ export const anyPass =
     args.length > 0 ? any((fn)=>fn(...args), fns)
                     : arity(
                         Math.max(...pluck('length', fns)),
-                        (...args) => any((fn)=>fn(...args), fns)
+                        (...args) => any((fn) => fn(...args), fns)
                       );

@@ -1,2 +1,3 @@
 export const negate =
-  x => -x;
+  x =>
+    -x;

@@ -1,2 +1,3 @@
-export
-  const not = x => !x;
+export const not =
+    x =>
+      !x;
