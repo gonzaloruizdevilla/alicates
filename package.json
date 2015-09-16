@@ -2,7 +2,11 @@
   "name": "alicates",
   "description": "Functional library with ES6",
   "version": "0.1.0",
-  "author": "",
+  "author": "Gonzalo Ruiz de Villa",
+  "repository" : {
+    "type": "git",
+    "url": "https://github.com/gonzaloruizdevilla/alicates.git"
+  },
   "license": "MIT",
   "main": "index.js",
   "scripts": {
