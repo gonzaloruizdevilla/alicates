@@ -265,6 +265,33 @@ describe('equals', () => {
     assert.strictEqual(equals(s, new WeakSet([])), false);
   });
 
+  it('is commutative', function() {
+    function Point(x, y) {
+      this.x = x;
+      this.y = y;
+    }
+    Point.prototype.equals = function(point) {
+      return point instanceof Point &&
+             this.x === point.x && this.y === point.y;
+    };
+
+    function ColorPoint(x, y, color) {
+      this.x = x;
+      this.y = y;
+      this.color = color;
+    }
+    ColorPoint.prototype = new Point(0, 0);
+    ColorPoint.prototype.equals = function(point) {
+      return point instanceof ColorPoint &&
+             this.x === point.x && this.y === point.y &&
+             this.color === point.color;
+    };
+
+    assert.strictEqual(equals(new Point(2, 2), new ColorPoint(2, 2, 'red')), false);
+    assert.strictEqual(equals(new ColorPoint(2, 2, 'red'), new Point(2, 2)), false);
+  });
+
+
   it('is curried', () => {
     let a = [];
     let isA = equals(a);

@@ -62,13 +62,18 @@ const differenciateZeroes =
   (a, b) => a === 0 ? (1 / a === 1 / b)
                     : true;
 
+const dispatchToEquals =
+  (a, b) =>
+      hasMethod('equals', a) && a.equals(b) &&
+      hasMethod('equals', b) && b.equals(a);
+
 _equals =
   (a, b, acc) =>
     a === b                  ? differenciateZeroes(a,b)  :
     a === null || b === null ? false :
     (a !== a && b !== b)     ? true  : //NaN !== NaN =>  true
-    hasMethod('equals', a)   ? a.equals(b) :
-    hasMethod('equals', b)   ? b.equals(a)
+    hasMethod('equals', a)   ? dispatchToEquals(a,b) :
+    hasMethod('equals', b)   ? dispatchToEquals(a,b)
                              : isObject(a) && isObject(b) && equalObjects(a, b, acc);
 
 export const equals =
