@@ -8,9 +8,13 @@ import {slice} from './slice';
 class LastWhileDropper extends Base {
   constructor(fn, xf) {
     super();
+    this.f = fn;
     this.retained = Nil;
     this.xf = xf;
-    this.f = fn;
+  }
+  '@@transducer/step'(result, input) {
+    return this.f(input) ? this.retain(result, input)
+                         : this.flush(result, input);
   }
   flush(result, input) {
     result = reduce(
@@ -24,10 +28,6 @@ class LastWhileDropper extends Base {
   retain(result, input) {
     this.retained = cons(input, this.retained);
     return result;
-  }
-  '@@transducer/step'(result, input) {
-    return this.f(input) ? this.retain(result, input)
-                         : this.flush(result, input);
   }
 }
 

@@ -13,9 +13,9 @@ const _dropLast =
 class LastDropper extends Base {
   constructor(n, xf) {
     super();
+    this.n = n;
     this.retained = Nil;
     this.xf = xf;
-    this.n = n;
   }
   '@@transducer/step'(result, input) {
     return this.retain(result, input);

@@ -9,8 +9,11 @@ import {reduce} from './reduce';
 class Chainer extends Base {
   constructor(fn, xf) {
     super();
-    this.xf = xf;
     this.f = fn;
+    this.xf = xf;
+  }
+  '@@transducer/step'(result, input) {
+    return this.valueStep(result, this.f(input));
   }
   valueStep(result, value) {
     return isArrayLike(value) ? this.arrayStep(result, value)
@@ -25,9 +28,6 @@ class Chainer extends Base {
   }
   elementStep(result, value) {
     return this.xf['@@transducer/step'](result, value);
-  }
-  '@@transducer/step'(result, input) {
-    return this.valueStep(result, this.f(input));
   }
 }
 

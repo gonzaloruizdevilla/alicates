@@ -3,10 +3,10 @@ import {isTransformer} from '../type/isTransformer';
 
 class IndexFinder {
   constructor(fn, xf) {
+    this.f = fn;
     this.pos = -1;
     this.result = undefined;
     this.xf = xf;
-    this.f = fn;
   }
   '@@transducer/step'(result, input) {
     this.pos += 1;

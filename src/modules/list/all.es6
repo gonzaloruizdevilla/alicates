@@ -4,13 +4,12 @@ import {isTransformer} from '../type/isTransformer';
 import {reduced} from './reduced';
 import {reduce} from './reduce';
 
-
 class AllXf extends Base {
   constructor(fn, xf){
     super();
+    this.all = true;
     this.fn = fn;
     this.xf = xf;
-    this.all = true;
   }
   '@@transducer/step'(result, input) {
     if(!this.fn(input)) {

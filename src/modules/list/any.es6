@@ -7,9 +7,9 @@ import {reduce} from './reduce';
 class AnyXf extends Base {
   constructor(fn, xf){
     super();
+    this.any = false;
     this.fn = fn;
     this.xf = xf;
-    this.any = false;
   }
   '@@transducer/step'(result, input) {
     if(this.fn(input)) {

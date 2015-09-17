@@ -4,9 +4,9 @@ import {reduced} from './reduced';
 
 class IndexFinder {
   constructor(fn, xf) {
+    this.f = fn;
     this.pos = -1;
     this.xf = xf;
-    this.f = fn;
   }
   '@@transducer/step'(result, input) {
     this.pos += 1;

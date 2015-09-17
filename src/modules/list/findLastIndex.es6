@@ -3,10 +3,10 @@ import {isTransformer} from '../type/isTransformer';
 
 class LastIndexFinder {
   constructor(fn, xf) {
-    this.pos = -1;
-    this.lastPos = -1;
-    this.xf = xf;
     this.f = fn;
+    this.lastPos = -1;
+    this.pos = -1;
+    this.xf = xf;
   }
   '@@transducer/step'(result, input) {
     this.pos += 1;

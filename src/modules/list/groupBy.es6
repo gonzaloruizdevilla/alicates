@@ -8,12 +8,12 @@ import {reduce} from './reduce';
 class Grouper extends Base{
   constructor(fn, xf) {
     super();
-    this.xf = xf;
     this.f = fn;
     this.values = {};
+    this.xf = xf;
   }
   '@@transducer/result'(result) {
-    let step =
+    const step =
       (acc, key) =>
         this.xf['@@transducer/step'](acc, this.values[key]);
 
@@ -25,8 +25,8 @@ class Grouper extends Base{
     return this.xf['@@transducer/result'](result);
   }
   '@@transducer/step'(result, input) {
-    let key = this.f(input);
-    var pair = this.values[key] = this.values[key] || [key,[]];
+    const key = this.f(input);
+    const pair = this.values[key] = this.values[key] || [key,[]];
     pair[1][pair[1].length] = input;
     return result;
   }

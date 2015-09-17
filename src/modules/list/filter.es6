@@ -7,8 +7,8 @@ import {isTransformer} from '../type/isTransformer';
 class Filterer extends Base{
   constructor(fn, xf) {
     super();
-    this.xf = xf;
     this.f = fn;
+    this.xf = xf;
   }
   '@@transducer/step'(result, input) {
     return (this.f(input)) ? this.xf['@@transducer/step'](result, input) : result;

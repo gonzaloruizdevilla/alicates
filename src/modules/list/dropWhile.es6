@@ -7,8 +7,8 @@ class WhileDropper extends Base {
   constructor(fn, xf) {
     super();
     this.dropping = true;
-    this.xf = xf;
     this.f = fn;
+    this.xf = xf;
   }
   '@@transducer/step'(result, input) {
     return this.dropping && (this.dropping = this.f(input)) ? result

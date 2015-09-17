@@ -4,18 +4,15 @@ import {reduce} from './reduce';
 
 const _forEach =
   (fn, xs) =>
-    (
-      reduce(
-          (acc, x) => fn(x),
-          null,
-          xs
-      ),
-      xs
+    reduce(
+        (acc, x) => fn(x),
+        null,
+        xs
     );
 
 export const forEach =
   curry(
     (fn, xs) =>
       hasMethod('forEach', xs) ? xs.forEach(fn)
-                               : _forEach(fn, xs)
+                               : (_forEach(fn, xs), xs)
   );

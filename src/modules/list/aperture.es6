@@ -5,16 +5,12 @@ import {range}        from './range';
 import {reduce}       from './reduce';
 import {slice}        from './slice';
 
-
 class Aperturer extends Base {
   constructor(n, xf) {
     super();
     this.n = n;
-    this.xf = xf;
     this.store = [];
-  }
-  hasNStored() {
-    return this.store.length === this.n;
+    this.xf = xf;
   }
   '@@transducer/step'(result, input) {
     if (this.hasNStored()) {
@@ -24,7 +20,9 @@ class Aperturer extends Base {
     return this.hasNStored() ? this.xf['@@transducer/step'](result, [...this.store])
                              : result;
   }
-
+  hasNStored() {
+    return this.store.length === this.n;
+  }
 }
 
 const _aperture =

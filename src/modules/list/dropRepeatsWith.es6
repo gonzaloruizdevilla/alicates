@@ -7,12 +7,12 @@ class RepeatsWithDropper extends Base{
   constructor(fn, xf) {
     super();
     this.dropping = true;
-    this.xf = xf;
     this.f = fn;
     this.lastInput = undefined;
+    this.xf = xf;
   }
   '@@transducer/step'(result, input) {
-    let filter = this.f(this.lastInput, input);
+    const filter = this.f(this.lastInput, input);
     this.lastInput = input;
     return filter ? result
                   : this.xf['@@transducer/step'](result, input);
