@@ -7,11 +7,11 @@ import {slice}        from './slice';
 class LastTaker extends Base {
   constructor(n, xf) {
     super();
-    this.n = n;
-    this.xf = xf;
-    this.storage = new Array(n);
-    this.pos = 0;
     this.moreThanN = false;
+    this.n = n;
+    this.pos = 0;
+    this.storage = new Array(n);
+    this.xf = xf;
   }
   '@@transducer/step'(result, input) {
     this.storage[this.pos] = input;

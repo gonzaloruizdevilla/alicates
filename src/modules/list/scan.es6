@@ -6,10 +6,10 @@ import {isTransformer} from '../type/isTransformer';
 class Scanner extends Base {
   constructor(fn, acc, xf) {
     super();
-    this.fn = fn;
     this.acc = acc;
-    this.xf = xf;
     this.first = true;
+    this.fn = fn;
+    this.xf = xf;
   }
   '@@transducer/step'(result, input) {
     result = this.firstTime(result);

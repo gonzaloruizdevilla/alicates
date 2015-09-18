@@ -8,8 +8,8 @@ import {isTransformer} from '../type/isTransformer';
 class Mapper extends Base {
   constructor(fn, xf) {
     super();
-    this.xf = xf;
     this.f = fn;
+    this.xf = xf;
   }
   '@@transducer/step'(result, input) {
     return this.xf['@@transducer/step'](result, this.f(input));

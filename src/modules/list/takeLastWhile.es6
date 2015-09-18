@@ -9,8 +9,8 @@ class LastWhileTaker extends Base {
   constructor(fn, xf) {
     super();
     this.fn = fn;
-    this.xf = xf;
     this.storage = [];
+    this.xf = xf;
   }
   '@@transducer/step'(result, input) {
     if (this.fn(input)) {
@@ -21,7 +21,7 @@ class LastWhileTaker extends Base {
     return result;
   }
   '@@transducer/result'(result) {
-    let step = this.xf['@@transducer/step'].bind(this);
+    const step = this.xf['@@transducer/step'].bind(this);
     return reduce(
       step,
       result,

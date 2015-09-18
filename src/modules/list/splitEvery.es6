@@ -7,8 +7,8 @@ class Splitter extends Base {
   constructor(n, xf) {
     super();
     this.n = n;
-    this.xf = xf;
     this.store = [];
+    this.xf = xf;
   }
   '@@transducer/step'(result, input) {
     this.store[this.store.length] = input;

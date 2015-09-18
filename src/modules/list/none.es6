@@ -8,8 +8,8 @@ class NoneXf extends Base {
   constructor(fn, xf){
     super();
     this.fn = fn;
-    this.xf = xf;
     this.none = true;
+    this.xf = xf;
   }
   '@@transducer/step'(result, input) {
     if(this.fn(input)) {
