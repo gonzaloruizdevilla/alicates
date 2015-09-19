@@ -1,12 +1,11 @@
-import {any} from './any';
+import {all} from './all';
 import {curryN} from '../functional/curryN';
 import {filter} from './filter';
-import {not} from '../logic/not';
 
 const filterFn =
   args =>
     el =>
-      not(any(exclude => el === exclude, args));
+      all(exclude => el !== exclude, args);
 
 export
   const without = curryN(
