@@ -1,2 +1,3 @@
 export const t =
-  () => true;
+  () =>
+    true;

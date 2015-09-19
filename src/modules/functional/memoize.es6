@@ -14,5 +14,3 @@ export const memoize =
         cache = new Map(),
         (...args) => callFn(fn, cache, toString(args), args)
     ))();
-  /*
-    */

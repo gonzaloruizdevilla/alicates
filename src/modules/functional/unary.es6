@@ -1,3 +1,4 @@
 export const unary =
   fn =>
-    (x) => fn(x);
+    (x) =>
+      fn(x);

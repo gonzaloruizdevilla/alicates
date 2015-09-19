@@ -1,2 +1,3 @@
 export const of =
-  x => [x];
+  x =>
+    [x];

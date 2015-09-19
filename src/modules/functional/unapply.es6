@@ -1,3 +1,4 @@
 export const unapply =
   fn =>
-    (...args) => fn(args);
+    (...args) =>
+      fn(args);
