@@ -3,15 +3,14 @@ import {curryN} from '../functional/curryN';
 import {filter} from './filter';
 import {not} from '../logic/not';
 
-/* jshint -W067 */
+const filterFn =
+  args =>
+    el =>
+      not(any(exclude => el === exclude, args));
+
 export
   const without = curryN(
     2,
     (arr, ...args) =>
-      (filterFn => (
-        filterFn = el => not(any(exclude => el === exclude, args)),
-        filter(filterFn, arr)
-      )
-    )()
+      filter(filterFn(args), arr)
   );
-/* jshint +W067 */
