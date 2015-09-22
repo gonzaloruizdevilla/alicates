@@ -1,6 +1,6 @@
 let assert = require('chai').assert;
 
-import {add, Identity} from '../../src/index.es6';
+import {add, Identity, toString} from '../../src/index.es6';
 
 describe('Identity', () => {
   it('has value and map properties', () => {
@@ -16,5 +16,17 @@ describe('Identity', () => {
     assert.equal(x.value, 1);
     assert.equal(y.value, 3);
     assert.ok(y instanceof Identity);
+  });
+
+  it('has a toString function', () => {
+    let x = new Identity(1);
+    assert.equal(toString(x), 'Identity(1)');
+  });
+
+  it('supports function binding', () => {
+    let result = new Identity(5).bind(value =>
+                   new Identity(6).bind(value2 =>
+                     new Identity(value + value2)));
+    assert.deepEqual(result, new Identity(11));
   });
 });
