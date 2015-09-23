@@ -11,6 +11,6 @@ export class Identity {
     return transform(this.value);
   }
   toString() {
-    return 'Identity(' + toString(this.value) + ')'
+    return 'Identity(' + toString(this.value) + ')';
   }
 }
