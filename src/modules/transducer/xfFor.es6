@@ -1,4 +1,4 @@
-import {cons, isList}  from '../functor/list';
+import {cons, isList}     from '../functor/List';
 import {createMapEntry}   from '../object/createMapEntry';
 import {identity}         from '../functional/identity';
 import {isArrayLike}      from '../type/isArrayLike';
