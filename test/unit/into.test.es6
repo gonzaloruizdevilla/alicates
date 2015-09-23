@@ -1,7 +1,7 @@
 let assert = require('chai').assert;
 
 import {add, always, compose, filter, take, identity, into, map} from '../../src/index.es6';
-import {cons, Nil} from '../../src/modules/list/list';
+import {cons, Nil} from '../../src/modules/functor/List';
 
 describe('into', function() {
   var isOdd = function(b) {return b % 2 === 1;};

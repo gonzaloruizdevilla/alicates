@@ -37,7 +37,6 @@ export * from './list/join';
 export * from './list/last';
 export * from './list/lastIndexOf';
 export * from './list/length';
-export * from './list/list';
 export * from './list/map';
 export * from './list/mapAccum';
 export * from './list/mapAccumRight';

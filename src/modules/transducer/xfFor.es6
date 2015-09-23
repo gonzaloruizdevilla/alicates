@@ -1,9 +1,9 @@
-import {cons, Cons, Nil}  from '../list/list';
-import {createMapEntry} from '../object/createMapEntry';
-import {identity} from '../functional/identity';
-import {isArrayLike} from '../type/isArrayLike';
-import {isTransformer} from '../type/isTransformer';
-import {merge} from '../object/merge';
+import {cons, isList}  from '../functor/list';
+import {createMapEntry}   from '../object/createMapEntry';
+import {identity}         from '../functional/identity';
+import {isArrayLike}      from '../type/isArrayLike';
+import {isTransformer}    from '../type/isTransformer';
+import {merge}            from '../object/merge';
 
 const arrayXf =
   init =>
@@ -41,10 +41,6 @@ const objectXf = {
 };
 
 const throwError = (obj) => {throw new Error('Cannot create transformer for ' + obj);};
-
-const isList =
-  obj =>
-    obj instanceof Cons || obj === Nil;
 
 export const xfFor =
   obj =>

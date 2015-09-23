@@ -1,6 +1,10 @@
 let assert = require('chai').assert;
 
-import {none, into, Nil, cons} from '../../src/index.es6';
+import {cons} from '../../src/modules/functor/List';
+import {into} from '../../src/modules/list/into';
+import {Nil} from '../../src/modules/functor/List';
+import {none} from '../../src/modules/list/none';
+
 
 describe('none', () => {
   const pred = a => a > 2;

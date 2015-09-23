@@ -7,6 +7,9 @@ export const Nil = {
   },
   get tail() {
     throw new Error('Accessing tail on empty list.');
+  },
+  equals(x) {
+    return x.isEmpty;
   }
 };
 
@@ -52,3 +55,7 @@ export const toArray =
       _toArray(start, start.length + listLength(list) - 1, list)
     )
   );
+
+export const isList =
+  obj =>
+    obj.constructor.name === 'Cons' || obj.isEmpty;
