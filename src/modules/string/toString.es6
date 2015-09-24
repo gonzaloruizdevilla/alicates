@@ -1,9 +1,12 @@
-import {cond, equals} from '../logic';
-import {contains, filter, map} from '../list';
-import {curry} from '../functional/curry';
+import {cond}     from '../logic/cond';
+import {contains} from '../list/contains';
+import {curry}    from '../functional/curry';
+import {equals}   from '../logic/equals';
+import {filter}   from '../list/filter';
 import {isObject} from '../type/isObject';
-import {keys} from '../object/keys';
-import {t} from '../functional/t';
+import {keys}     from '../object/keys';
+import {map}      from '../list/map';
+import {t}        from '../functional/t';
 
 let _toString;
 
