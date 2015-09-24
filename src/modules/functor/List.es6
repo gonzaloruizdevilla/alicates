@@ -1,17 +1,33 @@
-import {curry} from '../functional/curry';
+import {curry}    from '../functional/curry';
+import {equals}   from '../logic/equals';
+import {into}     from '../list/into';
+import {map}      from '../list/map';
+import {toString} from '../string/toString';
 
-export const Nil = {
-  isEmpty: true,
+let reverse ;
+
+class NilClz {
+  constructor(){
+    this.isEmpty = true;
+  }
   get head() {
     throw new Error('Accessing head on empty list.');
-  },
+  }
   get tail() {
     throw new Error('Accessing tail on empty list.');
-  },
+  }
   equals(x) {
     return x.isEmpty;
   }
-};
+  map() {
+    return this;
+  }
+  toString() {
+    return 'Nil';
+  }
+}
+
+export const Nil = new NilClz();
 
 export class Cons {
   constructor(head, tail) {
@@ -19,6 +35,27 @@ export class Cons {
     this.tail = tail;
   }
   get isEmpty() {return false;}
+  toString() {
+    return 'Cons(' + toString(this.head) + ', ' + toString(this.tail) + ')';
+  }
+  equals(x) {
+    return equals(this.head, x.head) ? this.tail.equals(x.tail)
+                                     : false;
+  }
+  map(fn) {
+    return into(Nil, map(fn), reverse(this));
+  }
+  [Symbol.iterator]() {
+    let pos = this;
+    return {
+        next: () => {
+          let result = (pos === Nil) ? {done: true}
+                                     : {done: false, value: pos.head}
+          pos = result.done ? pos : pos.tail;
+          return result;
+        }
+    };
+  }
 }
 
 export const cons =
@@ -30,10 +67,11 @@ const _reverse =
     list === Nil ? acc
                  : _reverse(cons(list.head, acc), list.tail);
 
-export const reverseList =
+reverse =
   list =>
     _reverse(Nil, list);
 
+export const reverseList = reverse;
 
 const _length =
   (acc, list) =>
