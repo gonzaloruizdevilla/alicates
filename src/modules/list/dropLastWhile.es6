@@ -18,7 +18,7 @@ class LastWhileDropper extends Base {
   }
   flush(result, input) {
     result = reduce(
-      (result, value) => this.xf['@@transducer/step'].bind(this)(result, value),
+      this.xf['@@transducer/step'],
       result,
       toArray([], this.retained)
     );
