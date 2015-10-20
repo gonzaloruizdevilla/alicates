@@ -7,13 +7,13 @@ describe('useWith', () => {
   let add1 = x => x + 1;
   let mult2 = x => x * 2;
   let div3 = x =>  x / 3;
-  let f = useWith(max, add1, mult2, div3);
+  let f = useWith(max, [add1, mult2, div3]);
 
-  it('takes a arbitrary number of function arguments and returns a function', () => {
-    assert.strictEqual(typeof useWith(max), 'function');
-    assert.strictEqual(typeof useWith(max, add1), 'function');
-    assert.strictEqual(typeof useWith(max, add1, mult2, div3), 'function');
-  });
+  it('takes a list of function and returns a function', () => {
+     assert.strictEqual(typeof useWith(max, []), 'function');
+     assert.strictEqual(typeof useWith(max, [add1]), 'function');
+     assert.strictEqual(typeof useWith(max, [add1, mult2, div3]), 'function');
+   });
 
   it('passes the arguments received to their respective functions', () => {
     assert.strictEqual(f(7, 8, 9), 16); // max(7 + 1, 8 * 2, 9 / 3);
@@ -24,7 +24,7 @@ describe('useWith', () => {
     assert.strictEqual(f(7, 8, 9, 20), 20);
   });
 
-  it('nonetheless has the correct arity', () => {
+  it('has the correct arity', () => {
     assert.strictEqual(f.length, 3);
   });
 

@@ -2,7 +2,7 @@ import {arity} from './arity';
 import {identity} from './identity';
 
 export const useWith =
-  (main, ...fns) =>
+  (main, fns) =>
     arity(fns.length, (...args) => main(
       ...(
         args.map(
