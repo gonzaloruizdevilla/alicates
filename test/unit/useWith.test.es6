@@ -10,10 +10,10 @@ describe('useWith', () => {
   let f = useWith(max, [add1, mult2, div3]);
 
   it('takes a list of function and returns a function', () => {
-     assert.strictEqual(typeof useWith(max, []), 'function');
-     assert.strictEqual(typeof useWith(max, [add1]), 'function');
-     assert.strictEqual(typeof useWith(max, [add1, mult2, div3]), 'function');
-   });
+    assert.strictEqual(typeof useWith(max, []), 'function');
+    assert.strictEqual(typeof useWith(max, [add1]), 'function');
+    assert.strictEqual(typeof useWith(max, [add1, mult2, div3]), 'function');
+  });
 
   it('passes the arguments received to their respective functions', () => {
     assert.strictEqual(f(7, 8, 9), 16); // max(7 + 1, 8 * 2, 9 / 3);

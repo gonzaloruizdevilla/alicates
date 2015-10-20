@@ -29,7 +29,7 @@ describe('pathOr', () => {
     assert.strictEqual(pathOr('Unknown', ['a', 'b', 'c'], null), 'Unknown');
   });
 
-  it("gets a deep property's value from objects", () => {
+  it('gets a deep property\'s value from objects', () => {
     assert.strictEqual(pathOr('Unknown', ['a', 'b', 'c'], deepObject), 'c');
     assert.strictEqual(pathOr('Unknown', ['a'], deepObject), deepObject.a);
   });

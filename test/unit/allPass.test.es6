@@ -9,21 +9,21 @@ describe('allPass', () => {
   var plusEq = (w, x, y, z) => w + x  === y + z;
 
   it('reports whether all predicates are satisfied by a given value', () => {
-      var ok = allPass([odd, lt20, gt5]);
-      assert.strictEqual(ok(7), true);
-      assert.strictEqual(ok(9), true);
-      assert.strictEqual(ok(10), false);
-      assert.strictEqual(ok(3), false);
-      assert.strictEqual(ok(21), false);
-    });
+    var ok = allPass([odd, lt20, gt5]);
+    assert.strictEqual(ok(7), true);
+    assert.strictEqual(ok(9), true);
+    assert.strictEqual(ok(10), false);
+    assert.strictEqual(ok(3), false);
+    assert.strictEqual(ok(21), false);
+  });
 
-    it('returns true on empty predicate list', () => {
-      assert.strictEqual(allPass([])(3), true);
-    });
+  it('returns true on empty predicate list', () => {
+    assert.strictEqual(allPass([])(3), true);
+  });
 
-    it('returns a curried function whose arity matches that of the highest-arity predicate', () => {
-      assert.strictEqual(allPass([odd, gt5, plusEq]).length, 4);
-      assert.strictEqual(allPass([odd, gt5, plusEq])(9, 9, 9, 9), true);
-      assert.strictEqual(allPass([odd, gt5, plusEq])(9)(9)(9)(9), true);
-    });
+  it('returns a curried function whose arity matches that of the highest-arity predicate', () => {
+    assert.strictEqual(allPass([odd, gt5, plusEq]).length, 4);
+    assert.strictEqual(allPass([odd, gt5, plusEq])(9, 9, 9, 9), true);
+    assert.strictEqual(allPass([odd, gt5, plusEq])(9)(9)(9)(9), true);
+  });
 });

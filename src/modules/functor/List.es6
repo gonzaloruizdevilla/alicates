@@ -4,7 +4,7 @@ import {into}     from '../list/into';
 import {map}      from '../list/map';
 import {toString} from '../string/toString';
 
-let reverse ;
+let reverse;
 
 class NilClz {
   constructor(){
@@ -48,12 +48,12 @@ export class Cons {
   [Symbol.iterator]() {
     let pos = this;
     return {
-        next: () => {
-          let result = (pos === Nil) ? {done: true}
-                                     : {done: false, value: pos.head}
-          pos = result.done ? pos : pos.tail;
-          return result;
-        }
+      next: () => {
+        let result = (pos === Nil) ? {done: true}
+                                   : {done: false, value: pos.head};
+        pos = result.done ? pos : pos.tail;
+        return result;
+      }
     };
   }
 }
