@@ -1,6 +1,6 @@
 let assert = require('chai').assert;
 
-import {useWith} from '../../src/index.es6';
+import {add, useWith} from '../../src/index.es6';
 
 describe('useWith', () => {
   let max = Math.max;
@@ -26,6 +26,18 @@ describe('useWith', () => {
 
   it('has the correct arity', () => {
     assert.strictEqual(f.length, 3);
+  });
+
+  it('passes context to its functions', () => {
+    let a = function(x) { return this.f1(x); };
+    let b = function(x) { return this.f2(x); };
+    let c = function(x, y) { return this.f3(x, y); };
+    let d = useWith(c, [a, b]);
+    let context = {f1: add(1), f2: add(2), f3: add};
+    assert.strictEqual(a.call(context, 1), 2);
+    assert.strictEqual(b.call(context, 1), 3);
+    assert.strictEqual(d.apply(context, [1, 1]), 5);
+    assert.strictEqual(d.apply(context, [2, 3]), 8);
   });
 
 });

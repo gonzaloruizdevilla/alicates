@@ -1,12 +1,16 @@
-import {arity} from './arity';
+import {curryN} from './curryN';
 import {identity} from './identity';
 
 export const useWith =
   (main, fns) =>
-    arity(fns.length, (...args) => main(
-      ...(
-        args.map(
-          (arg, idx) => (fns[idx] || identity)(arg)
-        )
-      )
-    ));
+    curryN(
+      fns.length,
+      function(...args) {
+        return main.apply(
+          this,
+          args.map(
+            (arg, idx) => (fns[idx] || identity).call(this, arg)
+          )
+        );
+      }
+    );
