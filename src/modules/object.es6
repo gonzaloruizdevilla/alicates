@@ -24,6 +24,7 @@ export * from './object/mergeAll';
 export * from './object/omit';
 export * from './object/over';
 export * from './object/path';
+export * from './object/pathOr';
 export * from './object/pick';
 export * from './object/pickAll';
 export * from './object/pickBy';
