@@ -29,6 +29,13 @@ describe('map', () => {
     assert.deepEqual(map(times2, [1, 2, 3, 4]), [2, 4, 6, 8]);
   });
 
+  it('interprets ((->) r) as a functor', () => {
+    let f = function(a) { return a - 1; };
+    let g = function(b) { return b * 2; };
+    let h = map(f, g);
+    assert.strictEqual(h(10), (10 * 2) - 1);
+  });
+
   it('dispatches to objects that implement `map`', function() {
     let obj = {x: 100, map: function(f) { return f(this.x); }};
     assert.strictEqual(map(add1, obj), 101);
